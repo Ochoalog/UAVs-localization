@@ -1,0 +1,158 @@
+
+"-s color diff-intensity 9 -s density diff-intensity 9 circular 15"
+"-s unscented diff-intensity 9 -s density diff-intensity 9 circular 15"
+"-s color diff-intensity 9 -s density diff-intensity 9 circular 10"
+"-s unscented diff-intensity 9 -s density diff-intensity 9 circular 10"
+
+"-s color diff-intensity 10 -s density diff-intensity 10 circular 15"
+"-s unscented diff-intensity 10 -s density diff-intensity 10 circular 15"
+"-s color diff-intensity 10 -s density diff-intensity 10 circular 10"
+"-s unscented diff-intensity 10 -s density diff-intensity 10 circular 10"
+
+"-s color diff-intensity 11 -s density diff-intensity 11 circular 15"
+"-s unscented diff-intensity 11 -s density diff-intensity 11 circular 15"
+"-s color diff-intensity 11 -s density diff-intensity 11 circular 10"
+"-s unscented diff-intensity 11 -s density diff-intensity 11 circular 10"
+
+"-s color diff-cie1976 10 -s density diff-cie1976 10 circular 15"
+"-s unscented diff-cie1976 10 -s density diff-cie1976 10 circular 15"
+"-s color diff-cie1976 10 -s density diff-cie1976 10 circular 10"
+"-s unscented diff-cie1976 10 -s density diff-cie1976 10 circular 10"
+
+"-s color diff-cie1976 11 -s density diff-cie1976 11 circular 15"
+"-s unscented diff-cie1976 11 -s density diff-cie1976 11 circular 15"
+"-s color diff-cie1976 11 -s density diff-cie1976 11 circular 10"
+"-s unscented diff-cie1976 11 -s density diff-cie1976 11 circular 10"
+
+"-s color diff-cie1994 11 -s density diff-cie1994 11 circular 15"
+"-s unscented diff-cie1994 11 -s density diff-cie1994 11 circular 15"
+"-s color diff-cie1994 11 -s density diff-cie1994 11 circular 10"
+"-s unscented diff-cie1994 11 -s density diff-cie1994 11 circular 10"
+
+"-s color diff-cie1976 12 -s density diff-cie1976 12 circular 15"
+"-s unscented diff-cie1976 12 -s density diff-cie1976 12 circular 15"
+"-s color diff-cie1976 12 -s density diff-cie1976 12 circular 10"
+"-s unscented diff-cie1976 12 -s density diff-cie1976 12 circular 10"
+
+"-s color diff-cie2000 8 -s density diff-cie2000 8 circular 15"
+"-s unscented diff-cie2000 8 -s density diff-cie2000 8 circular 15"
+"-s color diff-cie2000 8 -s density diff-cie2000 8 circular 10"
+"-s unscented diff-cie2000 8 -s density diff-cie2000 8 circular 10"
+
+"-s color diff-cie2000 9 -s density diff-cie2000 9 circular 15"
+"-s unscented diff-cie2000 9 -s density diff-cie2000 9 circular 15"
+"-s color diff-cie2000 9 -s density diff-cie2000 9 circular 10"
+"-s unscented diff-cie2000 9 -s density diff-cie2000 9 circular 10"
+
+"-s color diff-cie2000 10 -s density diff-cie2000 10 circular 15"
+"-s unscented diff-cie2000 10 -s density diff-cie2000 10 circular 15"
+"-s color diff-cie2000 10 -s density diff-cie2000 10 circular 10"
+"-s unscented diff-cie2000 10 -s density diff-cie2000 10 circular 10"
+
+"-s color diff-cmc1984 9 -s density diff-cmc1984 9 circular 15"
+"-s unscented diff-cmc1984 9 -s density diff-cmc1984 9 circular 15"
+"-s color diff-cmc1984 9 -s density diff-cmc1984 9 circular 10"
+"-s unscented diff-cmc1984 9 -s density diff-cmc1984 9 circular 10"
+
+"-s color diff-cmc1984 10 -s density diff-cmc1984 10 circular 15"
+"-s unscented diff-cmc1984 10 -s density diff-cmc1984 10 circular 15"
+"-s color diff-cmc1984 10 -s density diff-cmc1984 10 circular 10"
+"-s unscented diff-cmc1984 10 -s density diff-cmc1984 10 circular 10"
+
+"-s color diff-cmc1984 11 -s density diff-cmc1984 11 circular 15"
+"-s unscented diff-cmc1984 11 -s density diff-cmc1984 11 circular 15"
+"-s color diff-cmc1984 11 -s density diff-cmc1984 11 circular 10"
+"-s unscented diff-cmc1984 11 -s density diff-cmc1984 11 circular 10"
+
+"-s color diff-rgb 12 -s density diff-rgb 12 circular 15"
+"-s unscented diff-rgb 12 -s density diff-rgb 12 circular 15"
+"-s color diff-rgb 12 -s density diff-rgb 12 circular 10"
+"-s unscented diff-rgb 12 -s density diff-rgb 12 circular 10"
+
+"-s color diff-rgb 13 -s density diff-rgb 13 circular 15"
+"-s unscented diff-rgb 13 -s density diff-rgb 13 circular 15"
+"-s color diff-rgb 13 -s density diff-rgb 13 circular 10"
+"-s unscented diff-rgb 13 -s density diff-rgb 13 circular 10"
+
+
+
+
+
+
+
+
+"s_color_diff-intensity_9_-s_density_diff-intensity_9_circular_15"
+"s_unscented_diff-intensity_9_-s_density_diff-intensity_9_circular_15"
+"s_color_diff-intensity_9_-s_density_diff-intensity_9_circular_10"
+"s_unscented_diff-intensity_9_-s_density_diff-intensity_9_circular_10"
+
+"s_color_diff-intensity_10_-s_density_diff-intensity_10_circular_15"
+"s_unscented_diff-intensity_10_-s_density_diff-intensity_10_circular_15"
+"s_color_diff-intensity_10_-s_density_diff-intensity_10_circular_10"
+"s_unscented_diff-intensity_10_-s_density_diff-intensity_10_circular_10"
+
+"s_color_diff-intensity_11_-s_density_diff-intensity_11_circular_15"
+"s_unscented_diff-intensity_11_-s_density_diff-intensity_11_circular_15"
+"s_color_diff-intensity_11_-s_density_diff-intensity_11_circular_10"
+"s_unscented_diff-intensity_11_-s_density_diff-intensity_11_circular_10"
+
+"s_color_diff-cie1976_10_-s_density_diff-cie1976_10_circular_15"
+"s_unscented_diff-cie1976_10_-s_density_diff-cie1976_10_circular_15"
+"s_color_diff-cie1976_10_-s_density_diff-cie1976_10_circular_10"
+"s_unscented_diff-cie1976_10_-s_density_diff-cie1976_10_circular_10"
+
+"s_color_diff-cie1976_11_-s_density_diff-cie1976_11_circular_15"
+"s_unscented_diff-cie1976_11_-s_density_diff-cie1976_11_circular_15"
+"s_color_diff-cie1976_11_-s_density_diff-cie1976_11_circular_10"
+"s_unscented_diff-cie1976_11_-s_density_diff-cie1976_11_circular_10"
+
+"s_color_diff-cie1994_11_-s_density_diff-cie1994_11_circular_15"
+"s_unscented_diff-cie1994_11_-s_density_diff-cie1994_11_circular_15"
+"s_color_diff-cie1994_11_-s_density_diff-cie1994_11_circular_10"
+"s_unscented_diff-cie1994_11_-s_density_diff-cie1994_11_circular_10"
+
+"s_color_diff-cie1976_12_-s_density_diff-cie1976_12_circular_15"
+"s_unscented_diff-cie1976_12_-s_density_diff-cie1976_12_circular_15"
+"s_color_diff-cie1976_12_-s_density_diff-cie1976_12_circular_10"
+"s_unscented_diff-cie1976_12_-s_density_diff-cie1976_12_circular_10"
+
+"s_color_diff-cie2000_8_-s_density_diff-cie2000_8_circular_15"
+"s_unscented_diff-cie2000_8_-s_density_diff-cie2000_8_circular_15"
+"s_color_diff-cie2000_8_-s_density_diff-cie2000_8_circular_10"
+"s_unscented_diff-cie2000_8_-s_density_diff-cie2000_8_circular_10"
+
+"s_color_diff-cie2000_9_-s_density_diff-cie2000_9_circular_15"
+"s_unscented_diff-cie2000_9_-s_density_diff-cie2000_9_circular_15"
+"s_color_diff-cie2000_9_-s_density_diff-cie2000_9_circular_10"
+"s_unscented_diff-cie2000_9_-s_density_diff-cie2000_9_circular_10"
+
+"s_color_diff-cie2000_10_-s_density_diff-cie2000_10_circular_15"
+"s_unscented_diff-cie2000_10_-s_density_diff-cie2000_10_circular_15"
+"s_color_diff-cie2000_10_-s_density_diff-cie2000_10_circular_10"
+"s_unscented_diff-cie2000_10_-s_density_diff-cie2000_10_circular_10"
+
+"s_color_diff-cmc1984_9_-s_density_diff-cmc1984_9_circular_15"
+"s_unscented_diff-cmc1984_9_-s_density_diff-cmc1984_9_circular_15"
+"s_color_diff-cmc1984_9_-s_density_diff-cmc1984_9_circular_10"
+"s_unscented_diff-cmc1984_9_-s_density_diff-cmc1984_9_circular_10"
+
+"s_color_diff-cmc1984_10_-s_density_diff-cmc1984_10_circular_15"
+"s_unscented_diff-cmc1984_10_-s_density_diff-cmc1984_10_circular_15"
+"s_color_diff-cmc1984_10_-s_density_diff-cmc1984_10_circular_10"
+"s_unscented_diff-cmc1984_10_-s_density_diff-cmc1984_10_circular_10"
+
+"s_color_diff-cmc1984_11_-s_density_diff-cmc1984_11_circular_15"
+"s_unscented_diff-cmc1984_11_-s_density_diff-cmc1984_11_circular_15"
+"s_color_diff-cmc1984_11_-s_density_diff-cmc1984_11_circular_10"
+"s_unscented_diff-cmc1984_11_-s_density_diff-cmc1984_11_circular_10"
+
+"s_color_diff-rgb_12_-s_density_diff-rgb_12_circular_15"
+"s_unscented_diff-rgb_12_-s_density_diff-rgb_12_circular_15"
+"s_color_diff-rgb_12_-s_density_diff-rgb_12_circular_10"
+"s_unscented_diff-rgb_12_-s_density_diff-rgb_12_circular_10"
+
+"s_color_diff-rgb_13_-s_density_diff-rgb_13_circular_15"
+"s_unscented_diff-rgb_13_-s_density_diff-rgb_13_circular_15"
+"s_color_diff-rgb_13_-s_density_diff-rgb_13_circular_10"
+"s_unscented_diff-rgb_13_-s_density_diff-rgb_13_circular_10"
+

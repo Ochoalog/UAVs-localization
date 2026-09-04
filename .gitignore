@@ -1,0 +1,60 @@
+# ==============================================================================
+# Datasets de Imagens e Sensores (pesados: 44 GB - hospedados no Zenodo)
+# ==============================================================================
+Datasets/
+0061/
+0061_original/
+
+# ==============================================================================
+# Binários, Arquivos Objeto e Artefatos de Compilação
+# ==============================================================================
+*.o
+*.a
+*.so
+*.so.*
+*.out
+*.exe
+*.DAT
+*.csv
+*.ods
+*.kmz
+*.zip
+PhiR2Framework
+MapfromImage
+ReaderLog
+ViewDensity
+Makefile
+Makefile.*
+.qmake.stash
+*.pro.user*
+
+# ==============================================================================
+# Pastas de Build Antigas e Git Interno
+# ==============================================================================
+*build*
+[Bb]uild/
+phir2frameworkv2/.git*/
+
+# ==============================================================================
+# Resultados Brutos de Simulação e Logs de Partículas (gerados em tempo de execução)
+# ==============================================================================
+Results*/
+Logs*/
+phir2frameworkv2/Results*/
+phir2frameworkv2/Logs*/
+phir2frameworkv2/Imgs/
+UFRGS_VET_18_10_2019_alfa_e_beta_juntos_piores_ou_demais_mapas/
+UFRGS_VET_390_613_50K_apenas_beta_4_mapas/
+Experimentos 08_01_2020/
+
+# Ignorar pastas de resultados gerados dentro de Experimentos
+Experimentos/*/*/traj/
+Experimentos/*/*/UFRGS_VET_*/
+Experimentos/*/*/*mapas*/
+Experimentos/*/*/*/
+!Experimentos/*.py
+!Experimentos/*.sh
+!Experimentos/*/*.py
+!Experimentos/*/*.sh
+!Experimentos/*/*/*.py
+!Experimentos/*/*/*.sh

@@ -1,0 +1,295 @@
+[BriefHeuristic.cpp:1364]: (style) Consecutive return, break, continue, goto or throw statements are unnecessary.
+[BriefHeuristic.cpp:109]: (style) The scope of the variable 'fitnessScore' can be reduced.
+[BriefHeuristic.cpp:109]: (style) The scope of the variable 'secStep' can be reduced.
+[BriefHeuristic.cpp:177]: (style) The scope of the variable 'proxPixel' can be reduced.
+[BriefHeuristic.cpp:446]: (style) The scope of the variable 'proxPixel' can be reduced.
+[BriefHeuristic.cpp:56]: (style) Variable 'halfMargin' is assigned a value that is never used.
+[BriefHeuristic.cpp:207]: (style) Variable 'sumViValues' is assigned a value that is never used.
+[BriefHeuristic.cpp:228]: (style) Variable 'sumNormalized' is assigned a value that is never used.
+[BriefHeuristic.cpp:251]: (style) Variable 'proxPixel' is assigned a value that is never used.
+[BriefHeuristic.cpp:345]: (style) Variable 'sumScaled' is assigned a value that is never used.
+[BriefHeuristic.cpp:591]: (style) Variable 'proxPixel' is assigned a value that is never used.
+[BriefHeuristic.cpp:448]: (style) Variable 'maximumFitness' is assigned a value that is never used.
+[BriefHeuristic.cpp:448]: (style) Variable 'minimumFitness' is assigned a value that is never used.
+[BriefHeuristic.cpp:449]: (style) Variable 'widowingMinFitDec' is assigned a value that is never used.
+[BriefHeuristic.cpp:450]: (style) Variable 'iElem' is assigned a value that is never used.
+[BriefHeuristic.cpp:450]: (style) Variable 'jElem' is assigned a value that is never used.
+[BriefHeuristic.cpp:451]: (style) Variable 'sumProb' is assigned a value that is never used.
+[BriefHeuristic.cpp:791]: (style) Variable 'halfMargin' is assigned a value that is never used.
+[BriefHeuristic.cpp:1355]: (style) Variable 'diff' is assigned a value that is never used.
+[BriefHeuristic.cpp:8]: (warning) Member variable 'BriefHeuristic::width' is not initialized in the constructor.
+[BriefHeuristic.cpp:8]: (warning) Member variable 'BriefHeuristic::height' is not initialized in the constructor.
+[BriefHeuristic.cpp:8]: (warning) Member variable 'BriefHeuristic::sumNdviWeightsDrone' is not initialized in the constructor.
+[BriefHeuristic.h:39] -> [Heuristic.h:64]: (warning) The class 'BriefHeuristic' defines member variable with name 'type' also defined in its parent class 'Heuristic'.
+[Ndvi.h:18]: (style) Class 'Ndvi' has a constructor with 1 argument that is not explicit.
+[Utils.h:75]: (style) Class 'Trigonometry' has a constructor with 1 argument that is not explicit.
+[Grvi.h:16]: (style) Class 'Grvi' has a constructor with 1 argument that is not explicit.
+[Grvi.h:17]: (style) Class 'Grvi' has a constructor with 1 argument that is not explicit.
+[ColorCPU.cpp:223]: (style) The scope of the variable 'KL' can be reduced.
+[ColorCPU.cpp:223]: (style) The scope of the variable 'KC' can be reduced.
+[ColorCPU.cpp:223]: (style) The scope of the variable 'KH' can be reduced.
+[ColorCPU.cpp:267]: (style) Variable 'CLbar7' is assigned a value that is never used.
+[ColorCPU.cpp:373]: (style) Variable 'CLbar7' is assigned a value that is never used.
+[ColorCPU.cpp:3]: (warning) Member variable 'CPUColorConverter::m_WhitePoint' is not initialized in the constructor.
+[ColorCPU.cpp:3]: (warning) Member variable 'CPUColorConverter::m_Gamma' is not initialized in the constructor.
+[CorrelativeSM.cpp:17]: (warning) Member variable 'CorrelativeScanMatching::minX' is not initialized in the constructor.
+[CorrelativeSM.cpp:17]: (warning) Member variable 'CorrelativeScanMatching::minY' is not initialized in the constructor.
+[CorrelativeSM.cpp:17]: (warning) Member variable 'CorrelativeScanMatching::minTh' is not initialized in the constructor.
+[CorrelativeSM.cpp:316]: (performance) Function parameter 'p1' should be passed by reference.
+[CorrelativeSM.cpp:316]: (performance) Function parameter 'p2' should be passed by reference.
+[DistanceTransform.cpp:118]: (error) Mismatching allocation and deallocation: f
+[DroneRobot.cpp:193]: (style) C-style pointer casting
+[DroneRobot.cpp:194]: (style) C-style pointer casting
+[DroneRobot.cpp:195]: (style) C-style pointer casting
+[DroneRobot.cpp:196]: (style) C-style pointer casting
+[DroneRobot.cpp:197]: (style) C-style pointer casting
+[DroneRobot.cpp:1643]: (style) The scope of the variable 'cT' can be reduced.
+[DroneRobot.cpp:691]: (style) Variable 'sum' is assigned a value that is never used.
+[DroneRobot.cpp:1085]: (style) Variable 'kPoints' is assigned a value that is never used.
+[DroneRobot.cpp:23]: (warning) Member variable 'DroneRobot::step' is not initialized in the constructor.
+
+
+[DroneRobot.h:47]: (style) Unused private function: 'DroneRobot::findOdometryUsingECC'
+[DroneRobot.h:53]: (style) Unused private function: 'DroneRobot::findOdometryUsingICP'
+[DroneRobot.h:54]: (style) Unused private function: 'DroneRobot::findOdometryUsingCorrelativeSM'
+[DroneRobot.h:55]: (style) Unused private function: 'DroneRobot::findOdometryUsingTemplateMatching'
+[DroneRobot.h:56]: (style) Unused private function: 'DroneRobot::GetGradient'
+[DroneRobot.h:63]: (style) Unused private function: 'DroneRobot::localizeWithFeatureMatching'
+[MapGrid.h:22]: (style) Class 'MapGrid' has a constructor with 1 argument that is not explicit.
+[SiftHeuristic.h:33]: (style) Class 'Rtree' has a constructor with 1 argument that is not explicit.
+[DroneRobot.cpp:1588]: (style) Exception should be caught by reference.
+
+
+[CorrelativeSM.h:35]: (performance) Function parameter 'p' should be passed by reference.
+[CorrelativeSM.h:37]: (performance) Function parameter 'p1' should be passed by reference.
+[CorrelativeSM.h:37]: (performance) Function parameter 'p2' should be passed by reference.
+[Grid.cpp:102]: (style) The scope of the variable 'aux' can be reduced.
+[Grid.h:13]: (style) 'class Grid' does not have a copy constructor which is recommended since the class contains a pointer to allocated memory.
+[Grvi.cpp:37]: (style) Variable 'minValue' is assigned a value that is never used.
+[Grvi.cpp:37]: (style) Variable 'maxValue' is assigned a value that is never used.
+[Grvi.cpp:42]: (style) Unused variable: i
+[Grvi.cpp:42]: (style) Unused variable: posResult
+[Heuristic.h:82]: (style) Class 'KernelHeuristic' is unsafe, 'KernelHeuristic::kernel' can leak by wrong usage.
+[Kernel.cpp:56]: (style) Assignment of function parameter has no effect outside the function.
+[Kernel.cpp:61]: (style) Assignment of function parameter has no effect outside the function.
+[MapGrid.cpp:9]: (warning) Member variable 'MapGrid::cells' is not initialized in the constructor.
+[MapGrid.cpp:9]: (warning) Member variable 'MapGrid::gradients' is not initialized in the constructor.
+[MapGrid.cpp:9]: (warning) Member variable 'MapGrid::reliableGradients' is not initialized in the constructor.
+[MapGrid.cpp:38]: (warning) Member variable 'MapGrid::gradients' is not initialized in the constructor.
+[MapGrid.cpp:38]: (warning) Member variable 'MapGrid::reliableGradients' is not initialized in the constructor.
+[MapGrid.cpp:38]: (warning) Member variable 'MapGrid::radius' is not initialized in the constructor.
+[MapGrid.cpp:50]: (warning) Member variable 'MapGrid::heuristic' is not initialized in the constructor.
+[MapGrid.cpp:50]: (warning) Member variable 'MapGrid::radius' is not initialized in the constructor.
+[MapGrid.h:15]: (style) 'class MapGrid' does not have a copy constructor which is recommended since the class contains a pointer to allocated memory.
+[MapGrid.cpp:57]: (warning) scanf without field width limits can crash with huge input data.
+[Mcl.cpp:1239]: (style) C-style pointer casting
+[Mcl.cpp:1270]: (style) C-style pointer casting
+[Mcl.cpp:1294]: (style) C-style pointer casting
+[Mcl.cpp:1348]: (style) C-style pointer casting
+[Mcl.cpp:1384]: (style) C-style pointer casting
+[Mcl.cpp:1698]: (style) C-style pointer casting
+[Mcl.cpp:1738]: (style) C-style pointer casting
+[Mcl.cpp:1744]: (style) C-style pointer casting
+[Mcl.cpp:1752]: (style) C-style pointer casting
+[Mcl.cpp:1775]: (style) C-style pointer casting
+[Mcl.cpp:1793]: (style) C-style pointer casting
+[Mcl.cpp:1806]: (style) C-style pointer casting
+[Mcl.cpp:1812]: (style) C-style pointer casting
+[Mcl.cpp:859] -> [Mcl.cpp:861]: (performance) Variable 'stddev' is reassigned a value before the old one has been used.
+[Mcl.cpp:858] -> [Mcl.cpp:864]: (performance) Variable 'angleVar' is reassigned a value before the old one has been used.
+[Mcl.cpp:1004] -> [Mcl.cpp:1006]: (performance) Variable 'stddev' is reassigned a value before the old one has been used.
+[Mcl.cpp:1003] -> [Mcl.cpp:1009]: (performance) Variable 'angleVar' is reassigned a value before the old one has been used.
+[Mcl.cpp:251]: (style) The scope of the variable 'lineSize' can be reduced.
+[Mcl.cpp:844]: (style) The scope of the variable 'angle' can be reduced.
+[Mcl.cpp:989]: (style) The scope of the variable 'ponderada' can be reduced.
+[Mcl.cpp:1237]: (style) The scope of the variable 'diff' can be reduced.
+[Mcl.cpp:1346]: (style) The scope of the variable 'diff' can be reduced.
+[Mcl.cpp:1848]: (style) The scope of the variable 'tmp' can be reduced.
+[Mcl.cpp:826]: (style) Variable 'meanParticleVar' is assigned a value that is never used.
+[Mcl.cpp:1060]: (style) Variable 'varAngleError' is assigned a value that is never used.
+[Mcl.cpp:1505]: (style) Unused variable: it
+[Mcl.cpp:1673]: (style) Variable 'halfRows' is assigned a value that is never used.
+[Mcl.cpp:1674]: (style) Variable 'halfCols' is assigned a value that is never used.
+[Mcl.cpp:1696]: (style) Variable 'grad' is assigned a value that is never used.
+[Mcl.cpp:1729]: (style) Variable 'grad' is assigned a value that is never used.
+
+
+[Mcl.cpp:29]: (warning) Member variable 'MCL::maxRange' is not initialized in the constructor.
+[Mcl.cpp:29]: (warning) Member variable 'MCL::neff' is not initialized in the constructor.
+[Mcl.cpp:29]: (warning) Member variable 'MCL::locTechnique' is not initialized in the constructor.
+[Mcl.h:91]: (style) Unused private function: 'MCL::discardInvalidDeltaAngles'
+[Mcl.h:92]: (style) Unused private function: 'MCL::computeNeff'
+[Mcl.h:94]: (style) Unused private function: 'MCL::computeError3d'
+[Mcl.h:96]: (style) Unused private function: 'MCL::sumAngles'
+[Mcl.h:98]: (style) Unused private function: 'MCL::kldSampling'
+[Mcl.h:99]: (style) Unused private function: 'MCL::normalizingParticles'
+[Mcl.cpp:38]: (performance) Variable 'droneAngles' is assigned in constructor body. Consider performing initialization in initialization list.
+[Ndvi.cpp:66]: (style) Variable 'minValue' is assigned a value that is never used.
+[Ndvi.cpp:66]: (style) Variable 'maxValue' is assigned a value that is never used.
+[Ndvi.cpp:71]: (style) Unused variable: i
+[Ndvi.cpp:71]: (style) Unused variable: posResult
+[Ndvi.cpp:12]: (warning) Member variable 'Ndvi::gravaLogNdvi' is not initialized in the constructor.
+[PioneerRobot.cpp:9]: (warning) Member variable 'PioneerRobot::laserConnector_' is not initialized in the constructor.
+[PioneerRobot.cpp:9]: (warning) Member variable 'PioneerRobot::robotConnector_' is not initialized in the constructor.
+[PioneerRobot.cpp:9]: (warning) Member variable 'PioneerRobot::parser_' is not initialized in the constructor.
+[PioneerRobot.h:53]: (style) Unused private function: 'PioneerRobot::stopMovement'
+[PioneerRobot.cpp:546]: (performance) Prefer prefix ++/-- operators for non-primitive types.
+[PixelTransform.cpp:4]: (warning) Member variable 'PixelTransform::scaleX' is not initialized in the constructor.
+[PixelTransform.cpp:4]: (warning) Member variable 'PixelTransform::scaleY' is not initialized in the constructor.
+[PixelTransform.cpp:4]: (warning) Member variable 'PixelTransform::deltaX' is not initialized in the constructor.
+[PixelTransform.cpp:4]: (warning) Member variable 'PixelTransform::deltaY' is not initialized in the constructor.
+[Robot.cpp:93]: (style) The scope of the variable 't' can be reduced.
+[Robot.cpp:13]: (warning) Member variable 'Robot::motionMode_' is not initialized in the constructor.
+[Robot.cpp:13]: (warning) Member variable 'Robot::mcLocalization' is not initialized in the constructor.
+[Robot.cpp:13]: (warning) Member variable 'Robot::logFile_' is not initialized in the constructor.
+[Robot.cpp:13]: (warning) Member variable 'Robot::logMode_' is not initialized in the constructor.
+[Robot.cpp:13]: (warning) Member variable 'Robot::runQuiet' is not initialized in the constructor.
+[Robot.cpp:13]: (warning) Member variable 'Robot::orig_buf' is not initialized in the constructor.
+[Robot.h:17]: (style) 'class Robot' does not have a copy constructor which is recommended since the class contains a pointer to allocated memory.
+[SiftHeuristic.h:52]: (style) Unused private function: 'SIFTHeuristic::checkTransformation'
+[SomeKernels.cpp:45]: (warning) Member variable 'CGaussian::m_stdev' is not initialized in the constructor.
+[SomeKernels.cpp:45]: (warning) Member variable 'CGaussian::m_mean' is not initialized in the constructor.
+[SomeKernels.cpp:107]: (warning) Member variable 'CCircular::m_radius' is not initialized in the constructor.
+[SomeKernels.cpp:146]: (warning) Member variable 'CGaussianC::m_stdev' is not initialized in the constructor.
+[SomeKernels.cpp:146]: (warning) Member variable 'CGaussianC::m_mean' is not initialized in the constructor.
+[SomeKernels.cpp:246]: (warning) Member variable 'CEliptical::m_radiusX' is not initialized in the constructor.
+[SomeKernels.cpp:246]: (warning) Member variable 'CEliptical::m_radiusY' is not initialized in the constructor.
+[SomeKernels.cpp:446]: (warning) Member variable 'CEpanechnikovM::m_radiusX' is not initialized in the constructor.
+[SomeKernels.cpp:446]: (warning) Member variable 'CEpanechnikovM::m_radiusY' is not initialized in the constructor.
+[SomeKernels.cpp:384]: (warning) Member variable 'CGaussianM::m_stdevX' is not initialized in the constructor.
+[SomeKernels.cpp:384]: (warning) Member variable 'CGaussianM::m_meanX' is not initialized in the constructor.
+[SomeKernels.cpp:384]: (warning) Member variable 'CGaussianM::m_stdevY' is not initialized in the constructor.
+[SomeKernels.cpp:384]: (warning) Member variable 'CGaussianM::m_meanY' is not initialized in the constructor.
+[UTMConverter.cpp:229]: (style) Variable 'tmp' is assigned a value that is never used.
+[UTMConverter.h:49]: (style) Unused private function: 'UTMConverter::footpointLatitude'
+[Utils.cpp:418]: (warning) Member variable 'Pose3d::yawInvertido' is not initialized in the constructor.
+[Utils.cpp:424]: (warning) Member variable 'Pose3d::yawInvertido' is not initialized in the constructor.
+[VegetationIndex.cpp:3]: (warning) Member variable 'VegetationIndex::radianceFix' is not initialized in the constructor.
+[VegetationIndex.cpp:3]: (warning) Member variable 'VegetationIndex::radianceMultRed' is not initialized in the constructor.
+[VegetationIndex.cpp:3]: (warning) Member variable 'VegetationIndex::radianceAddRed' is not initialized in the constructor.
+[VegetationIndex.cpp:3]: (warning) Member variable 'VegetationIndex::radianceMultNir' is not initialized in the constructor.
+[VegetationIndex.cpp:3]: (warning) Member variable 'VegetationIndex::radianceAddNir' is not initialized in the constructor.
+[VegetationIndex.cpp:3]: (warning) Member variable 'VegetationIndex::radianceMultRedEdge' is not initialized in the constructor.
+[VegetationIndex.cpp:3]: (warning) Member variable 'VegetationIndex::radianceAddRedEdge' is not initialized in the constructor.
+[VegetationIndex.cpp:3]: (warning) Member variable 'VegetationIndex::radianceMultGreen' is not initialized in the constructor.
+[VegetationIndex.cpp:3]: (warning) Member variable 'VegetationIndex::radianceAddGreen' is not initialized in the constructor.
+[VegetationIndex.cpp:3]: (warning) Member variable 'VegetationIndex::reflectanceMultRed' is not initialized in the constructor.
+[VegetationIndex.cpp:3]: (warning) Member variable 'VegetationIndex::reflectanceAddRed' is not initialized in the constructor.
+[VegetationIndex.cpp:3]: (warning) Member variable 'VegetationIndex::reflectanceMultNir' is not initialized in the constructor.
+[VegetationIndex.cpp:3]: (warning) Member variable 'VegetationIndex::reflectanceAddNir' is not initialized in the constructor.
+[VegetationIndex.cpp:3]: (warning) Member variable 'VegetationIndex::reflectanceMultRedEdge' is not initialized in the constructor.
+[VegetationIndex.cpp:3]: (warning) Member variable 'VegetationIndex::reflectanceAddRedEdge' is not initialized in the constructor.
+[VegetationIndex.cpp:3]: (warning) Member variable 'VegetationIndex::reflectanceMultGreen' is not initialized in the constructor.
+[VegetationIndex.cpp:3]: (warning) Member variable 'VegetationIndex::reflectanceAddGreen' is not initialized in the constructor.
+[VegetationIndex.cpp:3]: (warning) Member variable 'VegetationIndex::thetaSe' is not initialized in the constructor.
+[VegetatonIndexGen.cpp:16]: (error) Uninitialized variable: idx
+[colorheuristic.cpp:157]: (style) Unused variable: i
+[colorheuristic.cpp:157]: (style) Unused variable: j
+[colorheuristic.cpp:158]: (style) Unused variable: auxX
+[colorheuristic.cpp:158]: (style) Unused variable: auxY
+[colorheuristic.cpp:208]: (style) Unused variable: i
+[colorheuristic.cpp:208]: (style) Unused variable: j
+[colorheuristic.cpp:209]: (style) Unused variable: auxX
+[colorheuristic.cpp:209]: (style) Unused variable: auxY
+[colorheuristic.cpp:211]: (style) Variable 'theta' is assigned a value that is never used.
+[colorheuristic.cpp:3]: (warning) Member variable 'ColorHeuristic::marginUnscented' is not initialized in the constructor.
+[colorheuristic.cpp:141]: (warning) Member variable 'UnscentedColorHeuristic::height' is not initialized in the constructor.
+[colorheuristic.cpp:141]: (warning) Member variable 'UnscentedColorHeuristic::width' is not initialized in the constructor.
+[main.cpp:55]: (style) C-style pointer casting
+[main.cpp:72]: (style) C-style pointer casting
+[main.cpp:103]: (style) Unused variable: outputName
+[mainMap.cpp:390]: (style) C-style pointer casting
+[mainMap.cpp:247]: (style) Variable 'diffcolor' is assigned a value that is never used.
+[readerlog.h:67]: (style) Class 'ReaderLog' has a constructor with 1 argument that is not explicit.
+[miheuristic.cpp:11]: (warning) Member variable 'MIHeuristic::observedEntropy' is not initialized in the constructor.
+[miheuristic.cpp:11]: (warning) Member variable 'MIHeuristic::cashedEntropy' is not initialized in the constructor.
+[mutualinfheuristic.cpp:53] -> [mutualinfheuristic.cpp:56]: (warning) Either the condition '!goodParticle' is redundant or there is possible null pointer dereference: goodParticle.
+[mutualinfheuristic.cpp:72]: (style) Unused variable: intensity
+[PixelTransform.cpp:490]: (style) The function 'Met2Pix' is never used.
+[PixelTransform.cpp:495]: (style) The function 'Met2PixX' is never used.
+[PixelTransform.cpp:500]: (style) The function 'Met2PixY' is never used.
+[PixelTransform.cpp:475]: (style) The function 'Pix2Met' is never used.
+[PixelTransform.cpp:480]: (style) The function 'Pix2MetX' is never used.
+[PixelTransform.cpp:485]: (style) The function 'Pix2MetY' is never used.
+[Utils.cpp:329]: (style) The function 'addRelativePose' is never used.
+[mutualinfheuristic.cpp:189]: (style) The function 'boundingRectIsIn' is never used.
+[MapGrid.cpp:216]: (style) The function 'calculateGradientFor' is never used.
+[MapGrid.cpp:211]: (style) The function 'calculateHeuristicFor' is never used.
+[MapGrid.cpp:221]: (style) The function 'calculateOrientation' is never used.
+[SiftHeuristic.cpp:122]: (style) The function 'checkTransformation' is never used.
+[MapGrid.cpp:160]: (style) The function 'clearCell' is never used.
+[DistanceTransform.cpp:41]: (style) The function 'computeChebyshevDT' is never used.
+[DroneRobot.cpp:709]: (style) The function 'computeEntropyMap' is never used.
+[Mcl.cpp:1635]: (style) The function 'computeError3d' is never used.
+[DistanceTransform.cpp:70]: (style) The function 'computeEuclideanDT' is never used.
+[DistanceTransform.cpp:13]: (style) The function 'computeManhattanDT' is never used.
+[Mcl.cpp:1622]: (style) The function 'computeNeff' is never used.
+[vec2.cpp:162]: (style) The function 'convert1DTo2DCoord' is never used.
+[vec2.cpp:173]: (style) The function 'convert2DTo1DCoord' is never used.
+[mainReader.cpp:183]: (style) The function 'convertIMUDataToOdometry' is never used.
+[MapGrid.cpp:191]: (style) The function 'convertToMapGridDiscrete' is never used.
+[angleutil.cpp:17]: (style) The function 'correctAngle' is never used.
+[ColorCPU.cpp:194]: (style) The function 'cpuColorConversion' is never used.
+[Mcl.cpp:1568]: (style) The function 'discardInvalidDeltaAngles' is never used.
+[MapGrid.cpp:373]: (style) The function 'drawLine' is never used.
+[mainReader.cpp:550]: (style) The function 'estimateOdometry' is never used.
+[DroneRobot.cpp:1884]: (style) The function 'findOdometryUsingCorrelativeSM' is never used.
+[DroneRobot.cpp:1720]: (style) The function 'findOdometryUsingICP' is never used.
+[UTMConverter.cpp:161]: (style) The function 'footpointLatitude' is never used.
+[mainReader.cpp:251]: (style) The function 'getATTRelTime' is never used.
+[mainReader.cpp:267]: (style) The function 'getATTRelTimeNew' is never used.
+[MapGrid.cpp:136]: (style) The function 'getCeilValue' is never used.
+[MapGrid.cpp:131]: (style) The function 'getFloorValue' is never used.
+[mainReader.cpp:201]: (style) The function 'getGPSRelTime' is never used.
+[mainReader.cpp:217]: (style) The function 'getGPSRelTimeNew' is never used.
+[Heuristic.cpp:16]: (style) The function 'getID' is never used.
+[mainReader.cpp:226]: (style) The function 'getIMURelTime' is never used.
+[mainReader.cpp:242]: (style) The function 'getIMURelTimeNew' is never used.
+[mainReader.cpp:92]: (style) The function 'getImagesCombinedIMU' is never used.
+[mainReader.cpp:359]: (style) The function 'getImagesRelTime' is never used.
+[PioneerRobot.cpp:571]: (style) The function 'getLaserReadings' is never used.
+[Grid.cpp:67]: (style) The function 'getMapHeight' is never used.
+[PioneerRobot.cpp:556]: (style) The function 'getMaxLaserRange' is never used.
+[SomeKernels.cpp:76]: (style) The function 'getMean' is never used.
+[SomeKernels.cpp:431]: (style) The function 'getMeanX' is never used.
+[SomeKernels.cpp:439]: (style) The function 'getMeanY' is never used.
+[PioneerRobot.cpp:561]: (style) The function 'getNumLasers' is never used.
+[PioneerRobot.cpp:566]: (style) The function 'getNumSonars' is never used.
+[miheuristic.cpp:366]: (style) The function 'getObservedEntropy' is never used.
+[Robot.cpp:141]: (style) The function 'getPoseEstimate' is never used.
+[Utils.cpp:318]: (style) The function 'getRelativePose' is never used.
+[SomeKernels.cpp:485]: (style) The function 'getSemiAxisX' is never used.
+[SomeKernels.cpp:489]: (style) The function 'getSemiAxisY' is never used.
+[SomeKernels.cpp:81]: (style) The function 'getStdev' is never used.
+[SomeKernels.cpp:427]: (style) The function 'getStdevX' is never used.
+[SomeKernels.cpp:435]: (style) The function 'getStdevY' is never used.
+[Robot.cpp:136]: (style) The function 'getTruePose' is never used.
+[readerlog.cpp:173]: (style) The function 'get_sensor_IMU' is never used.
+[readerlog.cpp:177]: (style) The function 'get_sensor_IMU2' is never used.
+[MapGrid.cpp:206]: (style) The function 'isGradientReliable' is never used.
+[vec4.cpp:36]: (style) The function 'lessEqual' is never used.
+[DroneRobot.cpp:1227]: (style) The function 'localizeWithFeatureMatching' is never used.
+[Mcl.cpp:1837]: (style) The function 'normalizingParticles' is never used.
+[mainReader.cpp:416]: (style) The function 'parseArgs' is never used.
+[mainReader.cpp:523]: (style) The function 'plotIMU' is never used.
+[mainReader.cpp:276]: (style) The function 'removeFuckedImages' is never used.
+[SomeKernels.cpp:5]: (style) The function 'roundNumber' is never used.
+[ColorCPU.cpp:116]: (style) The function 'sRGBCIELAB' is never used.
+[miheuristic.cpp:372]: (style) The function 'setCashedEntropy' is never used.
+[Heuristic.cpp:35]: (style) The function 'setColorDifference' is never used.
+[UTMConverter.cpp:331]: (style) The function 'setDatum' is never used.
+[Grvi.cpp:34]: (style) The function 'setIndexSaveImg' is never used.
+[Heuristic.cpp:31]: (style) The function 'setLimiar' is never used.
+[Mcl.cpp:1073]: (style) The function 'setNumParticles' is never used.
+[miheuristic.cpp:362]: (style) The function 'setObservedEntropy' is never used.
+[MapGrid.cpp:151]: (style) The function 'setObstacle' is never used.
+[VegetationIndex.cpp:35]: (style) The function 'setRadiance' is never used.
+[VegetationIndex.cpp:48]: (style) The function 'setReflectance' is never used.
+[MapGrid.cpp:320]: (style) The function 'smoothMap' is never used.
+[Utils.cpp:542]: (style) The function 'stopCounting' is never used.
+[PioneerRobot.cpp:301]: (style) The function 'stopMovement' is never used.
+[densityheuristic.cpp:44]: (style) The function 'strategyName' is never used.
+[Mcl.cpp:1655]: (style) The function 'sumAngles' is never used.
+[colorheuristic.cpp:329]: (style) The function 'transform_rotation' is never used.
+[Mcl.cpp:903]: (style) The function 'writeErrorLogFile3d' is never used.
+(information) Cppcheck cannot find all the include files (use --check-config for details)

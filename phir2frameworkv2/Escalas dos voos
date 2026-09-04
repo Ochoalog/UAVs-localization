@@ -1,0 +1,32 @@
+
+    //Rostock  (escala 0,40625)
+    //minscale = 0.2;
+    //maxscale = 0.6;
+
+    //Rostock Início (escala 1,1935483871)
+    //minscale = 0.8;
+    //maxscale = 2.0;
+
+    //BRIEF ORIGINAL TEST - UFRGS vôo 1
+    //minscale = 0.4;
+    //maxscale = 5.0;
+
+    //UFRGS-VET 50M (escala 0,662404092)
+    //minscale = 0.2;
+    //maxscale = 1.0;
+
+    //UFRGS-VET 100M mapas V1 (escala 1,430939227)
+    //minscale = 0.5;
+    //maxscale = 2;
+    //UFRGS-VET 100M mapas V2 (escala 1,104972376)
+    //minscale = 0.5;
+    //maxscale = 2;
+    //UFRGS-VET 100M mapas V3 (escala 0,922651934)
+    //minscale = 0.5;
+    //maxscale = 5;
+    minscale = minScale;
+    maxscale = maxScale;
+//    odomPose.theta = 0;
+
+    //ADM - 35 - voo 1 (escala com a imagem  do drone em 1234x910  0,366197183)
+    //ADM - 35 - voo 1 (escala com a imagem  do drone em 4608x3456 0,098972212)

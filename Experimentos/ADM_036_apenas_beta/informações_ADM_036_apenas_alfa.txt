@@ -1,0 +1,1 @@
+Testes usando apenas a distribuição dos pares de píxeis, sem pesar os píxeis conforme a informação de vegetação.

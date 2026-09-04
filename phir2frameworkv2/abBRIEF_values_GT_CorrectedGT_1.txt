@@ -1,0 +1,570 @@
+Nova execucao========================================================================================================
+Image: 105  GTbrief: 0.412506 correctedGTbrief: 0.42203
+
+Image: 106  GTbrief: 0.442248 correctedGTbrief: 0.432715
+
+Image: 107  GTbrief: 0.373287 correctedGTbrief: 0.409726
+
+Image: 108  GTbrief: 0.379439 correctedGTbrief: 0.372251
+
+Image: 109  GTbrief: 0.344567 correctedGTbrief: 0.343955
+
+Image: 110  GTbrief: 0.324445 correctedGTbrief: 0.390168
+
+Image: 111  GTbrief: 0.375692 correctedGTbrief: 0.356606
+
+Image: 112  GTbrief: 0.355905 correctedGTbrief: 0.387573
+
+Image: 113  GTbrief: 0.377977 correctedGTbrief: 0.382788
+
+Image: 114  GTbrief: 0.376347 correctedGTbrief: 0.386892
+
+Image: 115  GTbrief: 0.374227 correctedGTbrief: 0.383737
+
+Image: 116  GTbrief: 0.391834 correctedGTbrief: 0.382675
+
+Image: 117  GTbrief: 0.380505 correctedGTbrief: 0.423937
+
+Image: 118  GTbrief: 0.401724 correctedGTbrief: 0.406214
+
+Image: 119  GTbrief: 0.377832 correctedGTbrief: 0.407605
+
+Image: 120  GTbrief: 0.360137 correctedGTbrief: 0.388639
+
+Image: 121  GTbrief: 0.390292 correctedGTbrief: 0.410461
+
+Image: 122  GTbrief: 0.417208 correctedGTbrief: 0.41803
+
+Image: 123  GTbrief: 0.398781 correctedGTbrief: 0.419578
+
+Image: 124  GTbrief: 0.425961 correctedGTbrief: 0.411769
+
+Image: 125  GTbrief: 0.44684 correctedGTbrief: 0.482432
+
+Image: 126  GTbrief: 0.465996 correctedGTbrief: 0.446204
+
+Image: 127  GTbrief: 0.48362 correctedGTbrief: 0.489152
+
+Image: 128  GTbrief: 0.427434 correctedGTbrief: 0.430225
+
+Image: 129  GTbrief: 0.423573 correctedGTbrief: 0.453577
+
+Image: 130  GTbrief: 0.471161 correctedGTbrief: 0.437734
+
+Image: 131  GTbrief: 0.475175 correctedGTbrief: 0.467381
+
+Image: 132  GTbrief: 0.434871 correctedGTbrief: 0.465661
+
+Image: 133  GTbrief: 0.423464 correctedGTbrief: 0.47544
+
+Image: 134  GTbrief: 0.410248 correctedGTbrief: 0.439892
+
+Image: 135  GTbrief: 0.431989 correctedGTbrief: 0.470776
+
+Image: 136  GTbrief: 0.454261 correctedGTbrief: 0.480348
+
+Image: 137  GTbrief: 0.399716 correctedGTbrief: 0.439089
+
+Image: 138  GTbrief: 0.406689 correctedGTbrief: 0.385446
+
+Image: 139  GTbrief: 0.412921 correctedGTbrief: 0.44699
+
+Image: 140  GTbrief: 0.393882 correctedGTbrief: 0.403805
+
+Image: 141  GTbrief: 0.393184 correctedGTbrief: 0.419163
+
+Image: 142  GTbrief: 0.430157 correctedGTbrief: 0.42023
+
+Image: 143  GTbrief: 0.396833 correctedGTbrief: 0.447689
+
+Image: 144  GTbrief: 0.438207 correctedGTbrief: 0.435018
+
+Image: 145  GTbrief: 0.375969 correctedGTbrief: 0.379902
+
+Image: 146  GTbrief: 0.394503 correctedGTbrief: 0.389391
+
+Image: 147  GTbrief: 0.415032 correctedGTbrief: 0.395075
+
+Image: 148  GTbrief: 0.408417 correctedGTbrief: 0.360744
+
+Image: 149  GTbrief: 0.435868 correctedGTbrief: 0.416328
+
+Image: 150  GTbrief: 0.405219 correctedGTbrief: 0.415827
+
+Image: 151  GTbrief: 0.385376 correctedGTbrief: 0.395168
+
+Image: 152  GTbrief: 0.445841 correctedGTbrief: 0.438729
+
+Image: 153  GTbrief: 0.411829 correctedGTbrief: 0.42281
+
+Image: 154  GTbrief: 0.45617 correctedGTbrief: 0.433979
+
+Image: 155  GTbrief: 0.430521 correctedGTbrief: 0.462311
+
+Image: 156  GTbrief: 0.421728 correctedGTbrief: 0.435535
+
+Image: 157  GTbrief: 0.421628 correctedGTbrief: 0.428866
+
+Image: 158  GTbrief: 0.414684 correctedGTbrief: 0.427103
+
+Image: 159  GTbrief: 0.41156 correctedGTbrief: 0.401719
+
+Image: 160  GTbrief: 0.338259 correctedGTbrief: 0.374354
+
+Image: 161  GTbrief: 0.389043 correctedGTbrief: 0.410951
+
+Image: 162  GTbrief: 0.380504 correctedGTbrief: 0.386648
+
+Image: 163  GTbrief: 0.387511 correctedGTbrief: 0.370513
+
+Image: 164  GTbrief: 0.376076 correctedGTbrief: 0.399779
+
+Image: 165  GTbrief: 0.399114 correctedGTbrief: 0.381205
+
+Image: 166  GTbrief: 0.386 correctedGTbrief: 0.395587
+
+Image: 167  GTbrief: 0.413477 correctedGTbrief: 0.430063
+
+Image: 168  GTbrief: 0.44655 correctedGTbrief: 0.467873
+
+Image: 169  GTbrief: 0.402715 correctedGTbrief: 0.437079
+
+Image: 170  GTbrief: 0.451902 correctedGTbrief: 0.456442
+
+Image: 171  GTbrief: 0.431829 correctedGTbrief: 0.46838
+
+Image: 172  GTbrief: 0.448875 correctedGTbrief: 0.458326
+
+Image: 173  GTbrief: 0.445308 correctedGTbrief: 0.484892
+
+Image: 174  GTbrief: 0.462872 correctedGTbrief: 0.446987
+
+Image: 175  GTbrief: 0.434918 correctedGTbrief: 0.445614
+
+Image: 176  GTbrief: 0.442744 correctedGTbrief: 0.45017
+
+Image: 177  GTbrief: 0.515099 correctedGTbrief: 0.490483
+
+Image: 178  GTbrief: 0.487368 correctedGTbrief: 0.47214
+
+Image: 179  GTbrief: 0.463449 correctedGTbrief: 0.49898
+
+Image: 180  GTbrief: 0.503244 correctedGTbrief: 0.496333
+
+Image: 181  GTbrief: 0.490346 correctedGTbrief: 0.511911
+
+Image: 182  GTbrief: 0.502897 correctedGTbrief: 0.54891
+
+Image: 183  GTbrief: 0.473972 correctedGTbrief: 0.46148
+
+Image: 184  GTbrief: 0.507256 correctedGTbrief: 0.480533
+
+Image: 185  GTbrief: 0.456757 correctedGTbrief: 0.487987
+
+Image: 186  GTbrief: 0.484649 correctedGTbrief: 0.484096
+
+Image: 187  GTbrief: 0.528758 correctedGTbrief: 0.53448
+
+Image: 188  GTbrief: 0.526503 correctedGTbrief: 0.530873
+
+Image: 189  GTbrief: 0.471694 correctedGTbrief: 0.487041
+
+Image: 190  GTbrief: 0.466223 correctedGTbrief: 0.473936
+
+Image: 191  GTbrief: 0.490832 correctedGTbrief: 0.474876
+
+Image: 192  GTbrief: 0.500754 correctedGTbrief: 0.503606
+
+Image: 193  GTbrief: 0.470905 correctedGTbrief: 0.452982
+
+Image: 194  GTbrief: 0.460252 correctedGTbrief: 0.49183
+
+Image: 195  GTbrief: 0.461666 correctedGTbrief: 0.463797
+
+Image: 196  GTbrief: 0.481177 correctedGTbrief: 0.489839
+
+Image: 197  GTbrief: 0.478626 correctedGTbrief: 0.495418
+
+Image: 198  GTbrief: 0.416272 correctedGTbrief: 0.440616
+
+Image: 199  GTbrief: 0.425995 correctedGTbrief: 0.440312
+
+Image: 200  GTbrief: 0.449189 correctedGTbrief: 0.47465
+
+Image: 201  GTbrief: 0.440258 correctedGTbrief: 0.429476
+
+Image: 202  GTbrief: 0.508852 correctedGTbrief: 0.514512
+
+Image: 203  GTbrief: 0.454385 correctedGTbrief: 0.425084
+
+Image: 204  GTbrief: 0.424278 correctedGTbrief: 0.446181
+
+Image: 205  GTbrief: 0.474087 correctedGTbrief: 0.494875
+
+Image: 206  GTbrief: 0.459366 correctedGTbrief: 0.443545
+
+Image: 207  GTbrief: 0.469284 correctedGTbrief: 0.420703
+
+Image: 208  GTbrief: 0.43684 correctedGTbrief: 0.431362
+
+Image: 209  GTbrief: 0.441105 correctedGTbrief: 0.423045
+
+Image: 210  GTbrief: 0.422363 correctedGTbrief: 0.434039
+
+Image: 211  GTbrief: 0.472931 correctedGTbrief: 0.450555
+
+Image: 212  GTbrief: 0.433924 correctedGTbrief: 0.395975
+
+Image: 213  GTbrief: 0.39687 correctedGTbrief: 0.468545
+
+Image: 214  GTbrief: 0.438077 correctedGTbrief: 0.432277
+
+Image: 215  GTbrief: 0.439847 correctedGTbrief: 0.482129
+
+Image: 216  GTbrief: 0.458482 correctedGTbrief: 0.43935
+
+Image: 217  GTbrief: 0.47656 correctedGTbrief: 0.467726
+
+Image: 218  GTbrief: 0.470275 correctedGTbrief: 0.471047
+
+Image: 219  GTbrief: 0.419954 correctedGTbrief: 0.416846
+
+Image: 220  GTbrief: 0.48311 correctedGTbrief: 0.458787
+
+Image: 221  GTbrief: 0.410736 correctedGTbrief: 0.453005
+
+Image: 222  GTbrief: 0.426699 correctedGTbrief: 0.482441
+
+Image: 223  GTbrief: 0.48576 correctedGTbrief: 0.433225
+
+Image: 224  GTbrief: 0.47793 correctedGTbrief: 0.477193
+
+Image: 225  GTbrief: 0.438987 correctedGTbrief: 0.453082
+
+Image: 226  GTbrief: 0.49818 correctedGTbrief: 0.485023
+
+Image: 227  GTbrief: 0.447632 correctedGTbrief: 0.448953
+
+Image: 228  GTbrief: 0.497145 correctedGTbrief: 0.520471
+
+Image: 229  GTbrief: 0.488717 correctedGTbrief: 0.455746
+
+Image: 230  GTbrief: 0.464738 correctedGTbrief: 0.486024
+
+Image: 231  GTbrief: 0.514832 correctedGTbrief: 0.494907
+
+Image: 232  GTbrief: 0.499958 correctedGTbrief: 0.500168
+
+Image: 233  GTbrief: 0.474826 correctedGTbrief: 0.495649
+
+Image: 234  GTbrief: 0.451291 correctedGTbrief: 0.484798
+
+Image: 235  GTbrief: 0.477795 correctedGTbrief: 0.483394
+
+Image: 236  GTbrief: 0.485518 correctedGTbrief: 0.500344
+
+Image: 237  GTbrief: 0.457546 correctedGTbrief: 0.460356
+
+Image: 238  GTbrief: 0.460885 correctedGTbrief: 0.481388
+
+Image: 239  GTbrief: 0.450797 correctedGTbrief: 0.471339
+
+Image: 240  GTbrief: 0.479118 correctedGTbrief: 0.506776
+
+Image: 241  GTbrief: 0.512328 correctedGTbrief: 0.498329
+
+Image: 242  GTbrief: 0.476501 correctedGTbrief: 0.477083
+
+Image: 243  GTbrief: 0.471634 correctedGTbrief: 0.488001
+
+Image: 244  GTbrief: 0.512592 correctedGTbrief: 0.492228
+
+Image: 245  GTbrief: 0.493198 correctedGTbrief: 0.503665
+
+Image: 246  GTbrief: 0.46838 correctedGTbrief: 0.450372
+
+Image: 247  GTbrief: 0.488428 correctedGTbrief: 0.499786
+
+Image: 248  GTbrief: 0.454566 correctedGTbrief: 0.450819
+
+Image: 249  GTbrief: 0.472512 correctedGTbrief: 0.490282
+
+Image: 250  GTbrief: 0.46546 correctedGTbrief: 0.42768
+
+Image: 251  GTbrief: 0.527108 correctedGTbrief: 0.512211
+
+Image: 252  GTbrief: 0.52375 correctedGTbrief: 0.492698
+
+Image: 253  GTbrief: 0.498556 correctedGTbrief: 0.466519
+
+Image: 254  GTbrief: 0.492641 correctedGTbrief: 0.492765
+
+Image: 255  GTbrief: 0.458685 correctedGTbrief: 0.493372
+
+Image: 256  GTbrief: 0.482814 correctedGTbrief: 0.473407
+
+Image: 257  GTbrief: 0.496121 correctedGTbrief: 0.514843
+
+Image: 258  GTbrief: 0.45301 correctedGTbrief: 0.523407
+
+Image: 259  GTbrief: 0.497034 correctedGTbrief: 0.490453
+
+Image: 260  GTbrief: 0.491317 correctedGTbrief: 0.478438
+
+Image: 261  GTbrief: 0.478571 correctedGTbrief: 0.478577
+
+Image: 262  GTbrief: 0.482827 correctedGTbrief: 0.509022
+
+Image: 263  GTbrief: 0.472383 correctedGTbrief: 0.448444
+
+Image: 264  GTbrief: 0.453211 correctedGTbrief: 0.47419
+
+Image: 265  GTbrief: 0.445071 correctedGTbrief: 0.447572
+
+Image: 266  GTbrief: 0.465255 correctedGTbrief: 0.482556
+
+Image: 267  GTbrief: 0.472549 correctedGTbrief: 0.456981
+
+Image: 268  GTbrief: 0.485749 correctedGTbrief: 0.482597
+
+Image: 269  GTbrief: 0.495322 correctedGTbrief: 0.484159
+
+Image: 270  GTbrief: 0.454982 correctedGTbrief: 0.455753
+
+Image: 271  GTbrief: 0.520435 correctedGTbrief: 0.485822
+
+Image: 272  GTbrief: 0.489039 correctedGTbrief: 0.503038
+
+Image: 273  GTbrief: 0.472736 correctedGTbrief: 0.473908
+
+Image: 274  GTbrief: 0.472152 correctedGTbrief: 0.463543
+
+Image: 275  GTbrief: 0.486144 correctedGTbrief: 0.516257
+
+Image: 276  GTbrief: 0.493442 correctedGTbrief: 0.479983
+
+Image: 277  GTbrief: 0.495287 correctedGTbrief: 0.504227
+
+Image: 278  GTbrief: 0.508869 correctedGTbrief: 0.524247
+
+Image: 279  GTbrief: 0.497319 correctedGTbrief: 0.523044
+
+Image: 280  GTbrief: 0.474956 correctedGTbrief: 0.474585
+
+Image: 281  GTbrief: 0.54224 correctedGTbrief: 0.557425
+
+Image: 282  GTbrief: 0.482602 correctedGTbrief: 0.489392
+
+Image: 283  GTbrief: 0.530376 correctedGTbrief: 0.505907
+
+Image: 284  GTbrief: 0.528393 correctedGTbrief: 0.528649
+
+Image: 285  GTbrief: 0.48256 correctedGTbrief: 0.49575
+
+Image: 286  GTbrief: 0.447242 correctedGTbrief: 0.46668
+
+Image: 287  GTbrief: 0.492748 correctedGTbrief: 0.497591
+
+Image: 288  GTbrief: 0.491754 correctedGTbrief: 0.486474
+
+Image: 289  GTbrief: 0.504569 correctedGTbrief: 0.494869
+
+Image: 290  GTbrief: 0.457027 correctedGTbrief: 0.451524
+
+Image: 291  GTbrief: 0.473103 correctedGTbrief: 0.47636
+
+Image: 292  GTbrief: 0.530524 correctedGTbrief: 0.513691
+
+Image: 293  GTbrief: 0.498011 correctedGTbrief: 0.483442
+
+Image: 294  GTbrief: 0.44115 correctedGTbrief: 0.477271
+
+Image: 295  GTbrief: 0.450986 correctedGTbrief: 0.463968
+
+Image: 296  GTbrief: 0.472932 correctedGTbrief: 0.461638
+
+Image: 297  GTbrief: 0.464359 correctedGTbrief: 0.466004
+
+Image: 298  GTbrief: 0.459224 correctedGTbrief: 0.484634
+
+Image: 299  GTbrief: 0.462371 correctedGTbrief: 0.506773
+
+Image: 300  GTbrief: 0.462512 correctedGTbrief: 0.442387
+
+Image: 301  GTbrief: 0.483656 correctedGTbrief: 0.48146
+
+Image: 302  GTbrief: 0.425238 correctedGTbrief: 0.40583
+
+Image: 303  GTbrief: 0.444661 correctedGTbrief: 0.474725
+
+Image: 304  GTbrief: 0.477052 correctedGTbrief: 0.490974
+
+Image: 305  GTbrief: 0.455468 correctedGTbrief: 0.472149
+
+Image: 306  GTbrief: 0.455141 correctedGTbrief: 0.48816
+
+Image: 307  GTbrief: 0.46567 correctedGTbrief: 0.499367
+
+Image: 308  GTbrief: 0.412926 correctedGTbrief: 0.472206
+
+Image: 309  GTbrief: 0.475077 correctedGTbrief: 0.455878
+
+Image: 310  GTbrief: 0.433591 correctedGTbrief: 0.451382
+
+Image: 311  GTbrief: 0.458713 correctedGTbrief: 0.450937
+
+Image: 312  GTbrief: 0.392679 correctedGTbrief: 0.429623
+
+Image: 313  GTbrief: 0.453136 correctedGTbrief: 0.429021
+
+Image: 314  GTbrief: 0.439735 correctedGTbrief: 0.374239
+
+Image: 315  GTbrief: 0.442154 correctedGTbrief: 0.417069
+
+Image: 316  GTbrief: 0.388064 correctedGTbrief: 0.391745
+
+Image: 317  GTbrief: 0.402637 correctedGTbrief: 0.441362
+
+Image: 318  GTbrief: 0.431662 correctedGTbrief: 0.394678
+
+Image: 319  GTbrief: 0.451472 correctedGTbrief: 0.427598
+
+Image: 320  GTbrief: 0.406874 correctedGTbrief: 0.390864
+
+Image: 321  GTbrief: 0.414244 correctedGTbrief: 0.379149
+
+Image: 322  GTbrief: 0.420175 correctedGTbrief: 0.419748
+
+Image: 323  GTbrief: 0.412524 correctedGTbrief: 0.427331
+
+Image: 324  GTbrief: 0.423467 correctedGTbrief: 0.429654
+
+Image: 325  GTbrief: 0.439262 correctedGTbrief: 0.390016
+
+Image: 326  GTbrief: 0.461055 correctedGTbrief: 0.430593
+
+Image: 327  GTbrief: 0.413268 correctedGTbrief: 0.432911
+
+Image: 328  GTbrief: 0.436566 correctedGTbrief: 0.380696
+
+Image: 329  GTbrief: 0.441526 correctedGTbrief: 0.423053
+
+Image: 330  GTbrief: 0.418134 correctedGTbrief: 0.406807
+
+Image: 331  GTbrief: 0.402346 correctedGTbrief: 0.376128
+
+Image: 332  GTbrief: 0.397591 correctedGTbrief: 0.379894
+
+Image: 333  GTbrief: 0.425004 correctedGTbrief: 0.417737
+
+Image: 334  GTbrief: 0.400348 correctedGTbrief: 0.433056
+
+Image: 335  GTbrief: 0.411363 correctedGTbrief: 0.403407
+
+Image: 336  GTbrief: 0.446021 correctedGTbrief: 0.425702
+
+Image: 337  GTbrief: 0.447398 correctedGTbrief: 0.432163
+
+Image: 338  GTbrief: 0.433283 correctedGTbrief: 0.439871
+
+Image: 339  GTbrief: 0.447273 correctedGTbrief: 0.482775
+
+Image: 340  GTbrief: 0.455657 correctedGTbrief: 0.436919
+
+Image: 341  GTbrief: 0.441657 correctedGTbrief: 0.464125
+
+Image: 342  GTbrief: 0.46098 correctedGTbrief: 0.469796
+
+Image: 343  GTbrief: 0.497801 correctedGTbrief: 0.448264
+
+Image: 344  GTbrief: 0.475118 correctedGTbrief: 0.464799
+
+Image: 345  GTbrief: 0.488777 correctedGTbrief: 0.478882
+
+Image: 346  GTbrief: 0.440636 correctedGTbrief: 0.439596
+
+Image: 347  GTbrief: 0.489286 correctedGTbrief: 0.435625
+
+Image: 348  GTbrief: 0.436597 correctedGTbrief: 0.395732
+
+Image: 349  GTbrief: 0.488482 correctedGTbrief: 0.451274
+
+Image: 350  GTbrief: 0.433769 correctedGTbrief: 0.415824
+
+Image: 351  GTbrief: 0.436877 correctedGTbrief: 0.469569
+
+Image: 352  GTbrief: 0.461554 correctedGTbrief: 0.415739
+
+Image: 353  GTbrief: 0.455365 correctedGTbrief: 0.419317
+
+Image: 354  GTbrief: 0.466948 correctedGTbrief: 0.460452
+
+Image: 355  GTbrief: 0.452567 correctedGTbrief: 0.411751
+
+Image: 356  GTbrief: 0.427761 correctedGTbrief: 0.395143
+
+Image: 357  GTbrief: 0.424738 correctedGTbrief: 0.408406
+
+Image: 358  GTbrief: 0.401936 correctedGTbrief: 0.43779
+
+Image: 359  GTbrief: 0.472098 correctedGTbrief: 0.44093
+
+Image: 360  GTbrief: 0.450715 correctedGTbrief: 0.487311
+
+Image: 361  GTbrief: 0.445001 correctedGTbrief: 0.433951
+
+Image: 362  GTbrief: 0.467578 correctedGTbrief: 0.47432
+
+Image: 363  GTbrief: 0.481129 correctedGTbrief: 0.443225
+
+Image: 364  GTbrief: 0.447053 correctedGTbrief: 0.446038
+
+Image: 365  GTbrief: 0.449057 correctedGTbrief: 0.441543
+
+Image: 366  GTbrief: 0.42072 correctedGTbrief: 0.424387
+
+Image: 367  GTbrief: 0.451856 correctedGTbrief: 0.449216
+
+Image: 368  GTbrief: 0.435461 correctedGTbrief: 0.455028
+
+Image: 369  GTbrief: 0.42483 correctedGTbrief: 0.478196
+
+Image: 370  GTbrief: 0.448022 correctedGTbrief: 0.452093
+
+Image: 371  GTbrief: 0.418099 correctedGTbrief: 0.406389
+
+Image: 372  GTbrief: 0.423765 correctedGTbrief: 0.394556
+
+Image: 373  GTbrief: 0.404971 correctedGTbrief: 0.426046
+
+Image: 374  GTbrief: 0.425296 correctedGTbrief: 0.411096
+
+Image: 375  GTbrief: 0.402451 correctedGTbrief: 0.37776
+
+Image: 376  GTbrief: 0.402405 correctedGTbrief: 0.429991
+
+Image: 377  GTbrief: 0.429844 correctedGTbrief: 0.395625
+
+Image: 378  GTbrief: 0.423179 correctedGTbrief: 0.450624
+
+Image: 379  GTbrief: 0.37842 correctedGTbrief: 0.379817
+
+Image: 380  GTbrief: 0.377216 correctedGTbrief: 0.402683
+
+Image: 381  GTbrief: 0.424081 correctedGTbrief: 0.420344
+
+Image: 382  GTbrief: 0.405915 correctedGTbrief: 0.39477
+
+Image: 383  GTbrief: 0.408276 correctedGTbrief: 0.397573
+
+Image: 384  GTbrief: 0.423755 correctedGTbrief: 0.347998
+
+Image: 385  GTbrief: 0.412011 correctedGTbrief: 0.429418
+
+Image: 386  GTbrief: 0.414098 correctedGTbrief: 0.447696
+
+Image: 387  GTbrief: 0.437579 correctedGTbrief: 0.411505
+
+Image: 388  GTbrief: 0.439454 correctedGTbrief: 0.39721
+
+Image: 389  GTbrief: 0.418362 correctedGTbrief: 0.404869

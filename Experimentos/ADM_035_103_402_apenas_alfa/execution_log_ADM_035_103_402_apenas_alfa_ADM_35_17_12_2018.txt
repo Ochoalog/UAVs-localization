@@ -1,0 +1,405 @@
+mathias@mathias-To-be-filled-by-O-E-M:~/Workspace/phir2frameworkv2$ ./ADM_035_103_402_apenas_alfa_ADM_35_17_12_2018.sh
+Running traj -s BRIEF diff-cie2000 15 -bp 256 -blt 0.5 -bmt 4 -bm 10 -par 50000 -mndvw 6 -mindviw 1 -msc 1 -ndvit 1 -minsc 0.1 -maxsc 3 -msimp 0 -mappp 1 -pdm 51 -fit 0 -inids 85 -iniexec 103 -fimds 498 -fiexec 402 -alfagaussmsk 0 -cmppar 0 -corrpxpos 0 -betaweight 0 ADM_35_17_12_2018 ()
+
+ -quiet -e /home/mathias/Workspace/Datasets/ADM2019/0036/Mapas/ADM_35_17_12_2018.jpg -t /home/mathias/Workspace/Datasets/ADM2019/0035/traj.txt -s BRIEF diff-cie2000 15 -bp 256 -blt 0.5 -bmt 4 -bm 10 -par 50000 -mndvw 6 -mindviw 1 -msc 1 -ndvit 1 -minsc 0.1 -maxsc 3 -msimp 0 -mappp 1 -pdm 51 -fit 0 -inids 85 -iniexec 103 -fimds 498 -fiexec 402 -alfagaussmsk 0 -cmppar 0 -corrpxpos 0 -betaweight 0 -o /home/mathias/Workspace/Experimentos/ADM/0035/ADM_035_103_402_apenas_alfa/ADM_35_17_12_2018/traj/alfagaussmsk_0/ 0 29
+
+CONFIGURATED
+Initializing.... Running 
+init done
+opengl support available
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+Running traj -s BRIEF diff-cie2000 15 -bp 256 -blt 0.5 -bmt 4 -bm 10 -par 50000 -mndvw 6 -mindviw 1 -msc 1 -ndvit 1 -minsc 0.1 -maxsc 3 -msimp 0 -mappp 1 -pdm 51 -fit 0 -inids 85 -iniexec 103 -fimds 498 -fiexec 402 -alfagaussmsk 0.2 -cmppar 0 -corrpxpos 0 -betaweight 0 ADM_35_17_12_2018 ()
+
+ -quiet -e /home/mathias/Workspace/Datasets/ADM2019/0036/Mapas/ADM_35_17_12_2018.jpg -t /home/mathias/Workspace/Datasets/ADM2019/0035/traj.txt -s BRIEF diff-cie2000 15 -bp 256 -blt 0.5 -bmt 4 -bm 10 -par 50000 -mndvw 6 -mindviw 1 -msc 1 -ndvit 1 -minsc 0.1 -maxsc 3 -msimp 0 -mappp 1 -pdm 51 -fit 0 -inids 85 -iniexec 103 -fimds 498 -fiexec 402 -alfagaussmsk 0.2 -cmppar 0 -corrpxpos 0 -betaweight 0 -o /home/mathias/Workspace/Experimentos/ADM/0035/ADM_035_103_402_apenas_alfa/ADM_35_17_12_2018/traj/alfagaussmsk_0,2/ 0 29
+
+CONFIGURATED
+Initializing.... Running 
+init done
+opengl support available
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+Running traj -s BRIEF diff-cie2000 15 -bp 256 -blt 0.5 -bmt 4 -bm 10 -par 50000 -mndvw 6 -mindviw 1 -msc 1 -ndvit 1 -minsc 0.1 -maxsc 3 -msimp 0 -mappp 1 -pdm 51 -fit 0 -inids 85 -iniexec 103 -fimds 498 -fiexec 402 -alfagaussmsk 0.4 -cmppar 0 -corrpxpos 0 -betaweight 0 ADM_35_17_12_2018 ()
+
+ -quiet -e /home/mathias/Workspace/Datasets/ADM2019/0036/Mapas/ADM_35_17_12_2018.jpg -t /home/mathias/Workspace/Datasets/ADM2019/0035/traj.txt -s BRIEF diff-cie2000 15 -bp 256 -blt 0.5 -bmt 4 -bm 10 -par 50000 -mndvw 6 -mindviw 1 -msc 1 -ndvit 1 -minsc 0.1 -maxsc 3 -msimp 0 -mappp 1 -pdm 51 -fit 0 -inids 85 -iniexec 103 -fimds 498 -fiexec 402 -alfagaussmsk 0.4 -cmppar 0 -corrpxpos 0 -betaweight 0 -o /home/mathias/Workspace/Experimentos/ADM/0035/ADM_035_103_402_apenas_alfa/ADM_35_17_12_2018/traj/alfagaussmsk_0,4/ 0 29
+
+CONFIGURATED
+Initializing.... Running 
+init done
+opengl support available
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+Running traj -s BRIEF diff-cie2000 15 -bp 256 -blt 0.5 -bmt 4 -bm 10 -par 50000 -mndvw 6 -mindviw 1 -msc 1 -ndvit 1 -minsc 0.1 -maxsc 3 -msimp 0 -mappp 1 -pdm 51 -fit 0 -inids 85 -iniexec 103 -fimds 498 -fiexec 402 -alfagaussmsk 0.6 -cmppar 0 -corrpxpos 0 -betaweight 0 ADM_35_17_12_2018 ()
+
+ -quiet -e /home/mathias/Workspace/Datasets/ADM2019/0036/Mapas/ADM_35_17_12_2018.jpg -t /home/mathias/Workspace/Datasets/ADM2019/0035/traj.txt -s BRIEF diff-cie2000 15 -bp 256 -blt 0.5 -bmt 4 -bm 10 -par 50000 -mndvw 6 -mindviw 1 -msc 1 -ndvit 1 -minsc 0.1 -maxsc 3 -msimp 0 -mappp 1 -pdm 51 -fit 0 -inids 85 -iniexec 103 -fimds 498 -fiexec 402 -alfagaussmsk 0.6 -cmppar 0 -corrpxpos 0 -betaweight 0 -o /home/mathias/Workspace/Experimentos/ADM/0035/ADM_035_103_402_apenas_alfa/ADM_35_17_12_2018/traj/alfagaussmsk_0,6/ 0 29
+
+CONFIGURATED
+Initializing.... Running 
+init done
+opengl support available
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+Running traj -s BRIEF diff-cie2000 15 -bp 256 -blt 0.5 -bmt 4 -bm 10 -par 50000 -mndvw 6 -mindviw 1 -msc 1 -ndvit 1 -minsc 0.1 -maxsc 3 -msimp 0 -mappp 1 -pdm 51 -fit 0 -inids 85 -iniexec 103 -fimds 498 -fiexec 402 -alfagaussmsk 0.8 -cmppar 0 -corrpxpos 0 -betaweight 0 ADM_35_17_12_2018 ()
+
+ -quiet -e /home/mathias/Workspace/Datasets/ADM2019/0036/Mapas/ADM_35_17_12_2018.jpg -t /home/mathias/Workspace/Datasets/ADM2019/0035/traj.txt -s BRIEF diff-cie2000 15 -bp 256 -blt 0.5 -bmt 4 -bm 10 -par 50000 -mndvw 6 -mindviw 1 -msc 1 -ndvit 1 -minsc 0.1 -maxsc 3 -msimp 0 -mappp 1 -pdm 51 -fit 0 -inids 85 -iniexec 103 -fimds 498 -fiexec 402 -alfagaussmsk 0.8 -cmppar 0 -corrpxpos 0 -betaweight 0 -o /home/mathias/Workspace/Experimentos/ADM/0035/ADM_035_103_402_apenas_alfa/ADM_35_17_12_2018/traj/alfagaussmsk_0,8/ 0 29
+
+CONFIGURATED
+Initializing.... Running 
+init done
+opengl support available
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+Running traj -s BRIEF diff-cie2000 15 -bp 256 -blt 0.5 -bmt 4 -bm 10 -par 50000 -mndvw 6 -mindviw 1 -msc 1 -ndvit 1 -minsc 0.1 -maxsc 3 -msimp 0 -mappp 1 -pdm 51 -fit 0 -inids 85 -iniexec 103 -fimds 498 -fiexec 402 -alfagaussmsk 1.0 -cmppar 0 -corrpxpos 0 -betaweight 0 ADM_35_17_12_2018 ()
+
+ -quiet -e /home/mathias/Workspace/Datasets/ADM2019/0036/Mapas/ADM_35_17_12_2018.jpg -t /home/mathias/Workspace/Datasets/ADM2019/0035/traj.txt -s BRIEF diff-cie2000 15 -bp 256 -blt 0.5 -bmt 4 -bm 10 -par 50000 -mndvw 6 -mindviw 1 -msc 1 -ndvit 1 -minsc 0.1 -maxsc 3 -msimp 0 -mappp 1 -pdm 51 -fit 0 -inids 85 -iniexec 103 -fimds 498 -fiexec 402 -alfagaussmsk 1.0 -cmppar 0 -corrpxpos 0 -betaweight 0 -o /home/mathias/Workspace/Experimentos/ADM/0035/ADM_035_103_402_apenas_alfa/ADM_35_17_12_2018/traj/alfagaussmsk_1,0/ 0 29
+
+CONFIGURATED
+Initializing.... Running 
+init done
+opengl support available
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+ Running 
+100%
+mathias@mathias-To-be-filled-by-O-E-M:~/Workspace/phir2frameworkv2$ 
+

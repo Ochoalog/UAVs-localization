@@ -1,0 +1,1200 @@
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (1)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj2_alto/LAB_500/ 1 88
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (2)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj2_alto/LAB_500/ 2 88
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (3)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj2_alto/LAB_500/ 3 88
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (4)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj2_alto/LAB_500/ 4 88
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (5)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj2_alto/LAB_500/ 5 88
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (6)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj2_alto/LAB_500/ 6 88
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (7)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj2_alto/LAB_500/ 7 88
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (8)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj2_alto/LAB_500/ 8 88
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (9)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj2_alto/LAB_500/ 9 88
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (10)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj2_alto/LAB_500/ 10 88
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (11)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj2_alto/LAB_500/ 11 88
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (12)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj2_alto/LAB_500/ 12 88
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (13)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj2_alto/LAB_500/ 13 88
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (14)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj2_alto/LAB_500/ 14 88
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (15)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj2_alto/LAB_500/ 15 88
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (16)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj2_alto/LAB_500/ 16 88
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (17)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj2_alto/LAB_500/ 17 88
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (18)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj2_alto/LAB_500/ 18 88
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (19)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj2_alto/LAB_500/ 19 88
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (20)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj2_alto/LAB_500/ 20 88
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (21)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj2_alto/LAB_500/ 21 88
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (22)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj2_alto/LAB_500/ 22 88
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (23)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj2_alto/LAB_500/ 23 88
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (24)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj2_alto/LAB_500/ 24 88
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (25)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj2_alto/LAB_500/ 25 88
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (26)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj2_alto/LAB_500/ 26 88
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (27)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj2_alto/LAB_500/ 27 88
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (28)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj2_alto/LAB_500/ 28 88
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (29)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj2_alto/LAB_500/ 29 88
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (30)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj2_alto/LAB_500/ 30 88
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (1)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj2_alto/LAB_500/ 1 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (2)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj2_alto/LAB_500/ 2 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (3)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj2_alto/LAB_500/ 3 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (4)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj2_alto/LAB_500/ 4 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (5)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj2_alto/LAB_500/ 5 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (6)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj2_alto/LAB_500/ 6 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (7)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj2_alto/LAB_500/ 7 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (8)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj2_alto/LAB_500/ 8 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (9)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj2_alto/LAB_500/ 9 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (10)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj2_alto/LAB_500/ 10 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (11)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj2_alto/LAB_500/ 11 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (12)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj2_alto/LAB_500/ 12 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (13)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj2_alto/LAB_500/ 13 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (14)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj2_alto/LAB_500/ 14 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (15)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj2_alto/LAB_500/ 15 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (16)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj2_alto/LAB_500/ 16 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (17)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj2_alto/LAB_500/ 17 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (18)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj2_alto/LAB_500/ 18 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (19)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj2_alto/LAB_500/ 19 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (20)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj2_alto/LAB_500/ 20 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (21)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj2_alto/LAB_500/ 21 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (22)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj2_alto/LAB_500/ 22 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (23)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj2_alto/LAB_500/ 23 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (24)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj2_alto/LAB_500/ 24 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (25)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj2_alto/LAB_500/ 25 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (26)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj2_alto/LAB_500/ 26 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (27)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj2_alto/LAB_500/ 27 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (28)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj2_alto/LAB_500/ 28 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (29)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj2_alto/LAB_500/ 29 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (30)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj2_alto/LAB_500/ 30 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (1)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj2_alto/LAB_500/ 1 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (2)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj2_alto/LAB_500/ 2 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (3)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj2_alto/LAB_500/ 3 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (4)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj2_alto/LAB_500/ 4 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (5)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj2_alto/LAB_500/ 5 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (6)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj2_alto/LAB_500/ 6 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (7)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj2_alto/LAB_500/ 7 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (8)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj2_alto/LAB_500/ 8 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (9)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj2_alto/LAB_500/ 9 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (10)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj2_alto/LAB_500/ 10 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (11)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj2_alto/LAB_500/ 11 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (12)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj2_alto/LAB_500/ 12 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (13)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj2_alto/LAB_500/ 13 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (14)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj2_alto/LAB_500/ 14 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (15)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj2_alto/LAB_500/ 15 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (16)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj2_alto/LAB_500/ 16 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (17)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj2_alto/LAB_500/ 17 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (18)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj2_alto/LAB_500/ 18 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (19)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj2_alto/LAB_500/ 19 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (20)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj2_alto/LAB_500/ 20 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (21)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj2_alto/LAB_500/ 21 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (22)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj2_alto/LAB_500/ 22 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (23)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj2_alto/LAB_500/ 23 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (24)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj2_alto/LAB_500/ 24 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (25)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj2_alto/LAB_500/ 25 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (26)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj2_alto/LAB_500/ 26 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (27)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj2_alto/LAB_500/ 27 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (28)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj2_alto/LAB_500/ 28 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (29)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj2_alto/LAB_500/ 29 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (30)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj2_alto/LAB_500/ 30 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (1)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj2_alto/LAB_500/ 1 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (2)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj2_alto/LAB_500/ 2 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (3)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj2_alto/LAB_500/ 3 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (4)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj2_alto/LAB_500/ 4 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (5)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj2_alto/LAB_500/ 5 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (6)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj2_alto/LAB_500/ 6 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (7)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj2_alto/LAB_500/ 7 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (8)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj2_alto/LAB_500/ 8 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (9)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj2_alto/LAB_500/ 9 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (10)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj2_alto/LAB_500/ 10 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (11)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj2_alto/LAB_500/ 11 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (12)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj2_alto/LAB_500/ 12 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (13)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj2_alto/LAB_500/ 13 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (14)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj2_alto/LAB_500/ 14 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (15)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj2_alto/LAB_500/ 15 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (16)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj2_alto/LAB_500/ 16 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (17)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj2_alto/LAB_500/ 17 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (18)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj2_alto/LAB_500/ 18 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (19)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj2_alto/LAB_500/ 19 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (20)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj2_alto/LAB_500/ 20 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (21)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj2_alto/LAB_500/ 21 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (22)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj2_alto/LAB_500/ 22 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (23)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj2_alto/LAB_500/ 23 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (24)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj2_alto/LAB_500/ 24 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (25)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj2_alto/LAB_500/ 25 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (26)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj2_alto/LAB_500/ 26 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (27)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj2_alto/LAB_500/ 27 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (28)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj2_alto/LAB_500/ 28 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (29)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj2_alto/LAB_500/ 29 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (30)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj2_alto/LAB_500/ 30 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (1)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj2_alto/LAB_500/ 1 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (2)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj2_alto/LAB_500/ 2 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (3)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj2_alto/LAB_500/ 3 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (4)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj2_alto/LAB_500/ 4 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (5)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj2_alto/LAB_500/ 5 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (6)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj2_alto/LAB_500/ 6 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (7)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj2_alto/LAB_500/ 7 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (8)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj2_alto/LAB_500/ 8 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (9)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj2_alto/LAB_500/ 9 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (10)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj2_alto/LAB_500/ 10 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (11)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj2_alto/LAB_500/ 11 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (12)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj2_alto/LAB_500/ 12 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (13)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj2_alto/LAB_500/ 13 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (14)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj2_alto/LAB_500/ 14 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (15)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj2_alto/LAB_500/ 15 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (16)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj2_alto/LAB_500/ 16 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (17)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj2_alto/LAB_500/ 17 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (18)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj2_alto/LAB_500/ 18 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (19)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj2_alto/LAB_500/ 19 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (20)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj2_alto/LAB_500/ 20 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (21)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj2_alto/LAB_500/ 21 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (22)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj2_alto/LAB_500/ 22 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (23)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj2_alto/LAB_500/ 23 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (24)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj2_alto/LAB_500/ 24 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (25)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj2_alto/LAB_500/ 25 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (26)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj2_alto/LAB_500/ 26 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (27)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj2_alto/LAB_500/ 27 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (28)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj2_alto/LAB_500/ 28 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (29)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj2_alto/LAB_500/ 29 29
+
+Running traj2_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (30)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj2_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj2_alto/LAB_500/ 30 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (1)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj3_alto/LAB_500/ 1 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (2)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj3_alto/LAB_500/ 2 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (3)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj3_alto/LAB_500/ 3 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (4)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj3_alto/LAB_500/ 4 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (5)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj3_alto/LAB_500/ 5 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (6)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj3_alto/LAB_500/ 6 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (7)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj3_alto/LAB_500/ 7 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (8)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj3_alto/LAB_500/ 8 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (9)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj3_alto/LAB_500/ 9 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (10)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj3_alto/LAB_500/ 10 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (11)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj3_alto/LAB_500/ 11 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (12)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj3_alto/LAB_500/ 12 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (13)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj3_alto/LAB_500/ 13 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (14)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj3_alto/LAB_500/ 14 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (15)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj3_alto/LAB_500/ 15 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (16)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj3_alto/LAB_500/ 16 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (17)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj3_alto/LAB_500/ 17 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (18)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj3_alto/LAB_500/ 18 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (19)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj3_alto/LAB_500/ 19 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (20)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj3_alto/LAB_500/ 20 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (21)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj3_alto/LAB_500/ 21 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (22)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj3_alto/LAB_500/ 22 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (23)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj3_alto/LAB_500/ 23 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (24)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj3_alto/LAB_500/ 24 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (25)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj3_alto/LAB_500/ 25 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (26)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj3_alto/LAB_500/ 26 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (27)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj3_alto/LAB_500/ 27 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (28)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj3_alto/LAB_500/ 28 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (29)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj3_alto/LAB_500/ 29 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap1 (30)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap1.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap1/traj3_alto/LAB_500/ 30 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (1)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj3_alto/LAB_500/ 1 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (2)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj3_alto/LAB_500/ 2 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (3)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj3_alto/LAB_500/ 3 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (4)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj3_alto/LAB_500/ 4 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (5)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj3_alto/LAB_500/ 5 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (6)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj3_alto/LAB_500/ 6 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (7)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj3_alto/LAB_500/ 7 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (8)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj3_alto/LAB_500/ 8 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (9)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj3_alto/LAB_500/ 9 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (10)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj3_alto/LAB_500/ 10 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (11)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj3_alto/LAB_500/ 11 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (12)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj3_alto/LAB_500/ 12 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (13)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj3_alto/LAB_500/ 13 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (14)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj3_alto/LAB_500/ 14 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (15)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj3_alto/LAB_500/ 15 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (16)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj3_alto/LAB_500/ 16 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (17)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj3_alto/LAB_500/ 17 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (18)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj3_alto/LAB_500/ 18 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (19)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj3_alto/LAB_500/ 19 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (20)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj3_alto/LAB_500/ 20 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (21)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj3_alto/LAB_500/ 21 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (22)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj3_alto/LAB_500/ 22 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (23)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj3_alto/LAB_500/ 23 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (24)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj3_alto/LAB_500/ 24 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (25)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj3_alto/LAB_500/ 25 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (26)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj3_alto/LAB_500/ 26 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (27)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj3_alto/LAB_500/ 27 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (28)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj3_alto/LAB_500/ 28 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (29)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj3_alto/LAB_500/ 29 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap2 (30)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap2.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap2/traj3_alto/LAB_500/ 30 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (1)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj3_alto/LAB_500/ 1 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (2)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj3_alto/LAB_500/ 2 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (3)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj3_alto/LAB_500/ 3 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (4)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj3_alto/LAB_500/ 4 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (5)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj3_alto/LAB_500/ 5 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (6)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj3_alto/LAB_500/ 6 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (7)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj3_alto/LAB_500/ 7 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (8)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj3_alto/LAB_500/ 8 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (9)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj3_alto/LAB_500/ 9 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (10)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj3_alto/LAB_500/ 10 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (11)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj3_alto/LAB_500/ 11 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (12)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj3_alto/LAB_500/ 12 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (13)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj3_alto/LAB_500/ 13 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (14)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj3_alto/LAB_500/ 14 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (15)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj3_alto/LAB_500/ 15 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (16)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj3_alto/LAB_500/ 16 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (17)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj3_alto/LAB_500/ 17 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (18)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj3_alto/LAB_500/ 18 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (19)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj3_alto/LAB_500/ 19 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (20)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj3_alto/LAB_500/ 20 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (21)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj3_alto/LAB_500/ 21 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (22)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj3_alto/LAB_500/ 22 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (23)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj3_alto/LAB_500/ 23 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (24)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj3_alto/LAB_500/ 24 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (25)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj3_alto/LAB_500/ 25 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (26)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj3_alto/LAB_500/ 26 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (27)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj3_alto/LAB_500/ 27 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (28)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj3_alto/LAB_500/ 28 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (29)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj3_alto/LAB_500/ 29 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap3 (30)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap3.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap3/traj3_alto/LAB_500/ 30 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (1)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj3_alto/LAB_500/ 1 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (2)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj3_alto/LAB_500/ 2 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (3)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj3_alto/LAB_500/ 3 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (4)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj3_alto/LAB_500/ 4 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (5)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj3_alto/LAB_500/ 5 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (6)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj3_alto/LAB_500/ 6 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (7)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj3_alto/LAB_500/ 7 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (8)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj3_alto/LAB_500/ 8 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (9)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj3_alto/LAB_500/ 9 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (10)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj3_alto/LAB_500/ 10 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (11)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj3_alto/LAB_500/ 11 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (12)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj3_alto/LAB_500/ 12 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (13)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj3_alto/LAB_500/ 13 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (14)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj3_alto/LAB_500/ 14 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (15)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj3_alto/LAB_500/ 15 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (16)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj3_alto/LAB_500/ 16 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (17)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj3_alto/LAB_500/ 17 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (18)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj3_alto/LAB_500/ 18 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (19)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj3_alto/LAB_500/ 19 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (20)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj3_alto/LAB_500/ 20 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (21)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj3_alto/LAB_500/ 21 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (22)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj3_alto/LAB_500/ 22 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (23)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj3_alto/LAB_500/ 23 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (24)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj3_alto/LAB_500/ 24 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (25)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj3_alto/LAB_500/ 25 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (26)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj3_alto/LAB_500/ 26 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (27)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj3_alto/LAB_500/ 27 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (28)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj3_alto/LAB_500/ 28 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (29)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj3_alto/LAB_500/ 29 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap4 (30)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap4.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap4/traj3_alto/LAB_500/ 30 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (1)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj3_alto/LAB_500/ 1 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (2)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj3_alto/LAB_500/ 2 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (3)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj3_alto/LAB_500/ 3 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (4)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj3_alto/LAB_500/ 4 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (5)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj3_alto/LAB_500/ 5 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (6)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj3_alto/LAB_500/ 6 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (7)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj3_alto/LAB_500/ 7 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (8)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj3_alto/LAB_500/ 8 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (9)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj3_alto/LAB_500/ 9 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (10)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj3_alto/LAB_500/ 10 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (11)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj3_alto/LAB_500/ 11 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (12)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj3_alto/LAB_500/ 12 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (13)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj3_alto/LAB_500/ 13 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (14)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj3_alto/LAB_500/ 14 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (15)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj3_alto/LAB_500/ 15 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (16)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj3_alto/LAB_500/ 16 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (17)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj3_alto/LAB_500/ 17 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (18)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj3_alto/LAB_500/ 18 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (19)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj3_alto/LAB_500/ 19 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (20)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj3_alto/LAB_500/ 20 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (21)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj3_alto/LAB_500/ 21 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (22)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj3_alto/LAB_500/ 22 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (23)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj3_alto/LAB_500/ 23 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (24)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj3_alto/LAB_500/ 24 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (25)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj3_alto/LAB_500/ 25 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (26)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj3_alto/LAB_500/ 26 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (27)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj3_alto/LAB_500/ 27 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (28)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj3_alto/LAB_500/ 28 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (29)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj3_alto/LAB_500/ 29 29
+
+Running traj3_alto -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 globalmap5 (30)
+
+ -quiet -e /home/mathias/Documents/Datasets/voo_maicon/Mapas_AdM/globalmap5.png -t /home/mathias/Documents/Datasets/voo_maicon/traj3_alto.txt -s BRIEF diff-cie2000 19 -bp 500 -blt 0.5 -bmt 4 -bm 10 -o /home/mathias/Documents/Results/globalmap5/traj3_alto/LAB_500/ 30 29
+

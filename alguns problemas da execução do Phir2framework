@@ -1,0 +1,124 @@
+Correções de erros comuns na execução do PhiR2Framework
+
+six
+sudo apt
+https://stackoverflow.com/questions/50954182/python-cannot-uninstall-six-while-pip-install-tld
+-----------
+eigen
+https://askubuntu.com/questions/491067/eigen-installation-seemed-to-work-but-i-still-cant-make-eigen-work
+-----------
+freeimage
+https://codeyarns.com/2014/02/11/how-to-install-and-use-freeimage/
+-----------
+libboost
+sudo apt-get install libboost-dev
+https://askubuntu.com/questions/670924/how-to-install-boost-on-ubuntu-14-04
+
+
+sudo apt-get install libboost-all-dev
+https://stackoverflow.com/questions/4596492/usr-bin-ld-cannot-find-lboost-system-mt
+
+
+-----------
+
+
+libglew
+sudo apt-get install libglew-dev
+https://stackoverflow.com/questions/15852417/compiling-opengl-program-gl-glew-h-missing
+-----------
+GL/glut.h
+https://askubuntu.com/questions/96087/how-to-install-opengl-glut-libraries
+ 
+                                                                                
+-----------
+cv2
+pip install opencv-python
+https://github.com/UmSenhorQualquer/pyforms/issues/77
+
+-----------
+Aria  (2.7.2)
+	 	 	 	
+http://robots.mobilerobots.com/wiki/All_Software
+-----------
+
+PIP - ubuntu 14.04
+https://www.saltycrane.com/blog/2010/02/how-install-pip-ubuntu/
+-----------
+
+PIP - ubuntu 16.04
+https://www.rosehosting.com/blog/how-to-install-pip-on-ubuntu-16-04/
+-----------
+
+error: cannot find -lippicv
+http://answers.opencv.org/question/85635/error-cannot-find-lippicv/
+I also have this problem, and I don't know what's the cause.
+Fortunately there's an easy workaround. That library is given by the pkg-config --libs opencv command in the Makefile.
+All you need to do is delete this library from the opencv pkg-config configuration file. Open /usr/local/lib/pkgconfig/opencv.pc (or whatever the OpenCV install directory is) and delete from the Libs: line -lippicv. Now everything should work fine.
+-----------
+
+
+
+
+libopencv_xfeatures2d.so.3.4: cannot open shared object file: No such file or directory
+
+Quando eu já não sabia mais o que fazer em relação ao erro da lib  xfeatures2d, após reinstalar 2x o opencv, rodei o comando (sudo find / -name "libopencv_core.so.3.2*") 
+
+https://github.com/chenguang055/dip_cvqt/issues/1
+sudo find / -name "xfeatures2d.so.3.2*"
+
+para encontrar a lib, e adicionei ela manualmente ao projeto.
+Ficou dessa forma no arquivo do projeto:
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../../usr/local/lib/x86_64-linux-gnu/release/ -lopencv_xfeatures2d
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../../usr/local/lib/x86_64-linux-gnu/debug/ -lopencv_xfeatures2d
+else:unix: LIBS += -L$$PWD/../../../../../usr/local/lib/x86_64-linux-gnu/ -lopencv_xfeatures2d
+
+INCLUDEPATH += $$PWD/../../../../../usr/local/lib/x86_64-linux-gnu
+DEPENDPATH += $$PWD/../../../../../usr/local/lib/x86_64-linux-gnu
+------------
+
+
+--QGIS 3 Ubuntu 16.04
+
+sudo sh -c 'echo "deb https://qgis.org/ubuntugis  xenial main" >> /etc/apt/sources.list'
+sudo sh -c 'echo "deb-src https://qgis.org/ubuntugis xenial main" >> /etc/apt/sources.list'
+sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
+
+wget -O - https://qgis.org/downloads/qgis-2017.gpg.key | gpg --import
+gpg --fingerprint CAEB3DC3BDF7FB45
+gpg --export --armor CAEB3DC3BDF7FB45 | sudo apt-key add -
+
+sudo apt-get update
+sudo apt-get update && sudo apt-get install qgis python-qgis qgis-plugin-grass
+------------
+
+Google Earth Pro no ubuntu 16.04
+https://itsfoss.com/install-google-earth-ubunu/
+------------
+
+
+git no ubuntu 16.04
+https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-16-04
+
+
+
+EXIF
+http://www.exifpurge.com/
+http://www.exifpro.com/download.html
+
+Octave Ubuntu 16.04
+https://medium.com/@manivannan_data/install-octave-on-ubuntu-16-04-d76f97e0d504
+
+Qt Creator ubuntu 16.04
+https://www.lucidar.me/en/dev-c-cpp/how-to-install-qt-creator-on-ubuntu-16-04/
+
+
+Inatalação da PCL 1.8 no ubuntu 16.04 (única que funcionou no meu desk)
+https://machineseez.blogspot.com/2017/06/installing-point-cloud-library-18-on.html
+
+
+PCL fácil de instalar ubuntu 16.04
+https://askubuntu.com/questions/979146/what-is-the-package-to-install-full-pcl-with-aptitude-and-does-prerequisites-com
+sudo apt install libpcl-dev
+
+
