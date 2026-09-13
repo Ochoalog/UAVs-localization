@@ -40,9 +40,12 @@ phir2frameworkv2/.git*/
 # ==============================================================================
 Results*/
 Logs*/
+results*/
+*results*/
 phir2frameworkv2/Results*/
 phir2frameworkv2/Logs*/
 phir2frameworkv2/Imgs/
+lambda_brief_modern/*results*/
 UFRGS_VET_18_10_2019_alfa_e_beta_juntos_piores_ou_demais_mapas/
 UFRGS_VET_390_613_50K_apenas_beta_4_mapas/
 Experimentos 08_01_2020/
