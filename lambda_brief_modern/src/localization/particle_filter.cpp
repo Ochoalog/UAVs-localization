@@ -198,4 +198,24 @@ EstimationState ParticleFilter::getEstimationState() const {
     return state;
 }
 
+std::vector<Particle> ParticleFilter::getExportParticles(int max_count) const {
+    if (max_count <= 0 || static_cast<size_t>(max_count) >= particles_.size()) {
+        return particles_;
+    }
+
+    // Select top particles by weight for informative visualization
+    std::vector<Particle> sorted_copy = particles_;
+    size_t k = static_cast<size_t>(max_count);
+    std::partial_sort(
+        sorted_copy.begin(),
+        sorted_copy.begin() + k,
+        sorted_copy.end(),
+        [](const Particle& a, const Particle& b) {
+            return a.weight > b.weight;
+        }
+    );
+    sorted_copy.resize(k);
+    return sorted_copy;
+}
+
 } // namespace lambda_brief

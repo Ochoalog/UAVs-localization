@@ -64,6 +64,12 @@ public:
     size_t getNumParticles() const { return particles_.size(); }
     double getNeff() const;
 
+    /**
+     * @brief Retrieve a representative subset of particles for visualization/logging
+     * @param max_count Maximum number of particles to export (-1 for all)
+     */
+    std::vector<Particle> getExportParticles(int max_count) const;
+
 private:
     ParticleFilterConfig config_;
     cv::Size map_size_{0, 0};

@@ -47,6 +47,8 @@ void AppConfig::printUsage(const char* program_name) {
               << "  --bf_d <val>            Bilateral filter diameter (default: 6)\n"
               << "  --bf_sc <val>           Bilateral filter sigmaColor (default: 5.0)\n"
               << "  --bf_ss <val>           Bilateral filter sigmaSpace (default: 5.0)\n"
+              << "  --save_particles        Export particle cloud to particles_log.csv for video rendering\n"
+              << "  --export_particles <N>  Max particles to export per frame (default: 1000, -1 for all)\n"
               << "  --seed <val>            Random seed for reproducibility (default: 42)\n"
               << "  --quiet                 Run without verbose console output\n"
               << "  -h, --help              Show this help message\n";
@@ -109,6 +111,10 @@ AppConfig AppConfig::parseCommandLine(int argc, char* argv[]) {
             config.bilateral_sigma_color = std::stod(argv[++i]);
         } else if (arg == "--bf_ss" && i + 1 < argc) {
             config.bilateral_sigma_space = std::stod(argv[++i]);
+        } else if (arg == "--save_particles") {
+            config.save_particles = true;
+        } else if (arg == "--export_particles" && i + 1 < argc) {
+            config.export_particles = std::stoi(argv[++i]);
         } else if (arg == "--seed" && i + 1 < argc) {
             config.random_seed = std::stoul(argv[++i]);
         } else if (arg == "--quiet") {

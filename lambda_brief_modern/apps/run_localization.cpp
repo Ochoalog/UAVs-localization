@@ -50,6 +50,11 @@ int main(int argc, char* argv[]) {
     fs::create_directories(config.output_dir);
     std::ofstream traj_out(fs::path(config.output_dir) / "traj_estimated.txt");
     std::ofstream error_out(fs::path(config.output_dir) / "errors.txt");
+    std::ofstream particles_out;
+    if (config.save_particles) {
+        particles_out.open(fs::path(config.output_dir) / "particles_log.csv");
+        particles_out << "frame,particle_id,x,y,z,yaw_deg,weight\n";
+    }
 
     // Legacy format header
     traj_out << "meanPX meanPY meanPZ varPX varPY varPZ meanAngle angleStdev NEFF elapsedTime\n";
@@ -166,6 +171,22 @@ int main(int argc, char* argv[]) {
                  << est.neff << " "
                  << elapsed_sec << "\n";
 
+        // Export particle cloud for video rendering
+        if (config.save_particles && particles_out.is_open()) {
+            auto exported = pf.getExportParticles(config.export_particles);
+            for (size_t pid = 0; pid < exported.size(); ++pid) {
+                particles_out << f << ","
+                              << pid << ","
+                              << std::fixed << std::setprecision(2)
+                              << exported[pid].pose.x << ","
+                              << exported[pid].pose.y << ","
+                              << exported[pid].pose.z << ","
+                              << (exported[pid].pose.yaw * 180.0 / M_PI) << ","
+                              << std::scientific << std::setprecision(6)
+                              << exported[pid].weight << "\n";
+            }
+        }
+
         // Compute error if Ground Truth available
         if (frame.has_ground_truth) {
             double scale_m = loader.getPixelToMeter();
@@ -211,6 +232,7 @@ int main(int argc, char* argv[]) {
 
     traj_out.close();
     error_out.close();
+    if (particles_out.is_open()) particles_out.close();
 
     std::cout << "\n================ Localization Summary ================\n";
     std::cout << "Total Frames Processed: " << loader.size() << "\n";

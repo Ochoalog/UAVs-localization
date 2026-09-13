@@ -151,6 +151,43 @@ O script produzirá:
 
 ---
 
+## 🎥 Gerando Vídeos da Eliminação de Partículas (Abordagem B)
+
+A versão moderna inclui um pipeline para gravação de vídeos em alta resolução (**Full HD / 720p / 4K**) demonstrando visualmente o enxame de partículas sendo filtrado e convergindo sobre o mapa de satélite:
+
+### Passo 1: Executar a localização com exportação de partículas
+Adicione a flag `--save_particles` (e opcionalmente `--export_particles <N>` para limitar o número de partículas exportadas por frame, ex: 1000):
+
+```bash
+./build/lambda_brief_loc \
+  --map "../Datasets/ADM/0036/Mapas/ADM_35_12_09_2018.jpg" \
+  --dataset_dir "../Datasets/ADM/0036" \
+  --output_dir "./results_adm0036" \
+  --num_particles 10000 \
+  --alpha 0.5 \
+  --vi NDVI \
+  --save_particles \
+  --export_particles 1000
+```
+
+### Passo 2: Renderizar o vídeo MP4 com o script Python
+```bash
+python3 scripts/render_video.py \
+  --results_dir ./results_adm0036 \
+  --map "../Datasets/ADM/0036/Mapas/ADM_35_12_09_2018.jpg" \
+  --output ./results_adm0036/localization_video.mp4 \
+  --fps 6.0
+```
+
+### O que o vídeo renderizado exibe:
+- **Mapa de Satélite Real** no fundo com foco dinâmico (*zoom automático*) na área do voo;
+- **Nuvem de Partículas Colorida**: pontinhos com transparência ponderados por probabilidade (partículas fracas em laranja/vermelho translúcido, partículas fortes em amarelo/verde brillante com vetores de direção Yaw);
+- **Ground Truth (GPS/IMU real)** em verde com rastro do trajeto;
+- **Estimativa do Filtro MCL** em amarelo/ciano com mira de precisão;
+- **Painel de Telemetria (HUD)** no canto superior com número do frame, coordenadas atuais, erro instantâneo de translação (metros) e erro de orientação (graus).
+
+---
+
 ## 📁 Estrutura de Diretórios da Implementação
 
 ```
@@ -182,5 +219,6 @@ lambda_brief_modern/
 │   ├── CMakeLists.txt             # Configuração CTest
 │   └── test_suite.cpp             # Suíte com 10 baterias de testes unitários
 └── scripts/
-    └── evaluate_results.py        # Avaliação e plotagem em Python 3
+    ├── evaluate_results.py        # Avaliação e plotagem em Python 3
+    └── render_video.py            # Renderizador de vídeo MP4 com HUD e eliminação de partículas
 ```

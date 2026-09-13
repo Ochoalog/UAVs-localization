@@ -30,6 +30,9 @@ struct AppConfig {
     double bilateral_sigma_color{5.0};
     double bilateral_sigma_space{5.0};
 
+    bool save_particles{false};
+    int export_particles{1000}; // Number of particles to export per frame (or -1 for all)
+
     unsigned int random_seed{42};
     bool quiet{false};
 
