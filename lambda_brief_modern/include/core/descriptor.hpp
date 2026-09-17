@@ -11,6 +11,11 @@ namespace lambda_brief {
 class Descriptor {
 public:
     /**
+     * @brief Convert image into descriptor operating color space (e.g. CIE L*a*b* or Grayscale)
+     */
+    static cv::Mat convertColorSpace(const cv::Mat& bgr, DescriptorColorMode mode);
+
+    /**
      * @brief Extract binary descriptor vector from drone image
      * Converts image to CIE L*a*b* and evaluates binary comparisons
      * on channels a* and b* for each pair.
@@ -57,7 +62,7 @@ public:
      * @brief Direct evaluation of normalized Hamming distance for a particle on the map
      */
     static double evaluateParticleDifference(
-        const cv::Mat& map_bgr,
+        const cv::Mat& map_converted,
         const Pose& particle_pose,
         const cv::Size& drone_size,
         const std::vector<PixelPair>& pairs,

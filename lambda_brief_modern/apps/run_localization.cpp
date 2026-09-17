@@ -31,13 +31,16 @@ int main(int argc, char* argv[]) {
     }
 
     // 1. Load satellite map
-    cv::Mat satellite_map = cv::imread(config.map_path, cv::IMREAD_COLOR);
-    if (satellite_map.empty()) {
+    cv::Mat satellite_map_bgr = cv::imread(config.map_path, cv::IMREAD_COLOR);
+    if (satellite_map_bgr.empty()) {
         std::cerr << "Error: Could not load satellite map from: " << config.map_path << std::endl;
         return 1;
     }
-    std::cout << "[Map] Loaded satellite map: " << satellite_map.cols << "x"
-              << satellite_map.rows << " (" << config.map_path << ")\n";
+    std::cout << "[Map] Loaded satellite map: " << satellite_map_bgr.cols << "x"
+              << satellite_map_bgr.rows << " (" << config.map_path << ")\n";
+
+    // Pre-convert satellite map to the descriptor's operating color space (e.g. CIELAB)
+    cv::Mat satellite_map = Descriptor::convertColorSpace(satellite_map_bgr, config.color_mode);
 
     // 2. Load dataset
     DatasetLoader loader(config.toDatasetLoaderOptions());

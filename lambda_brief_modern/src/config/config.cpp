@@ -24,6 +24,7 @@ DatasetLoaderOptions AppConfig::toDatasetLoaderOptions() const {
     dlo.bilateral_d = bilateral_d;
     dlo.bilateral_sigma_color = bilateral_sigma_color;
     dlo.bilateral_sigma_space = bilateral_sigma_space;
+    dlo.gt_offset = gt_offset;
     return dlo;
 }
 
@@ -35,6 +36,7 @@ void AppConfig::printUsage(const char* program_name) {
               << "  --output_dir <path>     Path to output directory for results (default: ./results)\n"
               << "  --traj <path>           Custom traj.txt path (optional)\n"
               << "  --gt <path>             Custom ground truth file (optional)\n"
+              << "  --gt_offset <idx>       Ground truth line 0 offset in traj.txt (-1 for auto, e.g. 84 for ADM/0036)\n"
               << "  --num_particles <N>     Number of particles (default: 50000)\n"
               << "  --alpha <val>           Vegetation mask weighting factor alpha [0..1] (default: 0.5)\n"
               << "  --vi <type>             Vegetation index: NDVI, NDRE, NDVI_RED_RE, GRVI (default: NDVI)\n"
@@ -73,6 +75,8 @@ AppConfig AppConfig::parseCommandLine(int argc, char* argv[]) {
             config.traj_file = argv[++i];
         } else if (arg == "--gt" && i + 1 < argc) {
             config.ground_truth_file = argv[++i];
+        } else if (arg == "--gt_offset" && i + 1 < argc) {
+            config.gt_offset = std::stoi(argv[++i]);
         } else if (arg == "--num_particles" && i + 1 < argc) {
             config.num_particles = std::stoul(argv[++i]);
         } else if (arg == "--alpha" && i + 1 < argc) {

@@ -4,6 +4,7 @@
 #include <fstream>
 #include <iostream>
 #include <algorithm>
+#include <regex>
 
 namespace lambda_brief {
 
@@ -204,17 +205,54 @@ bool DatasetLoader::loadGroundTruth() {
         all_samples.push_back(s);
     }
 
-    // If slice was used, check if GT count matches full dataset or sliced dataset
+    if (all_samples.empty()) {
+        return false;
+    }
+
+    // Determine Ground Truth offset relative to traj.txt lines
+    // In legacy datasets, traj_truth.txt starts at the flight execution segment (iniexec)
+    // rather than image 0 (takeoff/ascent).
+    int effective_offset = 0;
+    if (options_.gt_offset >= 0) {
+        effective_offset = options_.gt_offset;
+    } else {
+        // Auto-detect known legacy offsets based on dataset directory
+        std::string dir_str = options_.dataset_dir;
+        if (dir_str.find("0036") != std::string::npos) {
+            effective_offset = 84;  // Image 0199
+        } else if (dir_str.find("0035") != std::string::npos) {
+            effective_offset = 18;  // Image 0103
+        } else if (dir_str.find("0040") != std::string::npos) {
+            effective_offset = 55;  // Image 0200
+        } else if (dir_str.find("voo_100m") != std::string::npos || dir_str.find("UFRGS") != std::string::npos) {
+            effective_offset = 204; // Image 0390
+        }
+    }
+
+    size_t matched_count = 0;
     for (size_t i = 0; i < frames_.size(); ++i) {
         size_t frame_idx = frames_[i].index;
+
+        // Case 1: Exact size match with the sliced window
         if (all_samples.size() == frames_.size()) {
             frames_[i].has_ground_truth = true;
             frames_[i].ground_truth = all_samples[i];
-        } else if (frame_idx < all_samples.size()) {
-            frames_[i].has_ground_truth = true;
-            frames_[i].ground_truth = all_samples[frame_idx];
+            matched_count++;
+        }
+        // Case 2: Mapping with effective offset
+        else if (static_cast<int>(frame_idx) >= effective_offset) {
+            size_t gt_idx = frame_idx - effective_offset;
+            if (gt_idx < all_samples.size()) {
+                frames_[i].has_ground_truth = true;
+                frames_[i].ground_truth = all_samples[gt_idx];
+                matched_count++;
+            }
         }
     }
+
+    std::cout << "[DatasetLoader] Ground truth loaded: " << all_samples.size()
+              << " samples, matched " << matched_count << " of " << frames_.size()
+              << " frames (using GT offset " << effective_offset << ")" << std::endl;
 
     return true;
 }

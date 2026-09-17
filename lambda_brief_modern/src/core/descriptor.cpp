@@ -4,7 +4,7 @@
 
 namespace lambda_brief {
 
-static cv::Mat convertColorSpace(const cv::Mat& bgr, DescriptorColorMode mode) {
+cv::Mat Descriptor::convertColorSpace(const cv::Mat& bgr, DescriptorColorMode mode) {
     cv::Mat converted;
     if (mode == DescriptorColorMode::GRAY) {
         if (bgr.channels() == 3) {

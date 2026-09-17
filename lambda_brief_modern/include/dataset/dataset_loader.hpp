@@ -39,6 +39,7 @@ struct DatasetLoaderOptions {
     int bilateral_d{6};
     double bilateral_sigma_color{5.0};
     double bilateral_sigma_space{5.0};
+    int gt_offset{-1};           // Ground truth offset in traj.txt (-1 for auto-detection)
 };
 
 class DatasetLoader {
