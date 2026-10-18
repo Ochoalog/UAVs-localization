@@ -16,6 +16,14 @@ public:
     static cv::Mat convertColorSpace(const cv::Mat& bgr, DescriptorColorMode mode);
 
     /**
+     * @brief Uniform per-channel colour quantisation used by the legacy code
+     *        (DroneRobot::quantization, "-mappp 1", 25 levels) on BOTH the satellite
+     *        map and every drone RGB frame before the CIELAB conversion.
+     *        v' = floor(v * L / 255) * (255 / L). levels <= 0 returns a copy.
+     */
+    static cv::Mat quantizeColors(const cv::Mat& bgr, int levels);
+
+    /**
      * @brief Extract binary descriptor vector from drone image
      * Converts image to CIE L*a*b* and evaluates binary comparisons
      * on channels a* and b* for each pair.

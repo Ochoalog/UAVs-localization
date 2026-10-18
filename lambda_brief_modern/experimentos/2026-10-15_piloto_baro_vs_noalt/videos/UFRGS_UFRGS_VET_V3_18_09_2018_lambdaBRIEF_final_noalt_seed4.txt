@@ -1,0 +1,4 @@
+UFRGS_UFRGS_VET_V3_18_09_2018_lambdaBRIEF_final_noalt_seed4
+seed de MAE mediano entre 5 (MAE 11.6 m)
+frames 224 | MAE 11.6 m | erro final 8.3 m | convergiu no frame 14
+GT desenhado: traj_truth_sync.txt

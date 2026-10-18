@@ -56,3 +56,7 @@ target_link_libraries(lambda_brief_loc PRIVATE lambda_brief_core)
 # Tests
 enable_testing()
 add_subdirectory(tests)
+
+# Diagnostic tool: discriminability of the lambda-BRIEF likelihood at the GT pose
+add_executable(diag_likelihood apps/diag_likelihood.cpp)
+target_link_libraries(diag_likelihood PRIVATE lambda_brief_core)

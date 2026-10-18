@@ -1,0 +1,3 @@
+# 2026-10-17 18:37  (cwd: /storage/UAVs Localization/lambda_brief_modern)
+python3 scripts/paper_comparison_seeds.py --protocolo novo --lambda_alpha 0.5 --seeds 1 --nome artigo_novo_a0.5 --reaproveitar experimentos/2026-10-17_artigo_novo_a1 --sem_figuras_seed
+

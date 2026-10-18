@@ -1,0 +1,18 @@
+{
+  "dataset": "ADM0036",
+  "map": "ADM_35_12_09_2018",
+  "descriptor": "abBRIEF",
+  "alpha": 0.0,
+  "regime": "final_baro",
+  "seed": 3,
+  "binary_md5": "ce11b1776c6f83ded2ec9b19551eb1e9",
+  "git": {
+    "commit": "8e8502d2a33b1868af338ab38b8cc05c17fad174",
+    "dirty": true
+  },
+  "omp_threads": 4,
+  "duration_s": 54.56,
+  "host": "r2d2",
+  "adopted": false,
+  "written": "2026-10-15T13:08:05"
+}

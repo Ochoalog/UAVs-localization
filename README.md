@@ -17,7 +17,8 @@ O λ-BRIEF é uma extensão do descritor [abBRIEF](Multi_Map_Visual_Localization
 4. [Como Compilar](#como-compilar)
 5. [Como Executar](#como-executar)
 6. [Reprodução dos Experimentos (Figs. 2 a 5 do Paper)](#reprodução-dos-experimentos-figs-2-a-5-do-paper)
-7. [Documentação Detalhada](#documentação-detalhada)
+7. [Engine Moderna (`lambda_brief_modern/`)](#engine-moderna-lambda_brief_modern)
+8. [Documentação Detalhada](#documentação-detalhada)
 
 ---
 
@@ -36,13 +37,22 @@ Pares de pixels são amostrados sobre a sobreposição das máscaras por meio de
 ```text
 .
 ├── README.md                                # Visão geral e guia de execução (este arquivo)
+├── CLAUDE.md, AGENTS.md                     # Guia técnico e regras para agentes de IA
+├── lambda_brief_modern/                     # ENGINE MODERNA (C++17/CMake): ver a seção própria abaixo
+│   ├── experimentos/INDICE.md               # Índice e resumo de todos os experimentos
+│   └── docs/MANUAL_TESTES_ARTIGO.md         # Como rodar o teste do artigo (Figs. 4 e 5)
+├── sentinel2/                               # Série temporal Sentinel-2 da área ADM e georreferência dos mapas
 ├── docs/                                    # Documentação detalhada gerada pela engenharia reversa
 │   ├── architecture.md                      # Diagrama e fluxo de dados do pipeline
 │   ├── code-reference.md                    # Análise detalhada arquivo por arquivo
 │   ├── datasets.md                          # Inventário de datasets, mapas e sensores
 │   ├── pipeline-mapping.md                  # Matriz de rastreabilidade Paper -> Código
 │   ├── open-questions.md                    # Pontos de validação, dívidas técnicas e bugs
-│   └── improvement-ideas.md                 # Propostas e ideias de melhorias para resubmissão
+│   ├── improvement-ideas.md                 # Propostas e ideias de melhorias para resubmissão
+│   ├── migration-report.md                  # Relatório da migração legado → engine moderna
+│   ├── diagnostico_convergencia_e_pipeline.md  # Por que o filtro não convergia e o que foi corrigido
+│   ├── analise_fim_do_voo_adm2.md           # Fim do voo ADM2 (E1–E5) e motivação das duas fases
+│   └── revisao_odometria.md                 # Revisão da odometria visual e do atraso do GT
 ├── Multi_Map_Visual_Localization_...pdf     # Paper de referência do abBRIEF (Mantelli et al.)
 ├── Paper___LambdaλBRIEF_...pdf              # Versão em PDF do artigo do λ-BRIEF
 ├── alguns problemas da execução...          # Anotações do autor original sobre dependências
@@ -72,7 +82,8 @@ Pares de pixels são amostrados sobre a sobreposição das máscaras por meio de
 │   │   ├── 0035/                            # Voo ADM1 (300 frames avaliados)
 │   │   ├── 0036/                            # Voo ADM2 (196 frames avaliados)
 │   │   ├── 0039/                            # Voo ADM de teste (281 frames)
-│   │   └── 0040/                            # Voo ADM3 (266 frames avaliados)
+│   │   ├── 0040/                            # Voo ADM3 (266 frames avaliados)
+│   │   └── 0040_zenodo/                     # Mapas e GT do ADM3 (Zenodo 4070013: Maps.zip, GT_DAT.zip)
 │   ├── voo_maicon/                          # Dataset legado do abBRIEF (Mantelli et al.)
 │   └── voo_rodrigo2/                        # Dataset legado do abBRIEF (Mantelli et al.)
 │
@@ -210,6 +221,38 @@ O executável `PhiR2Framework` recebe parâmetros estruturados por flags de linh
   - $\alpha = 0.0 \implies$ Comportamento idêntico ao **abBRIEF** original (apenas máscara gaussiana).
   - $\alpha = 1.0$ (ou o melhor $\alpha$ calibrado) $\implies$ **λ-BRIEF**.
 - As curvas exibem o erro médio euclidiano acumulado frente ao Ground Truth de GPS/IMU ao longo do percurso para cada mapa histórico de satélite.
+- **Na engine moderna**, o mesmo teste roda com um comando (`lambda_brief_modern/scripts/paper_comparison.py` ou `paper_comparison_seeds.py`). Ver [`lambda_brief_modern/docs/MANUAL_TESTES_ARTIGO.md`](lambda_brief_modern/docs/MANUAL_TESTES_ARTIGO.md).
+
+> **Atenção ao comparar com o artigo.** No legado, o abBRIEF usava um caminho de código separado (pares quase uniformes e fixos), e as 30 repetições rodavam no mesmo processo com nuvem inicial repetida e escala herdada. Os detalhes, com as linhas do código, estão em [`lambda_brief_modern/docs/achados_codigo_legado.md`](lambda_brief_modern/docs/achados_codigo_legado.md).
+
+---
+
+## Engine Moderna (`lambda_brief_modern/`)
+
+Reimplementação em C++17/CMake/OpenCV 4 do λ-BRIEF e do filtro MCL, com testes de regressão. Além de reproduzir o legado, ela corrige o filtro (pesos bayesianos acumulados, reamostragem a cada frame) e acrescenta:
+
+- filtro em duas fases (`--two_phase`): busca global com priors e injeção, depois rastreio como no artigo;
+- altímetro real (`--altimeter_file`): barômetro do log do DJI, ou altura do log de voo do Zenodo no ADM3;
+- odometria visual nova (ratio test + MAGSAC), gravada uma vez por voo em `insumos/odom/`;
+- seeds independentes e pareadas entre abBRIEF e λ-BRIEF;
+- scripts de benchmark, do teste do artigo (1 ou N seeds), de avaliação e de vídeo.
+
+Por onde começar:
+
+| Arquivo | Conteúdo |
+|---|---|
+| [`lambda_brief_modern/README.md`](lambda_brief_modern/README.md) | compilação, todas as opções da CLI, regimes e scripts |
+| [`lambda_brief_modern/docs/MANUAL_TESTES_ARTIGO.md`](lambda_brief_modern/docs/MANUAL_TESTES_ARTIGO.md) | passo a passo do teste do artigo (Figs. 4 e 5) |
+| [`lambda_brief_modern/experimentos/INDICE.md`](lambda_brief_modern/experimentos/INDICE.md) | todos os experimentos, por data, com um resumo de cada um |
+| [`lambda_brief_modern/HISTORICO_RESULTADOS.md`](lambda_brief_modern/HISTORICO_RESULTADOS.md) | diário de cada rodada: objetivo, comando, resultado e conclusão |
+| [`CLAUDE.md`](CLAUDE.md) | convenções de coordenadas, armadilhas conhecidas e diagnóstico |
+
+```bash
+cd lambda_brief_modern
+cmake -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build -j$(nproc)
+./build/tests/test_suite
+python3 scripts/paper_comparison_seeds.py --protocolo novo --lambda_alpha 0.5 --dry_run
+```
 
 ---
 
@@ -223,3 +266,7 @@ Aprofunde-se no método e implementação consultando os documentos em [`docs/`]
 - 📊 [**docs/pipeline-mapping.md**](docs/pipeline-mapping.md): Tabela de rastreabilidade entre seções/fórmulas do artigo e o código C++.
 - 🔍 [**docs/open-questions.md**](docs/open-questions.md): Lista de itens pendentes de validação, discrepâncias sutis, bugs potenciais e parâmetros empíricos.
 - 💡 [**docs/improvement-ideas.md**](docs/improvement-ideas.md): Levantamento técnico de propostas de melhorias e novas abordagens para resubmissão do artigo.
+- 🔧 [**docs/diagnostico_convergencia_e_pipeline.md**](docs/diagnostico_convergencia_e_pipeline.md): Diagnóstico da convergência na engine moderna e descrição do pipeline.
+- ✈️ [**docs/analise_fim_do_voo_adm2.md**](docs/analise_fim_do_voo_adm2.md): Análise do fim do voo ADM2 (E1–E5) que motivou o filtro em duas fases.
+- 🧭 [**docs/revisao_odometria.md**](docs/revisao_odometria.md): Revisão da odometria visual e do alinhamento temporal do GT.
+- 🧾 [**lambda_brief_modern/docs/achados_codigo_legado.md**](lambda_brief_modern/docs/achados_codigo_legado.md): Diferenças entre o legado e a engine moderna que mudam a comparação abBRIEF × λ-BRIEF.

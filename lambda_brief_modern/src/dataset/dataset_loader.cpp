@@ -233,14 +233,12 @@ bool DatasetLoader::loadGroundTruth() {
     for (size_t i = 0; i < frames_.size(); ++i) {
         size_t frame_idx = frames_[i].index;
 
-        // Case 1: Exact size match with the sliced window
-        if (all_samples.size() == frames_.size()) {
-            frames_[i].has_ground_truth = true;
-            frames_[i].ground_truth = all_samples[i];
-            matched_count++;
-        }
-        // Case 2: Mapping with effective offset
-        else if (static_cast<int>(frame_idx) >= effective_offset) {
+        // GT line k always corresponds to traj.txt line (k + offset). The former
+        // "exact size match" shortcut paired GT[0] with the FIRST SLICED FRAME whenever the
+        // slice happened to have the same length as the GT file (e.g. --start_frame 0
+        // --end_frame 195 on ADM/0036 paired the take-off image 0115 with the GPS fix of
+        // image 0199), silently shifting the ground truth by `offset` frames.
+        if (static_cast<int>(frame_idx) >= effective_offset) {
             size_t gt_idx = frame_idx - effective_offset;
             if (gt_idx < all_samples.size()) {
                 frames_[i].has_ground_truth = true;

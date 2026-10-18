@@ -21,17 +21,28 @@ static double getAngleBetweenVectors(const cv::Point2f& v1, const cv::Point2f& v
     return std::acos(cos_val) * 180.0 / M_PI;
 }
 
+static VisualOdometryOptions legacyOptions(FeatureType type, int max_features) {
+    VisualOdometryOptions o;
+    o.type = type;
+    o.max_features = max_features;
+    return o;
+}
+
 VisualOdometry::VisualOdometry(FeatureType type, int max_features)
-    : type_(type), max_features_(max_features) {
-    if (type_ == FeatureType::SIFT) {
-        detector_ = cv::SIFT::create(max_features_);
+    : VisualOdometry(legacyOptions(type, max_features)) {}
+
+VisualOdometry::VisualOdometry(const VisualOdometryOptions& options)
+    : opt_(options) {
+    if (opt_.type == FeatureType::SIFT) {
+        detector_ = cv::SIFT::create(opt_.max_features);
     } else {
-        detector_ = cv::ORB::create(max_features_);
+        detector_ = cv::ORB::create(opt_.max_features > 0 ? opt_.max_features : 5000);
     }
 }
 
 void VisualOdometry::reset() {
-    // Stateless per pair
+    prev_ = Features();
+    has_prev_ = false;
 }
 
 bool VisualOdometry::validateHomographyGeometry(
@@ -88,74 +99,103 @@ bool VisualOdometry::validateHomographyGeometry(
     return true;
 }
 
-std::pair<Pose, bool> VisualOdometry::estimateRelativeMotion(
-    const cv::Mat& prev_img,
-    const cv::Mat& curr_img
-) {
-    if (prev_img.empty() || curr_img.empty()) {
-        return {Pose(), false};
-    }
+VisualOdometry::Features VisualOdometry::detect(const cv::Mat& img) const {
+    Features f;
+    if (img.empty()) return f;
+    cv::Mat gray;
+    if (img.channels() == 3) cv::cvtColor(img, gray, cv::COLOR_BGR2GRAY);
+    else gray = img;
+    detector_->detectAndCompute(gray, cv::noArray(), f.kp, f.desc);
+    f.size = gray.size();
+    return f;
+}
 
-    cv::Mat g_prev, g_curr;
-    if (prev_img.channels() == 3) cv::cvtColor(prev_img, g_prev, cv::COLOR_BGR2GRAY);
-    else g_prev = prev_img;
-    if (curr_img.channels() == 3) cv::cvtColor(curr_img, g_curr, cv::COLOR_BGR2GRAY);
-    else g_curr = curr_img;
+std::vector<cv::DMatch> VisualOdometry::match(const Features& curr, const Features& prev) const {
+    std::vector<cv::DMatch> good;
+    const bool is_float = (opt_.type == FeatureType::SIFT);
 
-    std::vector<cv::KeyPoint> kp1, kp2;
-    cv::Mat desc1, desc2;
-
-    detector_->detectAndCompute(g_curr, cv::noArray(), kp1, desc1);
-    detector_->detectAndCompute(g_prev, cv::noArray(), kp2, desc2);
-
-    if (desc1.empty() || desc2.empty() || kp1.size() < 6 || kp2.size() < 6) {
-        return {Pose(), false};
-    }
-
-    std::vector<cv::DMatch> matches;
-    if (type_ == FeatureType::SIFT) {
-        cv::FlannBasedMatcher matcher;
-        matcher.match(desc1, desc2, matches);
-    } else {
-        cv::BFMatcher matcher(cv::NORM_HAMMING, true);
-        matcher.match(desc1, desc2, matches);
-    }
-
-    if (matches.size() < 6) {
-        return {Pose(), false};
-    }
-
-    double min_dist = 100.0;
-    for (const auto& m : matches) {
-        if (m.distance < min_dist) min_dist = m.distance;
-    }
-
-    std::vector<cv::DMatch> good_matches;
-    double threshold_dist = std::max(2.0 * min_dist, 0.02);
-    for (const auto& m : matches) {
-        if (m.distance <= threshold_dist) {
-            good_matches.push_back(m);
+    if (opt_.matcher == VOMatcher::LEGACY) {
+        // Legacy: query = current frame, train = previous frame.
+        std::vector<cv::DMatch> matches;
+        if (is_float) {
+            cv::FlannBasedMatcher matcher;
+            matcher.match(curr.desc, prev.desc, matches);
+        } else {
+            cv::BFMatcher matcher(cv::NORM_HAMMING, true);
+            matcher.match(curr.desc, prev.desc, matches);
         }
+        if (matches.size() < 6) return good;
+        double min_dist = 100.0;  // OpenCV tutorial heuristic kept for fidelity
+        for (const auto& m : matches) min_dist = std::min(min_dist, static_cast<double>(m.distance));
+        const double threshold_dist = std::max(2.0 * min_dist, 0.02);
+        for (const auto& m : matches) {
+            if (m.distance <= threshold_dist) good.push_back(m);
+        }
+        return good;
     }
 
+    // RATIO: 2-NN + Lowe ratio test (+ optional mutual nearest-neighbour check).
+    cv::Ptr<cv::DescriptorMatcher> matcher;
+    if (is_float) matcher = cv::makePtr<cv::FlannBasedMatcher>();
+    else matcher = cv::makePtr<cv::BFMatcher>(cv::NORM_HAMMING, false);
+
+    std::vector<std::vector<cv::DMatch>> knn;
+    matcher->knnMatch(curr.desc, prev.desc, knn, 2);
+
+    std::vector<int> back;  // best curr index for every prev descriptor
+    if (opt_.mutual_check) {
+        std::vector<cv::DMatch> rev;
+        matcher->match(prev.desc, curr.desc, rev);
+        back.assign(prev.desc.rows, -1);
+        for (const auto& m : rev) back[m.queryIdx] = m.trainIdx;
+    }
+
+    good.reserve(knn.size() / 2);
+    for (const auto& pair : knn) {
+        if (pair.size() < 2) continue;
+        const cv::DMatch& best = pair[0];
+        if (best.distance >= opt_.ratio * pair[1].distance) continue;
+        if (opt_.mutual_check && back[best.trainIdx] != best.queryIdx) continue;
+        good.push_back(best);
+    }
+    return good;
+}
+
+std::pair<Pose, bool> VisualOdometry::estimate(const Features& prev, const Features& curr) {
+    stats_ = VOStats();
+    stats_.keypoints_prev = static_cast<int>(prev.kp.size());
+    stats_.keypoints_curr = static_cast<int>(curr.kp.size());
+
+    if (prev.desc.empty() || curr.desc.empty() || prev.kp.size() < 6 || curr.kp.size() < 6) {
+        return {Pose(), false};
+    }
+
+    const std::vector<cv::DMatch> good_matches = match(curr, prev);
+    stats_.matches = static_cast<int>(good_matches.size());
     if (good_matches.size() < 6) {
         return {Pose(), false};
     }
 
     std::vector<cv::Point2f> pts1, pts2;
+    pts1.reserve(good_matches.size());
+    pts2.reserve(good_matches.size());
     for (const auto& m : good_matches) {
-        pts1.push_back(kp1[m.queryIdx].pt);
-        pts2.push_back(kp2[m.trainIdx].pt);
+        pts1.push_back(curr.kp[m.queryIdx].pt);
+        pts2.push_back(prev.kp[m.trainIdx].pt);
     }
 
-    cv::Mat H = cv::findHomography(pts1, pts2, cv::RANSAC);
+    // H maps current-frame coordinates into the previous frame.
+    const int method = (opt_.robust == VORobust::MAGSAC) ? cv::USAC_MAGSAC : cv::RANSAC;
+    cv::Mat inlier_mask;
+    cv::Mat H = cv::findHomography(pts1, pts2, method, opt_.reproj_threshold_px, inlier_mask);
     if (H.empty()) {
         return {Pose(), false};
     }
+    stats_.inliers = inlier_mask.empty() ? 0 : cv::countNonZero(inlier_mask);
 
-    // Define 9 canonical reference points on curr image
-    const float w = static_cast<float>(g_curr.cols);
-    const float h = static_cast<float>(g_curr.rows);
+    // 9 canonical reference points on the current image
+    const float w = static_cast<float>(curr.size.width);
+    const float h = static_cast<float>(curr.size.height);
 
     std::vector<cv::Point2f> obj_corners(9);
     obj_corners[0] = cv::Point2f(0.0f, 0.0f);
@@ -171,23 +211,54 @@ std::pair<Pose, bool> VisualOdometry::estimateRelativeMotion(
     std::vector<cv::Point2f> scene_corners(9);
     cv::perspectiveTransform(obj_corners, scene_corners, H);
 
-    bool is_good = validateHomographyGeometry(obj_corners, scene_corners);
+    stats_.geometry_ok = validateHomographyGeometry(obj_corners, scene_corners);
+    const bool enough_inliers = (opt_.min_inliers <= 0) || (stats_.inliers >= opt_.min_inliers);
+    const bool is_good = stats_.geometry_ok && enough_inliers;
 
     Pose motion;
-    // Compute approximate translation, scale, and yaw (legacy formulas in DroneRobot.cpp)
+    // Translation / scale / yaw (legacy formulas in DroneRobot.cpp)
     motion.y = scene_corners[4].x - obj_corners[4].x;
     motion.x = -(scene_corners[4].y - obj_corners[4].y);
 
     double d_scene = getPointNorm(scene_corners[7] - scene_corners[8]);
     double d_obj = getPointNorm(obj_corners[7] - obj_corners[8]);
     motion.z = (d_obj > 1e-4) ? (d_scene / d_obj) : 1.0;
-    if (motion.z > 0.99 && motion.z < 1.01) {
+    if (std::abs(motion.z - 1.0) < opt_.scale_deadband) {  // legacy: 0.99 < dz < 1.01 -> 1
         motion.z = 1.0;
     }
 
     motion.yaw = std::atan2(scene_corners[5].y - scene_corners[4].y, scene_corners[5].x - scene_corners[4].x);
 
     return {motion, is_good};
+}
+
+std::pair<Pose, bool> VisualOdometry::estimateRelativeMotion(
+    const cv::Mat& prev_img,
+    const cv::Mat& curr_img
+) {
+    if (prev_img.empty() || curr_img.empty()) {
+        return {Pose(), false};
+    }
+    const Features prev = detect(prev_img);
+    const Features curr = detect(curr_img);
+    return estimate(prev, curr);
+}
+
+std::pair<Pose, bool> VisualOdometry::track(const cv::Mat& curr_img) {
+    if (curr_img.empty()) {
+        return {Pose(), false};
+    }
+    Features curr = detect(curr_img);
+    std::pair<Pose, bool> result{Pose(), false};
+    if (has_prev_) {
+        result = estimate(prev_, curr);
+    } else {
+        stats_ = VOStats();
+        stats_.keypoints_curr = static_cast<int>(curr.kp.size());
+    }
+    prev_ = std::move(curr);
+    has_prev_ = true;
+    return result;
 }
 
 } // namespace lambda_brief

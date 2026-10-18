@@ -1,0 +1,4 @@
+ADM0036_ADM_35_12_09_2018_lambdaBRIEF_final_noalt_seed2
+seed de MAE mediano entre 5 (MAE 34.7 m)
+frames 196 | MAE 34.7 m | erro final 8.7 m | convergiu no frame 23
+GT desenhado: traj_truth_sync.txt

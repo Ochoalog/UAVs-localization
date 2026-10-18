@@ -61,3 +61,27 @@ Experimentos/*/*/*/
 !Experimentos/*/*.sh
 !Experimentos/*/*/*.py
 !Experimentos/*/*/*.sh
+
+# ==============================================================================
+# Engine moderna (lambda_brief_modern): saídas brutas e artefatos locais
+# Versiona-se o resumo de cada experimento (INDICE.md, 00_LEIA_ME.md, tabela.md,
+# tabela.csv, figuras .png, COMANDO.txt) e os insumos (odometria fixa, relatórios
+# do altímetro); as execuções brutas e os vídeos ficam só na máquina.
+# ==============================================================================
+lambda_brief_modern/experimentos/**/execucoes/
+lambda_brief_modern/experimentos/**/seed_*/
+lambda_brief_modern/experimentos/**/seeds/
+!lambda_brief_modern/experimentos/**/tabela.csv
+*.mp4
+*.log
+__pycache__/
+*.pyc
+.venv*/
+Claude outputs/
+
+# Cópias de backup de editores (ex.: config-1.cpp)
+*-1.cpp
+*-1.hpp
+
+# Mensagem de commit preparada fora do git
+COMMIT_MSG*.txt

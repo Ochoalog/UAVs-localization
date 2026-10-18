@@ -4,11 +4,14 @@
 #include "core/pixel_sampler.hpp"
 #include "core/descriptor.hpp"
 #include "localization/particle_filter.hpp"
+#include "localization/phase_controller.hpp"
+#include "localization/visual_odometry.hpp"
 #include "dataset/dataset_loader.hpp"
 
 #include <iostream>
 #include <cassert>
 #include <cmath>
+#include <opencv2/imgproc.hpp>
 
 using namespace lambda_brief;
 
@@ -221,6 +224,347 @@ void testPoseNormalization() {
     TEST_CHECK(p2.yaw >= -M_PI && p2.yaw <= M_PI, "Negative angle normalized to [-pi, pi]");
 }
 
+
+void testLegacyQuantization() {
+    std::cout << "[Test 11] Legacy 25-level colour quantisation (DroneRobot::quantization)...\n";
+    cv::Mat img(1, 4, CV_8UC3);
+    img.at<cv::Vec3b>(0, 0) = cv::Vec3b(0, 0, 0);
+    img.at<cv::Vec3b>(0, 1) = cv::Vec3b(128, 128, 128);
+    img.at<cv::Vec3b>(0, 2) = cv::Vec3b(255, 255, 255);
+    img.at<cv::Vec3b>(0, 3) = cv::Vec3b(10, 11, 21);
+    cv::Mat q = Descriptor::quantizeColors(img, 25);
+    TEST_CHECK(q.at<cv::Vec3b>(0, 0)[0] == 0, "0 -> 0");
+    TEST_CHECK(q.at<cv::Vec3b>(0, 1)[0] == 122, "128 -> floor(128*25/255)*10.2 = 122");
+    TEST_CHECK(q.at<cv::Vec3b>(0, 2)[0] == 254, "255 -> 25*10.2f = 254.99999 -> 254 (legacy truncation)");
+    TEST_CHECK(q.at<cv::Vec3b>(0, 3)[0] == 0 && q.at<cv::Vec3b>(0, 3)[1] == 10 && q.at<cv::Vec3b>(0, 3)[2] == 20,
+               "10->0, 11->10, 21->20");
+    cv::Mat off = Descriptor::quantizeColors(img, 0);
+    TEST_CHECK(cv::norm(off, img, cv::NORM_INF) == 0, "levels=0 disables quantisation");
+}
+
+void testBayesianWeightAccumulation() {
+    std::cout << "[Test 12] Bayesian weight update multiplies the prior (w_t ~ w_{t-1} * p(z|x))...\n";
+    cv::Mat map_bgr(400, 400, CV_8UC3);
+    cv::RNG rng(1234);
+    rng.fill(map_bgr, cv::RNG::UNIFORM, 0, 256);
+    cv::GaussianBlur(map_bgr, map_bgr, cv::Size(5, 5), 1.5);
+    // Drone image = exact crop centred on (200,200), no rotation, scale 1.
+    // With yaw = -pi/2 the projection angle theta = -yaw - pi/2 = 0.
+    cv::Mat drone = map_bgr(cv::Rect(100, 100, 200, 200)).clone();
+    PixelSampler sampler(7);
+    auto pairs = sampler.sampleUniform(drone.size(), 256);
+    auto desc = Descriptor::computeDroneDescriptor(drone, pairs, DescriptorColorMode::LAB_NO_L);
+    cv::Mat map_lab = Descriptor::convertColorSpace(map_bgr, DescriptorColorMode::LAB_NO_L);
+
+    ParticleFilterConfig pfc;
+    pfc.num_particles = 2;
+    pfc.resample_neff_ratio = 0.0; // never resample inside this test
+    ParticleFilter pf(pfc);
+    pf.initializeUniform(map_bgr.size());
+    auto& P = const_cast<std::vector<Particle>&>(pf.getParticles());
+    P[0].pose = Pose(200, 200, 1.0, -M_PI / 2);   // true pose -> d = 0
+    P[1].pose = Pose(260, 230, 1.0, -M_PI / 2);   // wrong pose
+    P[0].weight = 0.1;
+    P[1].weight = 0.9;
+
+    const double d1 = Descriptor::evaluateParticleDifference(map_lab, P[1].pose, drone.size(), pairs, desc,
+                                                             DescriptorColorMode::LAB_NO_L);
+    const double d0 = Descriptor::evaluateParticleDifference(map_lab, P[0].pose, drone.size(), pairs, desc,
+                                                             DescriptorColorMode::LAB_NO_L);
+    TEST_CHECK(d0 < 1e-9, "Hamming distance is 0 at the true pose");
+    TEST_CHECK(d1 > 0.2, "Hamming distance is large at a wrong pose");
+
+    pf.updateWeights(map_lab, drone.size(), pairs, desc, DescriptorColorMode::LAB_NO_L);
+    const double l0 = 1.0, l1 = std::exp(-(d1 * d1) / (2.0 * pfc.var_brief));
+    const double expected_w0 = 0.1 * l0 / (0.1 * l0 + 0.9 * l1);
+    TEST_CHECK(std::abs(P[0].weight - expected_w0) < 1e-6, "Posterior weight = prior * likelihood (normalised)");
+    TEST_CHECK(std::abs(P[0].weight + P[1].weight - 1.0) < 1e-9, "Weights normalised");
+}
+
+void testResampleEveryFrame() {
+    std::cout << "[Test 13] resample_neff_ratio >= 1 resamples every frame (legacy)...\n";
+    ParticleFilterConfig pfc;
+    pfc.num_particles = 50;
+    pfc.resample_neff_ratio = 1.0;
+    ParticleFilter pf(pfc);
+    pf.initializeUniform(cv::Size(100, 100));
+    TEST_CHECK(pf.resampleIfNeeded(), "Resampling happens even with uniform weights");
+    TEST_CHECK(pf.getNumParticles() == 50, "Particle count conserved");
+}
+
+void testScaleAndYawPriors() {
+    std::cout << "[Test 14] Altimeter / compass priors multiply the likelihood...\n";
+    cv::Mat map_bgr(400, 400, CV_8UC3, cv::Scalar(128, 128, 128));
+    cv::Mat drone(100, 100, CV_8UC3, cv::Scalar(128, 128, 128));
+    PixelSampler sampler(3);
+    auto pairs = sampler.sampleUniform(drone.size(), 64);
+    auto desc = Descriptor::computeDroneDescriptor(drone, pairs, DescriptorColorMode::LAB_NO_L);
+    cv::Mat map_lab = Descriptor::convertColorSpace(map_bgr, DescriptorColorMode::LAB_NO_L);
+
+    ParticleFilterConfig pfc;
+    pfc.num_particles = 3;
+    pfc.resample_neff_ratio = 0.0;
+    ParticleFilter pf(pfc);
+    pf.initializeUniform(map_bgr.size());
+    auto& P = const_cast<std::vector<Particle>&>(pf.getParticles());
+    // Flat map -> identical Hamming distance for all three; only the priors differ.
+    P[0].pose = Pose(200, 200, 0.50, 0.0);
+    P[1].pose = Pose(200, 200, 0.60, 0.0);            // dz = 0.1 = 1 sigma
+    P[2].pose = Pose(200, 200, 0.50, 20.0 * M_PI / 180.0); // dyaw = 20 deg = 1 sigma
+    for (auto& p : P) p.weight = 1.0 / 3.0;
+    pf.setScalePrior(0.5, 0.2);                       // sigma_z = 0.2 * 0.5 = 0.1
+    pf.setYawPrior(0.0, 20.0 * M_PI / 180.0);
+    pf.updateWeights(map_lab, drone.size(), pairs, desc, DescriptorColorMode::LAB_NO_L);
+    const double e = std::exp(-0.5);
+    TEST_CHECK(std::abs(P[1].weight / P[0].weight - e) < 1e-9, "Scale prior: 1-sigma particle weighs exp(-1/2)");
+    TEST_CHECK(std::abs(P[2].weight / P[0].weight - e) < 1e-9, "Yaw prior: 1-sigma particle weighs exp(-1/2)");
+
+    // Priors apply to one update only.
+    for (auto& p : P) p.weight = 1.0 / 3.0;
+    pf.updateWeights(map_lab, drone.size(), pairs, desc, DescriptorColorMode::LAB_NO_L);
+    TEST_CHECK(std::abs(P[1].weight - P[0].weight) < 1e-12 && std::abs(P[2].weight - P[0].weight) < 1e-12,
+               "Priors are cleared after one update");
+}
+
+void testRandomInjection() {
+    std::cout << "[Test 15] Random particle injection keeps diversity...\n";
+    cv::Mat map_bgr(1000, 1000, CV_8UC3, cv::Scalar(128, 128, 128));
+    cv::Mat drone(50, 50, CV_8UC3, cv::Scalar(128, 128, 128));
+    PixelSampler sampler(5);
+    auto pairs = sampler.sampleUniform(drone.size(), 32);
+    auto desc = Descriptor::computeDroneDescriptor(drone, pairs, DescriptorColorMode::LAB_NO_L);
+    cv::Mat map_lab = Descriptor::convertColorSpace(map_bgr, DescriptorColorMode::LAB_NO_L);
+
+    ParticleFilterConfig pfc;
+    pfc.num_particles = 2000;
+    pfc.inject_ratio = 0.10;
+    pfc.random_seed = 11;
+    ParticleFilter pf(pfc);
+    pf.initializeUniform(map_bgr.size());
+    auto& P = const_cast<std::vector<Particle>&>(pf.getParticles());
+    for (auto& p : P) { p.pose = Pose(500, 500, 1.0, 0.0); p.weight = 1.0 / P.size(); }  // collapsed cloud
+    pf.setScalePrior(0.8, 0.05);
+    pf.updateWeights(map_lab, drone.size(), pairs, desc, DescriptorColorMode::LAB_NO_L);
+    size_t moved = 0; double zsum = 0.0;
+    for (const auto& p : P) {
+        if (std::abs(p.pose.x - 500) > 1e-9 || std::abs(p.pose.y - 500) > 1e-9) { ++moved; zsum += p.pose.z; }
+    }
+    // 200 draws with replacement from 2000 -> ~190 distinct particles replaced.
+    TEST_CHECK(moved > 150 && moved <= 200, "About inject_ratio * N particles re-drawn over the map");
+    TEST_CHECK(moved > 0 && std::abs(zsum / moved - 0.8) < 0.02, "Injected z follows the altitude prior");
+}
+
+void testModeEstimate() {
+    std::cout << "[Test 16] Mode estimator picks the dominant cluster, not the midpoint...\n";
+    ParticleFilterConfig pfc;
+    pfc.num_particles = 1000;
+    pfc.random_seed = 3;
+    pfc.mode_estimate = true;
+    pfc.mode_radius_px = 100.0;
+    ParticleFilter pf(pfc);
+    pf.initializeUniform(cv::Size(4800, 4800));
+    auto& P = const_cast<std::vector<Particle>&>(pf.getParticles());
+    std::mt19937 rng(9);
+    std::normal_distribution<double> n(0.0, 15.0);
+    for (size_t i = 0; i < P.size(); ++i) {
+        const bool a = i < 600;                       // 60% at (1000,1000), 40% at (3000,3000)
+        P[i].pose = Pose((a ? 1000.0 : 3000.0) + n(rng), (a ? 1000.0 : 3000.0) + n(rng), 0.5, 0.3);
+        P[i].weight = 1.0 / P.size();
+    }
+    const auto est = pf.getEstimationState();
+    TEST_CHECK(std::hypot(est.mean_pose.x - 1000.0, est.mean_pose.y - 1000.0) < 5.0,
+               "Mode estimate lands on the 60% cluster");
+    TEST_CHECK(std::abs(est.mean_pose.yaw - 0.3) < 1e-9 && std::abs(est.mean_pose.z - 0.5) < 1e-9,
+               "Mode estimate keeps the cluster's yaw and z");
+    TEST_CHECK(est.variance.x > 500.0 * 500.0, "Variance still reports the spread of the whole cloud");
+}
+
+void testInjectionGate() {
+    std::cout << "[Test 17] Injection gate: contrast measured, no injection below the threshold...\n";
+    cv::Mat map_bgr(400, 400, CV_8UC3);
+    cv::RNG rng(1234);
+    rng.fill(map_bgr, cv::RNG::UNIFORM, 0, 256);
+    cv::GaussianBlur(map_bgr, map_bgr, cv::Size(5, 5), 1.5);
+    cv::Mat drone = map_bgr(cv::Rect(100, 100, 200, 200)).clone();
+    PixelSampler sampler(7);
+    auto pairs = sampler.sampleUniform(drone.size(), 256);
+    auto desc = Descriptor::computeDroneDescriptor(drone, pairs, DescriptorColorMode::LAB_NO_L);
+    cv::Mat map_lab = Descriptor::convertColorSpace(map_bgr, DescriptorColorMode::LAB_NO_L);
+
+    ParticleFilterConfig pfc;
+    pfc.num_particles = 500;
+    pfc.random_seed = 5;
+    pfc.min_scale = 0.9;
+    pfc.max_scale = 1.1;
+    pfc.inject_ratio = 0.10;
+    pfc.inject_gate = 1e9;   // no frame is informative enough -> never inject
+    ParticleFilter pf(pfc);
+    pf.initializeUniform(map_bgr.size());
+    auto& P = const_cast<std::vector<Particle>&>(pf.getParticles());
+    for (auto& p : P) { p.pose = Pose(200, 200, 1.0, -M_PI / 2); p.weight = 1.0 / P.size(); }  // on the truth
+    pf.updateWeights(map_lab, drone.size(), pairs, desc, DescriptorColorMode::LAB_NO_L);
+    TEST_CHECK(pf.getObservationContrast() > 0.5, "Cloud on the true pose has a high contrast");
+    TEST_CHECK(pf.getLastInjectedCount() == 0, "Gate closed: nothing injected below the contrast threshold");
+    size_t moved = 0;
+    for (const auto& p : P) moved += (std::abs(p.pose.x - 200) > 1e-9 || std::abs(p.pose.y - 200) > 1e-9);
+    TEST_CHECK(moved == 0, "Tracking cloud untouched");
+    TEST_CHECK(pf.getNeffBeforeResampling() > 0.99 * P.size(), "Neff before resampling is recorded");
+}
+
+void testInitAroundPose() {
+    std::cout << "[Test 18] Diagnostic init_around_gt: Gaussian cloud centred on a given pose...\n";
+    ParticleFilterConfig pfc;
+    pfc.num_particles = 20000;
+    pfc.random_seed = 11;
+    pfc.min_scale = 0.1;
+    pfc.max_scale = 3.0;
+    ParticleFilter pf(pfc);
+    const Pose center(2000.0, 2500.0, 1.0, 0.6);
+    const double sigma_xy = 20.0, mean_z = 0.87, sigma_z = 0.05 * mean_z;
+    pf.initializeAroundPose(cv::Size(4800, 4800), center, sigma_xy, 5.0, mean_z, sigma_z);
+    const auto& P = pf.getParticles();
+    TEST_CHECK(P.size() == pfc.num_particles, "Cloud size matches num_particles");
+    double mx = 0, my = 0, mz = 0, vx = 0, vy = 0, vz = 0;
+    for (const auto& p : P) { mx += p.pose.x; my += p.pose.y; mz += p.pose.z; }
+    mx /= P.size(); my /= P.size(); mz /= P.size();
+    for (const auto& p : P) {
+        vx += (p.pose.x - mx) * (p.pose.x - mx);
+        vy += (p.pose.y - my) * (p.pose.y - my);
+        vz += (p.pose.z - mz) * (p.pose.z - mz);
+    }
+    vx /= P.size(); vy /= P.size(); vz /= P.size();
+    TEST_CHECK(std::abs(mx - center.x) < 2.0 && std::abs(my - center.y) < 2.0,
+               "Cloud mean x,y lands on the requested centre");
+    TEST_CHECK(std::abs(std::sqrt(vx) - sigma_xy) < 2.0 && std::abs(std::sqrt(vy) - sigma_xy) < 2.0,
+               "Cloud x,y std-dev matches sigma_xy_px");
+    TEST_CHECK(std::abs(mz - mean_z) < 0.02, "Cloud mean z lands on mean_z");
+    TEST_CHECK(std::sqrt(vz) < sigma_z * 1.5, "Cloud z std-dev is close to sigma_z (clamped to [min,max]_scale)");
+    bool all_in_bounds = true, all_z_in_range = true;
+    for (const auto& p : P) {
+        if (p.pose.x < 0.0 || p.pose.x > 4800.0 || p.pose.y < 0.0 || p.pose.y > 4800.0) all_in_bounds = false;
+        if (p.pose.z < pfc.min_scale || p.pose.z > pfc.max_scale) all_z_in_range = false;
+    }
+    TEST_CHECK(all_in_bounds, "All particles stay within map bounds (clamped)");
+    TEST_CHECK(all_z_in_range, "All particles' z stays within [min_scale, max_scale] (clamped)");
+}
+
+void testPhaseController() {
+    std::cout << "[Test 19] Two-phase controller: GLOBAL -> TRACKING -> GLOBAL...\n";
+    PhaseConfig pc;
+    pc.enabled = true;
+    pc.converge_std_px = 100.0;
+    pc.converge_frames = 3;
+    pc.converge_contrast = 1.3;
+    pc.relocalize_std_px = 400.0;
+    pc.relocalize_frames = 2;
+    PhaseController ctl(pc);
+    TEST_CHECK(ctl.phase() == FilterPhase::GLOBAL, "Starts in GLOBAL");
+    ctl.update(50.0, true, 1.5);
+    ctl.update(50.0, true, 1.0);          // contrast too low -> streak reset
+    TEST_CHECK(ctl.streak() == 0 && !ctl.tracking(), "Low contrast resets the convergence streak");
+    ctl.update(50.0, true, 1.5);
+    ctl.update(900.0, true, 1.5);         // spread too large -> reset
+    TEST_CHECK(ctl.streak() == 0, "Large spread resets the convergence streak");
+    ctl.update(50.0, true, 1.5);
+    ctl.update(60.0, false, 0.0);         // contrast unavailable -> spread decides
+    const bool changed = ctl.update(70.0, true, 1.4);
+    TEST_CHECK(changed && ctl.tracking(), "Switches to TRACKING after converge_frames good frames");
+    ctl.update(500.0, false, 0.0);
+    TEST_CHECK(ctl.tracking(), "One spread-out frame does not trigger relocalization");
+    ctl.update(80.0, false, 0.0);
+    ctl.update(500.0, false, 0.0);
+    const bool back = ctl.update(600.0, false, 0.0);
+    TEST_CHECK(back && ctl.phase() == FilterPhase::GLOBAL, "Back to GLOBAL after relocalize_frames spread-out frames");
+
+    PhaseConfig off;
+    PhaseController ctl_off(off);
+    for (int i = 0; i < 20; ++i) ctl_off.update(1.0, true, 5.0);
+    TEST_CHECK(!ctl_off.tracking(), "Disabled controller stays in GLOBAL (legacy behaviour)");
+
+    PhaseConfig never;
+    never.enabled = true;
+    never.converge_frames = 1;
+    never.converge_contrast = 0.0;
+    PhaseController ctl_never(never);
+    ctl_never.update(10.0, false, 0.0);
+    for (int i = 0; i < 20; ++i) ctl_never.update(5000.0, false, 0.0);
+    TEST_CHECK(ctl_never.tracking(), "relocalize_std_px = 0 never leaves TRACKING");
+}
+
+void testInjectionDisabledStillMeasuresContrast() {
+    std::cout << "[Test 20] Injection disabled: contrast still measured, cloud untouched...\n";
+    cv::Mat map_bgr(400, 400, CV_8UC3);
+    cv::RNG rng(1234);
+    rng.fill(map_bgr, cv::RNG::UNIFORM, 0, 256);
+    cv::GaussianBlur(map_bgr, map_bgr, cv::Size(5, 5), 1.5);
+    cv::Mat drone = map_bgr(cv::Rect(100, 100, 200, 200)).clone();
+    PixelSampler sampler(7);
+    auto pairs = sampler.sampleUniform(drone.size(), 256);
+    auto desc = Descriptor::computeDroneDescriptor(drone, pairs, DescriptorColorMode::LAB_NO_L);
+    cv::Mat map_lab = Descriptor::convertColorSpace(map_bgr, DescriptorColorMode::LAB_NO_L);
+
+    ParticleFilterConfig pfc;
+    pfc.num_particles = 500;
+    pfc.random_seed = 5;
+    pfc.min_scale = 0.9;
+    pfc.max_scale = 1.1;
+    pfc.inject_ratio = 0.10;
+    ParticleFilter pf(pfc);
+    pf.initializeUniform(map_bgr.size());
+    auto& P = const_cast<std::vector<Particle>&>(pf.getParticles());
+    for (auto& p : P) { p.pose = Pose(200, 200, 1.0, -M_PI / 2); p.weight = 1.0 / P.size(); }
+    pf.setInjectionEnabled(false);
+    pf.updateWeights(map_lab, drone.size(), pairs, desc, DescriptorColorMode::LAB_NO_L);
+    TEST_CHECK(pf.hasObservationContrast() && pf.getObservationContrast() > 0.5,
+               "Contrast measured from the candidate poses");
+    TEST_CHECK(pf.getLastInjectedCount() == 0, "Nothing injected while disabled");
+    size_t moved = 0;
+    for (const auto& p : P) moved += (std::abs(p.pose.x - 200) > 1e-9 || std::abs(p.pose.y - 200) > 1e-9);
+    TEST_CHECK(moved == 0, "Cloud untouched while injection is disabled");
+    pf.setInjectionEnabled(true);
+    pf.updateWeights(map_lab, drone.size(), pairs, desc, DescriptorColorMode::LAB_NO_L);
+    TEST_CHECK(pf.getLastInjectedCount() == 50, "Re-enabled: inject_ratio * N candidates injected");
+}
+
+void testVisualOdometryStreaming() {
+    std::cout << "[Test 21] Visual odometry: legacy vs ratio matcher, track() == stateless estimate...\n";
+    // Textured synthetic ground: blurred noise + random rectangles.
+    cv::RNG rng(7);
+    cv::Mat canvas(900, 1100, CV_8UC3);
+    rng.fill(canvas, cv::RNG::UNIFORM, 0, 255);
+    cv::GaussianBlur(canvas, canvas, cv::Size(0, 0), 2.0);
+    for (int k = 0; k < 400; ++k) {
+        cv::Point a(rng.uniform(0, 1100), rng.uniform(0, 900));
+        cv::rectangle(canvas, a, a + cv::Point(rng.uniform(5, 60), rng.uniform(5, 60)),
+                      cv::Scalar(rng.uniform(0, 255), rng.uniform(0, 255), rng.uniform(0, 255)), cv::FILLED);
+    }
+    // Camera moves 20 px "forward" (up in the image) and 8 px to the right between frames.
+    const cv::Rect prev_roi(200, 250, 620, 456), curr_roi(208, 230, 620, 456);
+    const cv::Mat prev = canvas(prev_roi).clone(), curr = canvas(curr_roi).clone();
+
+    for (VOMatcher m : {VOMatcher::LEGACY, VOMatcher::RATIO}) {
+        VisualOdometryOptions o;
+        o.matcher = m;
+        o.robust = (m == VOMatcher::RATIO) ? VORobust::MAGSAC : VORobust::RANSAC;
+        VisualOdometry stateless(o), streaming(o);
+        auto [u, ok] = stateless.estimateRelativeMotion(prev, curr);
+        const std::string tag = (m == VOMatcher::RATIO) ? "ratio" : "legacy";
+        TEST_CHECK(ok, tag + ": pure translation is reliable");
+        TEST_CHECK(std::abs(u.x - 20.0) < 0.5 && std::abs(u.y - 8.0) < 0.5,
+                   tag + ": dx = 20 (forward), dy = 8 (right)");
+        TEST_CHECK(std::abs(u.yaw) < 0.01 && std::abs(u.z - 1.0) < 0.011, tag + ": no rotation / scale");
+
+        auto first = streaming.track(prev);
+        TEST_CHECK(!first.second && streaming.hasPrevious(), tag + ": first track() only primes the cache");
+        auto [v, ok2] = streaming.track(curr);
+        TEST_CHECK(ok2 && std::abs(v.x - u.x) < 1e-6 && std::abs(v.y - u.y) < 1e-6,
+                   tag + ": track() reproduces the stateless estimate");
+        if (m == VOMatcher::RATIO) {
+            TEST_CHECK(streaming.lastStats().inliers > 200, "ratio: hundreds of homography inliers");
+        }
+    }
+}
+
 int main() {
     std::cout << "========================================\n";
     std::cout << " Running lambda-BRIEF Regression Tests  \n";
@@ -236,6 +580,17 @@ int main() {
     testParticleFilterInitialization();
     testLowVarianceResampling();
     testPoseNormalization();
+    testLegacyQuantization();
+    testBayesianWeightAccumulation();
+    testResampleEveryFrame();
+    testScaleAndYawPriors();
+    testRandomInjection();
+    testModeEstimate();
+    testInjectionGate();
+    testInitAroundPose();
+    testPhaseController();
+    testInjectionDisabledStillMeasuresContrast();
+    testVisualOdometryStreaming();
 
     std::cout << "\n========================================\n";
     std::cout << " Test Results: " << g_tests_passed << " Passed, "

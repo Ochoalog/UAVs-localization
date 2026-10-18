@@ -164,7 +164,13 @@ def main():
     print_metrics(data, args.scale)
 
     if args.plot:
-        out_plot = os.path.join(args.results_dir, args.output_plot)
+        if os.path.isabs(args.output_plot) or os.path.dirname(args.output_plot):
+            out_plot = args.output_plot
+        else:
+            out_plot = os.path.join(args.results_dir, args.output_plot)
+        parent_dir = os.path.dirname(out_plot)
+        if parent_dir:
+            os.makedirs(parent_dir, exist_ok=True)
         generate_plots(data, out_plot)
 
 if __name__ == "__main__":

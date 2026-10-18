@@ -1,5 +1,6 @@
 #include "core/descriptor.hpp"
 #include <opencv2/imgproc.hpp>
+#include <opencv2/core.hpp>
 #include <cmath>
 
 namespace lambda_brief {
@@ -21,6 +22,24 @@ cv::Mat Descriptor::convertColorSpace(const cv::Mat& bgr, DescriptorColorMode mo
         }
     }
     return converted;
+}
+
+cv::Mat Descriptor::quantizeColors(const cv::Mat& bgr, int levels) {
+    if (levels <= 0 || bgr.empty()) return bgr.clone();
+    // Bit-exact replica of the legacy expression
+    //   floor(((float)v * value) / 255.) * (255 / value)   with `float value`
+    // evaluated in double precision and truncated when stored in a uchar
+    // (so 255 -> 254 for 25 levels, exactly as in phir2frameworkv2).
+    const float L = static_cast<float>(levels);
+    const double step = static_cast<double>(255.0f / L);
+    cv::Mat lut(1, 256, CV_8U);
+    for (int v = 0; v < 256; ++v) {
+        const double q = std::floor((static_cast<double>(static_cast<float>(v) * L)) / 255.0) * step;
+        lut.at<uchar>(v) = cv::saturate_cast<uchar>(static_cast<int>(q));
+    }
+    cv::Mat out;
+    cv::LUT(bgr, lut, out);
+    return out;
 }
 
 std::vector<uint8_t> Descriptor::computeDroneDescriptor(
