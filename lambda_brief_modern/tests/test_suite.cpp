@@ -565,6 +565,66 @@ void testVisualOdometryStreaming() {
     }
 }
 
+void testLegacyAbPattern() {
+    std::cout << "[Test 22] Legacy abBRIEF pair pattern: fixed, near-uniform, same cv::RNG sequence as BriefHeuristic.cpp...\n";
+    const cv::Size sz(1241, 913);
+    auto a = PixelSampler::sampleLegacyAbBrief(sz, 256);
+    auto b = PixelSampler::sampleLegacyAbBrief(sz, 256);
+    TEST_CHECK(a.size() == 256, "legacy_ab: a.size() == 256");
+    bool same = true, inside = true;
+    double sx = 0, sxx = 0;
+    for (size_t i = 0; i < a.size(); ++i) {
+        same &= (a[i].pt1 == b[i].pt1 && a[i].pt2 == b[i].pt2);
+        for (const cv::Point& p : {a[i].pt1, a[i].pt2}) {
+            inside &= (p.x >= 0 && p.x < sz.width && p.y >= 0 && p.y < sz.height);
+            sx += p.x; sxx += double(p.x) * p.x;
+        }
+    }
+    TEST_CHECK(same, "legacy_ab: same");    // the same pattern on every call (every frame, every run)
+    TEST_CHECK(inside, "legacy_ab: inside");
+    // Reference: the legacy loop written out with cv::RNG in its default state.
+    cv::RNG rng;
+    const double s = 1.0 / 25.0 * std::pow(1241.0, 2), t = 1.0 / 25.0 * std::pow(913.0, 2);
+    cv::Point p0;
+    do { p0 = cv::Point((int)rng.gaussian(s) + 1241 / 2, (int)rng.gaussian(t) + 913 / 2); }
+    while (!(p0.x >= 0 && p0.x < 1241 && p0.y >= 0 && p0.y < 913));
+    TEST_CHECK(a[0].pt1 == p0, "legacy_ab: a[0].pt1 == p0");
+    // Near-uniform: std of x close to W/sqrt(12) = 358 px, far from the intended W/5 = 248 px.
+    const double n = 2.0 * a.size(), mean = sx / n, sd = std::sqrt(sxx / n - mean * mean);
+    TEST_CHECK(sd > 310.0, "legacy_ab: sd > 310.0");
+    std::cout << "  -> fixed pattern, all points inside, std(x) = " << sd << " px (uniform: 358, W/5: 248)\n";
+}
+
+void testPairDetails() {
+    std::cout << "[Test 23] pairDetails (--save_pairs): per-pair projection reproduces the Hamming distance...\n";
+    cv::Mat map_bgr(400, 400, CV_8UC3);
+    cv::RNG rng(4321);
+    rng.fill(map_bgr, cv::RNG::UNIFORM, 0, 256);
+    cv::GaussianBlur(map_bgr, map_bgr, cv::Size(5, 5), 1.5);
+    cv::Mat map_lab = Descriptor::convertColorSpace(map_bgr, DescriptorColorMode::LAB_NO_L);
+    cv::Mat drone = map_bgr(cv::Rect(100, 100, 200, 200)).clone();
+    PixelSampler sampler(11);
+    auto pairs = sampler.sampleUniform(drone.size(), 256);
+    auto desc = Descriptor::computeDroneDescriptor(drone, pairs, DescriptorColorMode::LAB_NO_L);
+    const auto mode = DescriptorColorMode::LAB_NO_L;
+
+    // (a) a wrong pose inside the map, (b) a pose that puts part of the pairs outside the map
+    for (const Pose& pose : {Pose(240, 215, 1.0, -M_PI / 2), Pose(30, 200, 1.3, 0.4)}) {
+        const double d = Descriptor::evaluateParticleDifference(map_lab, pose, drone.size(), pairs, desc, mode);
+        auto det = Descriptor::pairDetails(map_lab, pose, drone.size(), pairs, desc, mode);
+        double se = 0.0;
+        for (const auto& q : det) se += q.e;
+        TEST_CHECK(det.size() == pairs.size(), "pairDetails: one entry per pair");
+        TEST_CHECK(std::abs(se / det.size() - d) < 1e-12, "pairDetails: mean(e) == evaluateParticleDifference");
+    }
+    // (c) at the true pose every pair is inside and agrees with the drone
+    auto det = Descriptor::pairDetails(map_lab, Pose(200, 200, 1.0, -M_PI / 2), drone.size(), pairs, desc, mode);
+    bool all_ok = true;
+    for (const auto& q : det) all_ok &= (q.valid && q.e == 0.0);
+    TEST_CHECK(all_ok, "pairDetails: e = 0 for every pair at the true pose");
+    std::cout << "  -> mean(e) matches the Hamming distance, inside and partly outside the map\n";
+}
+
 int main() {
     std::cout << "========================================\n";
     std::cout << " Running lambda-BRIEF Regression Tests  \n";
@@ -591,6 +651,8 @@ int main() {
     testPhaseController();
     testInjectionDisabledStillMeasuresContrast();
     testVisualOdometryStreaming();
+    testLegacyAbPattern();
+    testPairDetails();
 
     std::cout << "\n========================================\n";
     std::cout << " Test Results: " << g_tests_passed << " Passed, "

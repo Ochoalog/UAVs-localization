@@ -246,4 +246,49 @@ double Descriptor::evaluateParticleDifference(
     return static_cast<double>(diff_count) / static_cast<double>(drone_descriptor.size());
 }
 
+std::vector<Descriptor::PairDetail> Descriptor::pairDetails(
+    const cv::Mat& map_bgr,
+    const Pose& pose,
+    const cv::Size& drone_size,
+    const std::vector<PixelPair>& pairs,
+    const std::vector<uint8_t>& drone_descriptor,
+    DescriptorColorMode mode
+) {
+    std::vector<PairDetail> out(pairs.size());
+    const double scale = pose.z;
+    const float theta = static_cast<float>(pose.yaw * (-1.0) - (M_PI * 0.5));
+    const int xPad = drone_size.width / 2;
+    const int yPad = drone_size.height / 2;
+    const float cosTheta = std::cos(theta);
+    const float sinTheta = std::sin(theta);
+    const int bits_per_pair = (mode == DescriptorColorMode::GRAY) ? 1 :
+                              (mode == DescriptorColorMode::LAB_NO_L) ? 2 : 3;
+    size_t bit_idx = 0;
+    for (size_t p = 0; p < pairs.size(); ++p, bit_idx += bits_per_pair) {
+        const auto& pair = pairs[p];
+        auto& d = out[p];
+        double px1 = (pair.pt1.x - xPad) * scale, py1 = (pair.pt1.y - yPad) * scale;
+        double px2 = (pair.pt2.x - xPad) * scale, py2 = (pair.pt2.y - yPad) * scale;
+        d.m1 = cv::Point(static_cast<int>(std::round((px1 * cosTheta + py1 * sinTheta) + pose.x)),
+                         static_cast<int>(std::round((px1 * (-sinTheta) + py1 * cosTheta) + pose.y)));
+        d.m2 = cv::Point(static_cast<int>(std::round((px2 * cosTheta + py2 * sinTheta) + pose.x)),
+                         static_cast<int>(std::round((px2 * (-sinTheta) + py2 * cosTheta) + pose.y)));
+        const cv::Rect R(0, 0, map_bgr.cols, map_bgr.rows);
+        d.valid = R.contains(d.m1) && R.contains(d.m2);
+        if (!d.valid) continue;
+        int diff = 0;
+        if (mode == DescriptorColorMode::GRAY) {
+            uchar v1 = map_bgr.at<uchar>(d.m1), v2 = map_bgr.at<uchar>(d.m2);
+            diff += (((v1 > v2) ? 1 : 0) != drone_descriptor[bit_idx]);
+        } else {
+            const auto& c1 = map_bgr.at<cv::Vec3b>(d.m1);
+            const auto& c2 = map_bgr.at<cv::Vec3b>(d.m2);
+            for (int k = 0; k < bits_per_pair; ++k)
+                diff += (((c1[k] > c2[k]) ? 1 : 0) != drone_descriptor[bit_idx + k]);
+        }
+        d.e = static_cast<double>(diff) / bits_per_pair;
+    }
+    return out;
+}
+
 } // namespace lambda_brief

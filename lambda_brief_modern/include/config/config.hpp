@@ -83,6 +83,9 @@ struct AppConfig {
 
     bool save_particles{false};
     int export_particles{1000}; // Number of particles to export per frame (or -1 for all)
+    // Diagnostics (H0 / deep-BRIEF, videos): pairs_log.csv, frames_log.csv and amostragem/
+    // (sampling mask and drone NDVI per frame, half resolution). Read-only: results are unchanged.
+    bool save_pairs{false};
 
     unsigned int random_seed{42};
     bool quiet{false};

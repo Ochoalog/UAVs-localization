@@ -411,3 +411,17 @@ Qualquer nova bateria de testes (incluindo o benchmark de **abBRIEF**) deve segu
   - Comparação com o artigo: o ganho menor do λ aqui é esperado. O baseline do legado era mais fraco e as repetições eram encadeadas (ver `docs/achados_codigo_legado.md`). O λ melhora a convergência da busca global, não o erro de rastreio.
 - **Próximo passo:** rodar o protocolo do artigo (`--protocolo artigo`, sem altímetro) com 5–30 seeds e reportar a taxa de convergência; investigar o ADM3 na descida.
 ---
+
+### 2026-10-27_ab_legado_novo_a1 — abBRIEF do legado × abBRIEF × λ-BRIEF: quanto do ganho do artigo vinha do baseline
+- **Data:** 27/10/2026
+- **Pasta:** `experimentos/2026-10-27_ab_legado_novo_a1` (`00_LEIA_ME.md`, `tabela.md`, `compilado.png`)
+- **Manual:** [`docs/MANUAL_TESTES_ARTIGO.md`](docs/MANUAL_TESTES_ARTIGO.md), seção 8
+- **Objetivo / Hipótese:** o abBRIEF do legado usava 256 pares fixos e quase uniformes (variância passada como desvio-padrão em `rng.gaussian`, `BriefHeuristic.cpp:1132–1154`), enquanto o λ era central e re-sorteado por frame. Separar a diferença "ab legado → λ" em **baseline** (ab legado − ab) e **NDVI** (ab − λ).
+- **Comando:** `python3 scripts/ab_legado_comparison.py --protocolo novo --lambda_alpha 1.0 --seeds 1 --reaproveitar experimentos/2026-10-17_artigo_novo_a1` (só o `--pair_pattern legacy_ab` rodou; ab e λ copiados)
+- **Resultados (1 seed, α = 1, final_baro):** fração da diferença ab legado → λ que vem só do baseline: **ADM2 82%**, ADM1 2%. No ADM3 o ab da engine (20,9 m) ganha do λ (47,5 m).
+- **Conclusão:** boa parte do ganho publicado do λ no ADM2 vinha do baseline fraco do legado. Indício (1 seed); confirmar com 5 seeds (`--seeds 1..5 --reaproveitar experimentos/2026-10-17_artigo_novo_a1_5seeds`).
+---
+
+### v3 (27–28/10/2026) — peso de estabilidade do Sentinel-2: resultado negativo, só no branch `v3`
+- O peso por par derivado da variabilidade do NDVI do S2 (2018–2026) não melhorou a convergência e piorou o ADM3 com o mapa 01-2014 (5 seeds). Código, scripts e as 6 pastas de experimento (`2026-10-27_v3_*`, `2026-10-28_v3_*`) estão no branch `v3`. Resumo em `docs/RESUMO_PARA_NOVO_AGENTE.md`, seção 2.6.
+---

@@ -53,6 +53,12 @@ void AppConfig::printUsage(const char* program_name) {
               << "  --vi <type>             Vegetation index: NDVI, NDRE, NDVI_RED_RE, GRVI (default: NDVI)\n"
               << "  --pairs <N>             Number of pixel pairs (default: 256)\n"
               << "  --color_mode <mode>     Color mode: LAB_NO_L, LAB, GRAY (default: LAB_NO_L)\n"
+              << "  --pair_pattern <p>      How the pixel pairs are chosen (default: roulette):\n"
+              << "                          roulette        roulette over the alpha-combined mask, new pairs every frame\n"
+              << "                          roulette_fixed  the same, drawn once on the first frame and kept\n"
+              << "                          uniform         uniform over the image, new pairs every frame (ignores --alpha)\n"
+              << "                          legacy_ab       abBRIEF of the legacy code: one fixed, near-uniform pattern,\n"
+              << "                                          same cv::RNG sequence as BriefHeuristic.cpp:1132-1154 (ignores --alpha, --seed)\n"
               << "  --start_frame <idx>     Start frame index (-1 for start of dataset)\n"
               << "  --end_frame <idx>       End frame index (-1 for end of dataset)\n"
               << "  --pixel_to_meter <val>  Meters per pixel scale (default: 0.188679245)\n"
@@ -99,6 +105,8 @@ void AppConfig::printUsage(const char* program_name) {
               << "                          (sigma_xy=px, sigma_yaw=5deg, z~N(0.87*z_GT,5%)) instead of uniform\n"
               << "  --save_particles        Export particle cloud to particles_log.csv for video rendering\n"
               << "  --export_particles <N>  Max particles to export per frame (default: 1000, -1 for all)\n"
+              << "  --save_pairs            Export the pixel pairs of every frame (pairs_log.csv, frames_log.csv) and the\n"
+              << "                          sampling mask / drone NDVI (amostragem/*.png). Diagnostics only\n"
               << "  --seed <val>            Random seed for reproducibility (default: 42)\n"
               << "  --quiet                 Run without verbose console output\n"
               << "  -h, --help              Show this help message\n";
@@ -145,6 +153,14 @@ AppConfig AppConfig::parseCommandLine(int argc, char* argv[]) {
             if (cm_str == "LAB_NO_L") config.color_mode = DescriptorColorMode::LAB_NO_L;
             else if (cm_str == "LAB") config.color_mode = DescriptorColorMode::LAB;
             else if (cm_str == "GRAY") config.color_mode = DescriptorColorMode::GRAY;
+        } else if (arg == "--pair_pattern" && i + 1 < argc) {
+            std::string pp = argv[++i];
+            std::transform(pp.begin(), pp.end(), pp.begin(), ::tolower);
+            if (pp == "roulette") config.sampler_method = PixelSamplerMethod::ROULETTE_STOCHASTIC;
+            else if (pp == "roulette_fixed") config.sampler_method = PixelSamplerMethod::ROULETTE_FIXED;
+            else if (pp == "uniform") config.sampler_method = PixelSamplerMethod::UNIFORM;
+            else if (pp == "legacy_ab") config.sampler_method = PixelSamplerMethod::LEGACY_AB;
+            else std::cerr << "Warning: unknown --pair_pattern '" << pp << "', using roulette\n";
         } else if (arg == "--start_frame" && i + 1 < argc) {
             config.start_frame = std::stoi(argv[++i]);
         } else if (arg == "--end_frame" && i + 1 < argc) {
@@ -248,6 +264,8 @@ AppConfig AppConfig::parseCommandLine(int argc, char* argv[]) {
             config.vo_reproj_px = std::stod(argv[++i]);
         } else if (arg == "--vo_min_inliers" && i + 1 < argc) {
             config.vo_min_inliers = std::stoi(argv[++i]);
+        } else if (arg == "--save_pairs") {
+            config.save_pairs = true;
         } else if (arg == "--save_particles") {
             config.save_particles = true;
         } else if (arg == "--export_particles" && i + 1 < argc) {

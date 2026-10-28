@@ -95,6 +95,8 @@ Opções principais (a lista completa sai com `--help`):
 | `--unreliable_motion zero\|cv\|apply` | zero | Homografia reprovada: movimento nulo (legado), velocidade constante ou o movimento reprovado. `--apply_unreliable_odom` = `apply` |
 | `--gt_offset` | auto | Índice do `traj.txt` que corresponde à linha 0 do `traj_truth.txt`. **ADM/0036: o GT está ~2 frames atrasado, use 86** (ver armadilha 13) |
 | `--save_particles --export_particles N` | off | Grava `particles_log.csv` para o vídeo |
+| `--pair_pattern roulette\|roulette_fixed\|uniform\|legacy_ab` | roulette | Como os pares são escolhidos. `legacy_ab` = abBRIEF do legado (padrão fixo e quase uniforme; armadilha 16) |
+| `--save_pairs` | off | Diagnóstico: `pairs_log.csv` (pares projetados na estimativa e no GT, erro por par), `frames_log.csv` (d(estimativa), d(GT)), `amostragem/` (máscara e NDVI). Não muda o resultado |
 | `--inject_ratio r` | 0 | Re-sorteia r·N partículas por frame (relocalização). Recomendado 0.05–0.10 |
 | `--two_phase` | off | Priors, injeção e `--vo_scale_deadband` só na fase GLOBAL; depois de convergir (`--converge_std 100`, `--converge_frames 5`, `--converge_contrast 1.3`) passa a TRACKING no modo do artigo (sem priors, sem injeção, deadband `--track_vo_scale_deadband 0.01`). `--relocalize_std px` (0 = nunca) volta à GLOBAL. Log por frame em `phase_log.txt`. Usado no regime `final_baro` (piloto de 15/10 e teste do artigo de 17/10) |
 | `--inject_spread px` | 0 | Escala a injeção por σ_xy/px: nuvem concentrada ⇒ quase sem injeção. Recomendado 300 (com altímetro) |
@@ -178,3 +180,5 @@ A análise `docs/analise_fim_do_voo_adm2.md` (29 execuções) mostrou que o prio
 - Regime recomendado: `final_baro` (duas fases + injeção + barômetro real + odometria fixa em `insumos/odom/`). O protocolo do artigo é o `vanilla`.
 - A engine é determinística para a mesma seed. Para a mesma seed, abBRIEF e λ-BRIEF começam da mesma nuvem (comparação pareada). Execuções com comando idêntico podem ser copiadas entre pastas (`--reaproveitar`).
 - Resultado de 17/10/2026 (5 seeds, final_baro): todos convergem; o λ ganha no ADM1 e no UFRGS, empata ou ganha por pouco no ADM2 e perde no ADM3. O ganho do λ está na convergência da busca global, não no erro de rastreio.
+- **v3 (só no branch `v3`):** peso de estabilidade do Sentinel-2 por par (`--stability_map`). Resultado negativo com 5 seeds; não está na `main`. Para consultar ou rodar: `git switch v3` (seção 10 do manual naquele branch).
+- **Próximo passo (28/10/2026):** diagnóstico H0 (de onde vem o piso de 8–15 m do rastreio) e depois o deep-BRIEF. Plano em `lambda_brief_modern/docs/PLANO_H0.md`.

@@ -77,6 +77,26 @@ public:
         const std::vector<uint8_t>& drone_descriptor,
         DescriptorColorMode mode = DescriptorColorMode::LAB_NO_L
     );
+
+    /** One pixel pair projected on the map at a pose (diagnostics, --save_pairs). */
+    struct PairDetail {
+        cv::Point m1, m2;   // map pixels of the two points
+        bool valid{false};  // both points inside the map
+        double e{1.0};      // fraction of the pair's bits that disagree with the drone (1 if invalid)
+    };
+
+    /**
+     * @brief Same projection as evaluateParticleDifference, but returns every pair. Read-only.
+     *        The mean of e over all pairs equals evaluateParticleDifference for poses inside the map.
+     */
+    static std::vector<PairDetail> pairDetails(
+        const cv::Mat& map_converted,
+        const Pose& pose,
+        const cv::Size& drone_size,
+        const std::vector<PixelPair>& pairs,
+        const std::vector<uint8_t>& drone_descriptor,
+        DescriptorColorMode mode
+    );
 };
 
 } // namespace lambda_brief

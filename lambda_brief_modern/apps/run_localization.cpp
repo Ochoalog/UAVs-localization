@@ -104,6 +104,17 @@ int main(int argc, char* argv[]) {
     fs::create_directories(config.output_dir);
     std::ofstream traj_out(fs::path(config.output_dir) / "traj_estimated.txt");
     std::ofstream error_out(fs::path(config.output_dir) / "errors.txt");
+    // --save_pairs: what the descriptor used in every frame (diagnostics). Read-only.
+    std::ofstream pairs_out, frames_out;
+    if (config.save_pairs) {
+        fs::create_directories(fs::path(config.output_dir) / "amostragem");
+        pairs_out.open(fs::path(config.output_dir) / "pairs_log.csv");
+        pairs_out << "frame,i,ax,ay,bx,by,est_m1x,est_m1y,est_m2x,est_m2y,est_e,"
+                     "gt_m1x,gt_m1y,gt_m2x,gt_m2y,gt_e\n";
+        frames_out.open(fs::path(config.output_dir) / "frames_log.csv");
+        frames_out << "frame,rgb,nir,red,est_x,est_y,est_z,est_yaw_deg,gt_x,gt_y,gt_yaw_deg,gt_z_ref,"
+                      "d_est,d_gt,phase\n";
+    }
     std::ofstream particles_out;
     if (config.save_particles) {
         particles_out.open(fs::path(config.output_dir) / "particles_log.csv");
@@ -175,6 +186,16 @@ int main(int argc, char* argv[]) {
         }
     }
     PixelSampler sampler(config.random_seed);
+    std::vector<PixelPair> fixed_pairs;  // --pair_pattern legacy_ab / roulette_fixed
+    switch (config.sampler_method) {
+        case PixelSamplerMethod::LEGACY_AB:
+            std::cout << "Pair pattern: legacy_ab (fixed, near-uniform pattern of the legacy abBRIEF)\n"; break;
+        case PixelSamplerMethod::ROULETTE_FIXED:
+            std::cout << "Pair pattern: roulette_fixed (roulette on the first frame, then kept)\n"; break;
+        case PixelSamplerMethod::UNIFORM:
+            std::cout << "Pair pattern: uniform (new uniform pairs every frame)\n"; break;
+        default: break;
+    }
 
     std::vector<double> position_errors;
     std::vector<double> yaw_errors;
@@ -280,12 +301,27 @@ int main(int argc, char* argv[]) {
             &max_fitness
         );
 
-        // C. Pixel Sampling via Stochastic Acceptance Roulette
-        std::vector<PixelPair> pairs = sampler.sampleRoulette(
-            combined_mask,
-            max_fitness,
-            config.num_pairs
-        );
+        // C. Pixel Sampling via Stochastic Acceptance Roulette (default) or one of the
+        //    --pair_pattern variants used to compare with the legacy abBRIEF
+        std::vector<PixelPair> pairs;
+        switch (config.sampler_method) {
+            case PixelSamplerMethod::LEGACY_AB:
+                if (fixed_pairs.empty())
+                    fixed_pairs = PixelSampler::sampleLegacyAbBrief(rgb.size(), config.num_pairs);
+                pairs = fixed_pairs;
+                break;
+            case PixelSamplerMethod::ROULETTE_FIXED:
+                if (fixed_pairs.empty())
+                    fixed_pairs = sampler.sampleRoulette(combined_mask, max_fitness, config.num_pairs);
+                pairs = fixed_pairs;
+                break;
+            case PixelSamplerMethod::UNIFORM:
+                pairs = sampler.sampleUniform(rgb.size(), config.num_pairs);
+                break;
+            default:
+                pairs = sampler.sampleRoulette(combined_mask, max_fitness, config.num_pairs);
+                break;
+        }
 
         // D. Observed Drone Descriptor
         std::vector<uint8_t> drone_desc = Descriptor::computeDroneDescriptor(
@@ -396,6 +432,56 @@ int main(int argc, char* argv[]) {
             }
         }
 
+        // --save_pairs: pairs projected at the estimate and at the GT pose, plus the sampling mask and
+        // drone NDVI. The GT has no filter-scale z: use the altimeter (gain * z_baro, the same reference as
+        // the scale prior) when there is one, else 0.87 * z_GT (ADM RGBres relation, see the scale prior
+        // comment below), else the estimate's z.
+        if (config.save_pairs && pairs_out.is_open()) {
+            const Pose pe = est.mean_pose;
+            const bool has_gt = frame.has_ground_truth;
+            double z_ref = pe.z;
+            if (auto it = altimeter_z.find(frame.index); it != altimeter_z.end()) z_ref = it->second * config.scale_prior_gain;
+            else if (has_gt) z_ref = 0.87 * frame.ground_truth.z;
+            const Pose pg = has_gt ? Pose(frame.ground_truth.x, frame.ground_truth.y, z_ref, frame.ground_truth.yaw_rad) : pe;
+            const auto de = Descriptor::pairDetails(satellite_map, pe, rgb.size(), pairs, drone_desc, config.color_mode);
+            const auto dg = Descriptor::pairDetails(satellite_map, pg, rgb.size(), pairs, drone_desc, config.color_mode);
+            for (size_t i = 0; i < pairs.size(); ++i) {
+                const auto& a = de[i];
+                const auto& g = dg[i];
+                pairs_out << f << "," << i << "," << pairs[i].pt1.x << "," << pairs[i].pt1.y << ","
+                          << pairs[i].pt2.x << "," << pairs[i].pt2.y << ","
+                          << a.m1.x << "," << a.m1.y << "," << a.m2.x << "," << a.m2.y << ","
+                          << (a.valid ? a.e : -1.0) << ","
+                          << g.m1.x << "," << g.m1.y << "," << g.m2.x << "," << g.m2.y << ","
+                          << (g.valid ? g.e : -1.0) << "\n";
+            }
+            const double d_est = Descriptor::evaluateParticleDifference(
+                satellite_map, pe, rgb.size(), pairs, drone_desc, config.color_mode);
+            const double d_gt = Descriptor::evaluateParticleDifference(
+                satellite_map, pg, rgb.size(), pairs, drone_desc, config.color_mode);
+            frames_out << f << "," << frame.rgb_path << "," << frame.nir_path << "," << frame.red_path << ","
+                       << std::fixed << std::setprecision(2) << pe.x << "," << pe.y << "," << std::setprecision(4)
+                       << pe.z << "," << std::setprecision(2) << pe.yaw * 180.0 / M_PI << ",";
+            if (has_gt) frames_out << frame.ground_truth.x << "," << frame.ground_truth.y << ","
+                                   << frame.ground_truth.yaw_deg << "," << std::setprecision(4) << pg.z;
+            else frames_out << ",,,";
+            frames_out << "," << std::setprecision(4) << d_est << "," << d_gt << ","
+                       << (tracking ? "T" : "G") << "\n";
+            frames_out.unsetf(std::ios::floatfield);
+            pairs_out.unsetf(std::ios::floatfield);
+            // sampling mask (what the roulette draws from) and drone NDVI, half resolution
+            cv::Mat m8, v8, half;
+            combined_mask.convertTo(m8, CV_8U, 255.0 / std::max(max_fitness, 1e-12));
+            vi_matrix.convertTo(v8, CV_8U, 127.5, 127.5);
+            char name[64];
+            std::snprintf(name, sizeof(name), "mask_%04zu.png", f);
+            cv::resize(m8, half, cv::Size(), 0.5, 0.5, cv::INTER_AREA);
+            cv::imwrite((fs::path(config.output_dir) / "amostragem" / name).string(), half);
+            std::snprintf(name, sizeof(name), "ndvi_%04zu.png", f);
+            cv::resize(v8, half, cv::Size(), 0.5, 0.5, cv::INTER_AREA);
+            cv::imwrite((fs::path(config.output_dir) / "amostragem" / name).string(), half);
+        }
+
         // Compute error if Ground Truth available
         if (frame.has_ground_truth) {
             double scale_m = loader.getPixelToMeter();
@@ -447,6 +533,8 @@ int main(int argc, char* argv[]) {
     error_out.close();
     if (phase_out.is_open()) phase_out.close();
     if (particles_out.is_open()) particles_out.close();
+    if (pairs_out.is_open()) pairs_out.close();
+    if (frames_out.is_open()) frames_out.close();
 
     std::cout << "\n================ Localization Summary ================\n";
     std::cout << "Total Frames Processed: " << loader.size() << "\n";

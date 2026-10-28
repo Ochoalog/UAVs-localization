@@ -292,7 +292,64 @@ python3 scripts/paper_comparison_seeds.py --protocolo novo --lambda_alpha 0.75 \
 
 ---
 
-## 8. Problemas comuns
+## 8. abBRIEF do legado: quanto do ganho do artigo vinha do baseline
+
+No legado, o abBRIEF não era o λ-BRIEF com α = 0. Ele usava um padrão de 256 pares **fixo e quase uniforme** (`phir2frameworkv2/BriefHeuristic.cpp:1132–1154`), enquanto o λ concentrava os pares no centro, re-sorteava a cada frame e usava o NDVI (ver `achados_codigo_legado.md`).
+
+A engine reproduz esse abBRIEF com `--pair_pattern legacy_ab`: mesmo `cv::RNG` na semente padrão, mesma variância usada como desvio-padrão, mesmo laço de rejeição. O padrão é calculado uma vez e usado em todos os frames. Ele ignora `--alpha` e `--seed`, como no legado.
+
+| `--pair_pattern` | Pares |
+|---|---|
+| `roulette` (padrão) | roleta sobre a máscara combinada pelo α, sorteados de novo a cada frame |
+| `roulette_fixed` | a mesma roleta, sorteada só no 1º frame e mantida |
+| `uniform` | uniformes na imagem, sorteados de novo a cada frame (ignora `--alpha`) |
+| `legacy_ab` | o abBRIEF do legado: um padrão fixo e quase uniforme (ignora `--alpha` e `--seed`) |
+
+**Antes de rodar:** recompile a engine (`cmake --build build -j$(nproc)`); a suíte de testes tem a bateria 22 para o `legacy_ab`.
+
+### 8.1 Com 1 seed
+
+O script `scripts/ab_legado_comparison.py` roda o **abBRIEF legado** ao lado do **abBRIEF** da engine e do **λ**, em cada voo × mapa do artigo. Ele separa a diferença "ab legado → λ" (a comparação do artigo) em:
+
+- **baseline** = MAE(ab legado) − MAE(ab);
+- **NDVI** = MAE(ab) − MAE(λ).
+
+As execuções do abBRIEF e do λ que já existem num teste do artigo com o mesmo protocolo, α e seeds são copiadas. Só o ab legado roda.
+
+```bash
+# Protocolo novo, α = 1, seed 1: copia as 40 de 2026-10-17_artigo_novo_a1 e roda só as 20 do ab legado
+python3 scripts/ab_legado_comparison.py --protocolo novo --lambda_alpha 1.0 --seeds 1 \
+        --reaproveitar experimentos/2026-10-17_artigo_novo_a1 --dry_run
+nohup python3 scripts/ab_legado_comparison.py --protocolo novo --lambda_alpha 1.0 --seeds 1 \
+        --reaproveitar experimentos/2026-10-17_artigo_novo_a1 > ab_legado.log 2>&1 &
+
+# Protocolo do artigo (sem altímetro, odometria do legado, α = 1), seed 1: roda as 60 (nada para copiar ainda)
+nohup python3 scripts/ab_legado_comparison.py --protocolo artigo --seeds 1 > ab_legado_artigo.log 2>&1 &
+```
+
+Para separar também o efeito de **re-sortear** e o de **centralizar** os pares, acrescente `--variantes legacy_ab uniform roulette_fixed`:
+
+- re-sortear = MAE(ab legado) − MAE(ab uniforme);
+- centralizar = MAE(ab uniforme) − MAE(ab).
+
+São 20 execuções a mais por variante.
+
+**Saída:** `experimentos/<hoje>_ab_legado_<protocolo>_a<α>/`
+
+| Arquivo | Conteúdo |
+|---|---|
+| `00_LEIA_ME.md` | o que foi rodado e o resumo por voo |
+| `tabela.md` | MAE, convergência, **Baseline**, **NDVI** e **Baseline / total** por mapa e por voo |
+| `tabela.csv` | MAE de cada execução |
+| `compilado.png` | erro por frame; uma linha por voo, uma coluna por mapa, uma curva por método |
+
+O acompanhamento é igual ao da seção 5 (`tail -f ab_legado.log`). Com 5 seeds, use `--seeds 1..5 --reaproveitar experimentos/2026-10-17_artigo_novo_a1_5seeds`.
+
+**Como ler.** Uma "Baseline / total" alta (por exemplo, acima de 50%) quer dizer que boa parte da vantagem do λ medida no artigo vinha de comparar com o abBRIEF fixo e uniforme, não da vegetação. Com 1 seed, leia como indício: uma única execução que não converge muda o MAE do mapa inteiro.
+
+---
+
+## 9. Problemas comuns
 
 | Sintoma | Causa e solução |
 |---|---|
@@ -303,3 +360,9 @@ python3 scripts/paper_comparison_seeds.py --protocolo novo --lambda_alpha 0.75 \
 | uma execução `FALHOU (exit N)` | veja o `run.log` dela; depois rode de novo com `--continuar` |
 | nada foi copiado com `--reaproveitar` | o comando mudou (binário, partículas, odometria ou caminho); o script só copia comandos idênticos |
 | pasta antiga não encontrada | `python3 scripts/experimentos.py onde <caminho antigo>` |
+
+---
+
+## 10. v3 (peso de estabilidade do Sentinel-2): só no branch `v3`
+
+A v3 ponderava cada par pela estabilidade do mapa medida no Sentinel-2 (`--stability_map`). O resultado foi negativo com 5 seeds (resumo em `docs/RESUMO_PARA_NOVO_AGENTE.md`, seção 2.6), então ela não entra na `main`. Para rodar ou consultar: `git switch v3` e a seção 10 deste manual naquele branch.
