@@ -2,6 +2,7 @@
 
 #include "core/types.hpp"
 #include "core/pixel_sampler.hpp"
+#include "core/descriptor.hpp"
 #include <opencv2/core.hpp>
 #include <vector>
 #include <random>
@@ -143,6 +144,16 @@ public:
      *        observation contrast C keeps being measured, but none enters the cloud.
      */
     void setInjectionEnabled(bool enabled) { injection_enabled_ = enabled; }
+
+    /**
+     * @brief v3: weight every pair by the map stability where it lands (--stability_map).
+     *        nullptr turns it off (default: the plain Hamming distance, bit-identical to v2).
+     *        The map must outlive the filter and have the size of the satellite map.
+     */
+    void setPairWeightMap(const cv::Mat* weights, StabilityFormula formula) {
+        pair_weights_.map = weights;
+        pair_weights_.formula = formula;
+    }
     bool injectionEnabled() const { return injection_enabled_; }
 
     /** @brief Observation contrast C of the last frame (see inject_gate) and particles injected. */
@@ -167,6 +178,7 @@ private:
     std::vector<Particle> particles_;
     std::vector<double> log_lik_;  // per-particle log-likelihood scratch buffer
     std::vector<double> diff_;     // per-particle Hamming distance scratch buffer
+    PairWeightMap pair_weights_;   // v3 (--stability_map); map == nullptr = off
     double prior_z_{-1.0};
     double prior_rel_sigma_{0.15};
     double prior_yaw_{0.0};

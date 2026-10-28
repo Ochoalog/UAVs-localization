@@ -246,4 +246,131 @@ double Descriptor::evaluateParticleDifference(
     return static_cast<double>(diff_count) / static_cast<double>(drone_descriptor.size());
 }
 
+double Descriptor::evaluateWeightedParticleDifference(
+    const cv::Mat& map_bgr,
+    const Pose& particle_pose,
+    const cv::Size& drone_size,
+    const std::vector<PixelPair>& pairs,
+    const std::vector<uint8_t>& drone_descriptor,
+    DescriptorColorMode mode,
+    const PairWeightMap* weights
+) {
+    if (weights == nullptr || weights->map == nullptr || weights->map->empty()) {
+        return evaluateParticleDifference(map_bgr, particle_pose, drone_size, pairs, drone_descriptor, mode);
+    }
+    if (particle_pose.x < -100 || particle_pose.x >= map_bgr.cols + 100 ||
+        particle_pose.y < -100 || particle_pose.y >= map_bgr.rows + 100) {
+        return 1.0;
+    }
+    const cv::Mat& W = *weights->map;
+    const double scale = particle_pose.z;
+    const float theta = static_cast<float>(particle_pose.yaw * (-1.0) - (M_PI * 0.5));
+    const int xPad = drone_size.width / 2;
+    const int yPad = drone_size.height / 2;
+    const float cosTheta = std::cos(theta);
+    const float sinTheta = std::sin(theta);
+    const int bits_per_pair = (mode == DescriptorColorMode::GRAY) ? 1 :
+                              (mode == DescriptorColorMode::LAB_NO_L) ? 2 : 3;
+    const size_t num_pairs = pairs.size();
+    if (num_pairs == 0) return 1.0;
+
+    double sum_we = 0.0, sum_w = 0.0, sum_coin = 0.0;
+    size_t bit_idx = 0;
+    for (size_t p = 0; p < num_pairs; ++p) {
+        const auto& pair = pairs[p];
+        double px1 = (pair.pt1.x - xPad) * scale;
+        double py1 = (pair.pt1.y - yPad) * scale;
+        int m_x1 = static_cast<int>(std::round((px1 * cosTheta + py1 * sinTheta) + particle_pose.x));
+        int m_y1 = static_cast<int>(std::round((px1 * (-sinTheta) + py1 * cosTheta) + particle_pose.y));
+        double px2 = (pair.pt2.x - xPad) * scale;
+        double py2 = (pair.pt2.y - yPad) * scale;
+        int m_x2 = static_cast<int>(std::round((px2 * cosTheta + py2 * sinTheta) + particle_pose.x));
+        int m_y2 = static_cast<int>(std::round((px2 * (-sinTheta) + py2 * cosTheta) + particle_pose.y));
+
+        bool valid = (m_x1 >= 0 && m_x1 < map_bgr.cols && m_y1 >= 0 && m_y1 < map_bgr.rows &&
+                      m_x2 >= 0 && m_x2 < map_bgr.cols && m_y2 >= 0 && m_y2 < map_bgr.rows);
+        double e = 1.0, w = 1.0;
+        if (valid) {
+            int diff = 0;
+            if (mode == DescriptorColorMode::LAB_NO_L) {
+                const auto& c1 = map_bgr.at<cv::Vec3b>(m_y1, m_x1);
+                const auto& c2 = map_bgr.at<cv::Vec3b>(m_y2, m_x2);
+                diff += (((c1[0] > c2[0]) ? 1 : 0) != drone_descriptor[bit_idx]);
+                diff += (((c1[1] > c2[1]) ? 1 : 0) != drone_descriptor[bit_idx + 1]);
+            } else if (mode == DescriptorColorMode::GRAY) {
+                uchar v1 = map_bgr.at<uchar>(m_y1, m_x1), v2 = map_bgr.at<uchar>(m_y2, m_x2);
+                diff += (((v1 > v2) ? 1 : 0) != drone_descriptor[bit_idx]);
+            } else {
+                const auto& c1 = map_bgr.at<cv::Vec3b>(m_y1, m_x1);
+                const auto& c2 = map_bgr.at<cv::Vec3b>(m_y2, m_x2);
+                for (int k = 0; k < 3; ++k) diff += (((c1[k] > c2[k]) ? 1 : 0) != drone_descriptor[bit_idx + k]);
+            }
+            e = static_cast<double>(diff) / bits_per_pair;
+            const bool in_w = (m_x1 < W.cols && m_y1 < W.rows && m_x2 < W.cols && m_y2 < W.rows);
+            if (in_w) {
+                const uchar a = W.at<uchar>(m_y1, m_x1), b = W.at<uchar>(m_y2, m_x2);
+                w = static_cast<double>(std::min(a, b)) / 255.0;
+            }
+        }
+        bit_idx += bits_per_pair;
+        sum_we += w * e;
+        sum_w += w;
+        sum_coin += w * e + (1.0 - w) * 0.5;
+    }
+    if (weights->formula == StabilityFormula::COIN) {
+        return sum_coin / static_cast<double>(num_pairs);
+    }
+    if (sum_w < 1e-9) return 0.5;  // every pair on a zero-weight cell: no information
+    return sum_we / sum_w;
+}
+
+std::vector<Descriptor::PairDetail> Descriptor::pairDetails(
+    const cv::Mat& map_bgr,
+    const Pose& pose,
+    const cv::Size& drone_size,
+    const std::vector<PixelPair>& pairs,
+    const std::vector<uint8_t>& drone_descriptor,
+    DescriptorColorMode mode,
+    const PairWeightMap* weights
+) {
+    std::vector<PairDetail> out(pairs.size());
+    const cv::Mat* W = (weights && weights->map && !weights->map->empty()) ? weights->map : nullptr;
+    const double scale = pose.z;
+    const float theta = static_cast<float>(pose.yaw * (-1.0) - (M_PI * 0.5));
+    const int xPad = drone_size.width / 2;
+    const int yPad = drone_size.height / 2;
+    const float cosTheta = std::cos(theta);
+    const float sinTheta = std::sin(theta);
+    const int bits_per_pair = (mode == DescriptorColorMode::GRAY) ? 1 :
+                              (mode == DescriptorColorMode::LAB_NO_L) ? 2 : 3;
+    size_t bit_idx = 0;
+    for (size_t p = 0; p < pairs.size(); ++p, bit_idx += bits_per_pair) {
+        const auto& pair = pairs[p];
+        auto& d = out[p];
+        double px1 = (pair.pt1.x - xPad) * scale, py1 = (pair.pt1.y - yPad) * scale;
+        double px2 = (pair.pt2.x - xPad) * scale, py2 = (pair.pt2.y - yPad) * scale;
+        d.m1 = cv::Point(static_cast<int>(std::round((px1 * cosTheta + py1 * sinTheta) + pose.x)),
+                         static_cast<int>(std::round((px1 * (-sinTheta) + py1 * cosTheta) + pose.y)));
+        d.m2 = cv::Point(static_cast<int>(std::round((px2 * cosTheta + py2 * sinTheta) + pose.x)),
+                         static_cast<int>(std::round((px2 * (-sinTheta) + py2 * cosTheta) + pose.y)));
+        const cv::Rect R(0, 0, map_bgr.cols, map_bgr.rows);
+        d.valid = R.contains(d.m1) && R.contains(d.m2);
+        if (!d.valid) continue;
+        int diff = 0;
+        if (mode == DescriptorColorMode::GRAY) {
+            uchar v1 = map_bgr.at<uchar>(d.m1), v2 = map_bgr.at<uchar>(d.m2);
+            diff += (((v1 > v2) ? 1 : 0) != drone_descriptor[bit_idx]);
+        } else {
+            const auto& c1 = map_bgr.at<cv::Vec3b>(d.m1);
+            const auto& c2 = map_bgr.at<cv::Vec3b>(d.m2);
+            for (int k = 0; k < bits_per_pair; ++k)
+                diff += (((c1[k] > c2[k]) ? 1 : 0) != drone_descriptor[bit_idx + k]);
+        }
+        d.e = static_cast<double>(diff) / bits_per_pair;
+        if (W && R.contains(d.m1) && d.m1.x < W->cols && d.m1.y < W->rows && d.m2.x < W->cols && d.m2.y < W->rows)
+            d.w = std::min(W->at<uchar>(d.m1), W->at<uchar>(d.m2)) / 255.0;
+    }
+    return out;
+}
+
 } // namespace lambda_brief

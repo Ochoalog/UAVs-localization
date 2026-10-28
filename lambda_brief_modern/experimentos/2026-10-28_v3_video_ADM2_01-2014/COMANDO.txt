@@ -1,0 +1,6 @@
+# 2026-10-28 10:55  (cwd: /storage/UAVs Localization/lambda_brief_modern)
+python3 scripts/v3_video.py --voo ADM2 --mapa 01-2014
+
+# 2026-10-28 11:17  (cwd: /storage/UAVs Localization/lambda_brief_modern)
+python3 scripts/v3_video.py --voo ADM2 --mapa 01-2014
+

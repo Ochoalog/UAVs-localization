@@ -1,6 +1,7 @@
 #include "core/pixel_sampler.hpp"
 #include <chrono>
 #include <algorithm>
+#include <cmath>
 
 namespace lambda_brief {
 
@@ -97,6 +98,33 @@ std::vector<PixelPair> PixelSampler::sampleUniform(
         pairs[p].pt2 = cv::Point(distX(rng_), distY(rng_));
     }
 
+    return pairs;
+}
+
+std::vector<PixelPair> PixelSampler::sampleLegacyAbBrief(
+    const cv::Size& img_size,
+    size_t num_pairs
+) {
+    const int cols = img_size.width;
+    const int rows = img_size.height;
+    // Same expressions as the legacy code, including the variance passed as sigma.
+    const double sx = 1.0 / 25.0 * std::pow(static_cast<double>(cols), 2);
+    const double sy = 1.0 / 25.0 * std::pow(static_cast<double>(rows), 2);
+    auto inside = [&](const cv::Point& p) { return p.x < cols && p.x >= 0 && p.y < rows && p.y >= 0; };
+
+    cv::RNG rng;  // default state, as in BriefHeuristic.cpp:1145
+    std::vector<PixelPair> pairs(num_pairs);
+    for (size_t x = 0; x < num_pairs; ++x) {
+        cv::Point p0, p1;
+        do {
+            p0 = cv::Point((int)rng.gaussian(sx) + cols / 2, (int)rng.gaussian(sy) + rows / 2);
+        } while (!inside(p0));
+        do {
+            p1 = cv::Point((int)rng.gaussian(sx) + cols / 2, (int)rng.gaussian(sy) + rows / 2);
+        } while (!inside(p1));
+        pairs[x].pt1 = p0;
+        pairs[x].pt2 = p1;
+    }
     return pairs;
 }
 

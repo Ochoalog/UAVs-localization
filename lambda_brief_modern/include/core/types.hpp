@@ -75,9 +75,11 @@ enum class DescriptorColorMode {
  * @brief Pixel distribution method for sampling BRIEF pairs
  */
 enum class PixelSamplerMethod {
-    ROULETTE_STOCHASTIC = 2,  // Lipowski & Lipowska (2012) stochastic acceptance
+    ROULETTE_STOCHASTIC = 2,  // Lipowski & Lipowska (2012) stochastic acceptance, new pairs every frame (default)
     GAUSSIAN = 11,            // Classical BRIEF Gaussian sampling
-    UNIFORM = 0               // Uniform spatial sampling
+    UNIFORM = 0,              // Uniform spatial sampling, new pairs every frame
+    LEGACY_AB = 1,            // abBRIEF of the legacy code: fixed, near-uniform pattern (BriefHeuristic.cpp:1132-1154)
+    ROULETTE_FIXED = 3        // Roulette over the combined mask, drawn once on the first frame and kept
 };
 
 /**

@@ -45,6 +45,22 @@ public:
         size_t num_pairs = 256
     );
 
+    /**
+     * @brief Pattern of the legacy abBRIEF (phir2frameworkv2, BriefHeuristic::updateDroneDescriptor(cv::Mat&),
+     *        BriefHeuristic.cpp:1132-1154): same generator (cv::RNG in its default state), same
+     *        expressions and the same rejection loop.
+     *
+     * The legacy code creates a local `cv::RNG rng;` (default state 0xFFFFFFFF) on every call and draws each
+     * point with rng.gaussian(S*S/25) + S/2, rejecting points outside the image. cv::RNG::gaussian takes the
+     * standard deviation, so the variance S^2/25 is used as sigma (~61,600 px for S = 1241): the accepted
+     * points are practically uniform over the image, and the pattern is the same on every frame and run.
+     * Independent of the seed.
+     */
+    static std::vector<PixelPair> sampleLegacyAbBrief(
+        const cv::Size& img_size,
+        size_t num_pairs = 256
+    );
+
     void setSeed(unsigned int seed);
 
 private:

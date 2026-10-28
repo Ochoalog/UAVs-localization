@@ -102,6 +102,10 @@ A suíte valida:
 | `--vi` | `string` | `NDVI` | Índice espectral: `NDVI`, `NDRE`, `NDVI_RED_RE`, `GRVI` |
 | `--pairs` | `int` | `256` | Número de pares de píxeis no descritor (256 pares = 512 bits) |
 | `--color_mode` | `string` | `LAB_NO_L` | Modo de cor: `LAB_NO_L` (legado), `LAB`, `GRAY` |
+| `--pair_pattern` | `string` | `roulette` | Como os pares são escolhidos: `roulette` (roleta sobre a máscara do α, re-sorteada a cada frame), `roulette_fixed` (sorteada uma vez), `uniform`, `legacy_ab` (o abBRIEF do legado: padrão fixo e quase uniforme; ver `docs/MANUAL_TESTES_ARTIGO.md`, seção 8) |
+| `--stability_map` | `string` | — | **v3:** raster 8-bit do tamanho do mapa (255 = peso 1, de `scripts/make_stability_map.py`). Cada par pesa `min(W(A), W(B))` nos pontos projetados no mapa. Sem ele, a distância é a da v2 |
+| `--stability_formula` | `string` | `normalized` | **v3:** `normalized` (Σw·e / Σw) ou `coin` (o par instável conta 0,5) |
+| `--save_pairs` | flag | off | Grava os pares de cada frame (`pairs_log.csv`, `frames_log.csv`) e a máscara de amostragem / NDVI do drone (`amostragem/`), para `scripts/v3_video.py`. Não muda o resultado |
 | `--start_frame` | `int` | `-1` | Frame inicial para fatiamento da trajetória (-1 = início) |
 | `--end_frame` | `int` | `-1` | Frame final para fatiamento da trajetória (-1 = final) |
 | `--pixel_to_meter`| `float` | `0.188679` | Fator de conversão píxel para metros (`0.188679245` para ADM, `0.10` para UFRGS VET mapas V3) |
@@ -225,6 +229,13 @@ python3 scripts/paper_comparison_seeds.py --protocolo novo --lambda_alpha 0.5 \
         --reaproveitar experimentos/2026-10-17_artigo_novo_a1_5seeds                  # reusa o abBRIEF
 ```
 
+**v3 (branch `v3`): peso de estabilidade do Sentinel-2.** Os pares que caem onde o mapa costuma mudar (desvio do NDVI do S2 ao longo dos anos) pesam menos na distância. Passo a passo na seção 10 do manual.
+
+```bash
+python3 scripts/make_stability_map.py --modo A                 # insumos/estabilidade/ADM_35_A.png
+python3 scripts/v3_comparison.py --seeds 1                     # ab e λ com e sem o peso, ADM1–3 × 5 mapas
+```
+
 **Regimes do filtro** (`scripts/benchmark_runner.py`):
 
 | Regime | O que é |
@@ -240,6 +251,10 @@ python3 scripts/paper_comparison_seeds.py --protocolo novo --lambda_alpha 0.5 \
 |---|---|
 | `paper_comparison.py` | teste do artigo com 1 seed (figuras como as Figs. 4 e 5, tabela por voo e mapa) |
 | `paper_comparison_seeds.py` | o mesmo com N seeds e média; reaproveita execuções idênticas de outra pasta |
+| `ab_legado_comparison.py` | abBRIEF do legado (`--pair_pattern legacy_ab`) × abBRIEF × λ: quanto do ganho do artigo vinha do baseline |
+| `make_stability_map.py` | v3: raster de peso do Sentinel-2 (A = estabilidade ao longo dos anos, B = mudança mapa → voo) |
+| `v3_comparison.py` | v3: ab e λ com e sem `--stability_map`, com Wilcoxon e o critério mínimo |
+| `v3_video.py` | v3: vídeos do drone (RGB, NDVI, máscara), do mapa e do Sentinel-2 com os pares e as partículas |
 | `benchmark_runner.py` | benchmark pareado por dataset, mapa, descritor/α, regime e seed; `--make_odom` grava a odometria fixa |
 | `consolidate_benchmark.py` | tabelas, testes estatísticos e gráficos de um benchmark (`--benchmark_dir`) |
 | `extract_altimeter.py` | barômetro real e `traj_truth_sync.txt` a partir dos logs do DJI (ADM1, ADM2, UFRGS) |

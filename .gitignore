@@ -85,3 +85,6 @@ Claude outputs/
 
 # Mensagem de commit preparada fora do git
 COMMIT_MSG*.txt
+
+# Quadros PNG dos vídeos (centenas de MB; os vídeos .mp4 já são ignorados)
+lambda_brief_modern/experimentos/**/quadros/

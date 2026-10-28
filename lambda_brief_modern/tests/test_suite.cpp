@@ -565,6 +565,113 @@ void testVisualOdometryStreaming() {
     }
 }
 
+void testLegacyAbPattern() {
+    std::cout << "[Test 22] Legacy abBRIEF pair pattern: fixed, near-uniform, same cv::RNG sequence as BriefHeuristic.cpp...\n";
+    const cv::Size sz(1241, 913);
+    auto a = PixelSampler::sampleLegacyAbBrief(sz, 256);
+    auto b = PixelSampler::sampleLegacyAbBrief(sz, 256);
+    TEST_CHECK(a.size() == 256, "legacy_ab: a.size() == 256");
+    bool same = true, inside = true;
+    double sx = 0, sxx = 0;
+    for (size_t i = 0; i < a.size(); ++i) {
+        same &= (a[i].pt1 == b[i].pt1 && a[i].pt2 == b[i].pt2);
+        for (const cv::Point& p : {a[i].pt1, a[i].pt2}) {
+            inside &= (p.x >= 0 && p.x < sz.width && p.y >= 0 && p.y < sz.height);
+            sx += p.x; sxx += double(p.x) * p.x;
+        }
+    }
+    TEST_CHECK(same, "legacy_ab: same");    // the same pattern on every call (every frame, every run)
+    TEST_CHECK(inside, "legacy_ab: inside");
+    // Reference: the legacy loop written out with cv::RNG in its default state.
+    cv::RNG rng;
+    const double s = 1.0 / 25.0 * std::pow(1241.0, 2), t = 1.0 / 25.0 * std::pow(913.0, 2);
+    cv::Point p0;
+    do { p0 = cv::Point((int)rng.gaussian(s) + 1241 / 2, (int)rng.gaussian(t) + 913 / 2); }
+    while (!(p0.x >= 0 && p0.x < 1241 && p0.y >= 0 && p0.y < 913));
+    TEST_CHECK(a[0].pt1 == p0, "legacy_ab: a[0].pt1 == p0");
+    // Near-uniform: std of x close to W/sqrt(12) = 358 px, far from the intended W/5 = 248 px.
+    const double n = 2.0 * a.size(), mean = sx / n, sd = std::sqrt(sxx / n - mean * mean);
+    TEST_CHECK(sd > 310.0, "legacy_ab: sd > 310.0");
+    std::cout << "  -> fixed pattern, all points inside, std(x) = " << sd << " px (uniform: 358, W/5: 248)\n";
+}
+
+void testStabilityWeightedDistance() {
+    std::cout << "[Test 23] v3 stability weight: per-pair weight min(W(A),W(B)), normalized and coin formulas...\n";
+    cv::Mat map_bgr(400, 400, CV_8UC3);
+    cv::RNG rng(4321);
+    rng.fill(map_bgr, cv::RNG::UNIFORM, 0, 256);
+    cv::GaussianBlur(map_bgr, map_bgr, cv::Size(5, 5), 1.5);
+    cv::Mat map_lab = Descriptor::convertColorSpace(map_bgr, DescriptorColorMode::LAB_NO_L);
+    cv::Mat drone = map_bgr(cv::Rect(100, 100, 200, 200)).clone();
+    PixelSampler sampler(11);
+    auto pairs = sampler.sampleUniform(drone.size(), 256);
+    auto desc = Descriptor::computeDroneDescriptor(drone, pairs, DescriptorColorMode::LAB_NO_L);
+    const auto mode = DescriptorColorMode::LAB_NO_L;
+    const Pose wrong(240, 215, 1.0, -M_PI / 2);   // overlapping but wrong pose -> e in (0,1)
+
+    // (a) all weights = 255 -> both formulas reproduce the v2 distance exactly
+    cv::Mat ones(map_bgr.size(), CV_8U, cv::Scalar(255));
+    const double d_plain = Descriptor::evaluateParticleDifference(map_lab, wrong, drone.size(), pairs, desc, mode);
+    PairWeightMap wn{&ones, StabilityFormula::NORMALIZED}, wc{&ones, StabilityFormula::COIN};
+    TEST_CHECK(std::abs(Descriptor::evaluateWeightedParticleDifference(map_lab, wrong, drone.size(), pairs, desc, mode, &wn) - d_plain) < 1e-12,
+               "w = 1 everywhere: normalized == v2 distance");
+    TEST_CHECK(std::abs(Descriptor::evaluateWeightedParticleDifference(map_lab, wrong, drone.size(), pairs, desc, mode, &wc) - d_plain) < 1e-12,
+               "w = 1 everywhere: coin == v2 distance");
+    TEST_CHECK(std::abs(Descriptor::evaluateWeightedParticleDifference(map_lab, wrong, drone.size(), pairs, desc, mode, nullptr) - d_plain) < 1e-12,
+               "null weights fall back to the v2 distance");
+
+    // (b) left half of the map weight 0.2 (51/255), right half weight 1: compare with a hand computation
+    cv::Mat half(map_bgr.size(), CV_8U, cv::Scalar(255));
+    half(cv::Rect(0, 0, 230, 400)).setTo(51);
+    const double theta = -wrong.yaw - M_PI / 2;   // = 0 here
+    double swe = 0, sw = 0, scoin = 0;
+    for (size_t p = 0; p < pairs.size(); ++p) {
+        auto proj = [&](cv::Point q) {
+            double x = (q.x - 100) * wrong.z, y = (q.y - 100) * wrong.z;
+            return cv::Point((int)std::round(x * std::cos(theta) + y * std::sin(theta) + wrong.x),
+                             (int)std::round(-x * std::sin(theta) + y * std::cos(theta) + wrong.y));
+        };
+        cv::Point a = proj(pairs[p].pt1), b = proj(pairs[p].pt2);
+        const auto& c1 = map_lab.at<cv::Vec3b>(a), &c2 = map_lab.at<cv::Vec3b>(b);
+        int diff = ((c1[0] > c2[0]) != (bool)desc[2 * p]) + ((c1[1] > c2[1]) != (bool)desc[2 * p + 1]);
+        double e = diff / 2.0, w = std::min(half.at<uchar>(a), half.at<uchar>(b)) / 255.0;
+        swe += w * e; sw += w; scoin += w * e + (1 - w) * 0.5;
+    }
+    PairWeightMap hn{&half, StabilityFormula::NORMALIZED}, hc{&half, StabilityFormula::COIN};
+    const double dn = Descriptor::evaluateWeightedParticleDifference(map_lab, wrong, drone.size(), pairs, desc, mode, &hn);
+    const double dc = Descriptor::evaluateWeightedParticleDifference(map_lab, wrong, drone.size(), pairs, desc, mode, &hc);
+    TEST_CHECK(std::abs(dn - swe / sw) < 1e-9, "normalized = sum(w e) / sum(w)");
+    TEST_CHECK(std::abs(dc - scoin / pairs.size()) < 1e-9, "coin = mean(w e + (1 - w) / 2)");
+    TEST_CHECK(std::abs(dn - d_plain) > 1e-6, "non-uniform weights change the distance");
+
+    // (c) the true pose stays at distance 0 under both formulas
+    const Pose truth(200, 200, 1.0, -M_PI / 2);
+    TEST_CHECK(Descriptor::evaluateWeightedParticleDifference(map_lab, truth, drone.size(), pairs, desc, mode, &hn) < 1e-12,
+               "normalized: d = 0 at the true pose");
+    // coin at the true pose = mean((1 - w) / 2) > 0, the same for every pose with the same weights
+    TEST_CHECK(Descriptor::evaluateWeightedParticleDifference(map_lab, truth, drone.size(), pairs, desc, mode, &hc) < 0.5,
+               "coin: d < 0.5 at the true pose");
+
+    // (d) the filter uses the weights when set
+    ParticleFilterConfig pfc;
+    pfc.num_particles = 2;
+    pfc.resample_neff_ratio = 0.0;
+    ParticleFilter pf(pfc);
+    pf.initializeUniform(map_bgr.size());
+    pf.setPairWeightMap(&half, StabilityFormula::NORMALIZED);
+    auto& P = const_cast<std::vector<Particle>&>(pf.getParticles());
+    P[0].pose = truth; P[1].pose = wrong; P[0].weight = P[1].weight = 0.5;
+    pf.updateWeights(map_lab, drone.size(), pairs, desc, mode);
+    const double l1 = std::exp(-(dn * dn) / (2.0 * pfc.var_brief));
+    TEST_CHECK(std::abs(P[0].weight - 1.0 / (1.0 + l1)) < 1e-6, "updateWeights uses the weighted distance");
+    // (e) pairDetails (--save_pairs) reproduces the weighted distance pair by pair
+    auto det = Descriptor::pairDetails(map_lab, wrong, drone.size(), pairs, desc, mode, &hn);
+    double we = 0, ww = 0;
+    for (const auto& d : det) { we += d.w * d.e; ww += d.w; }
+    TEST_CHECK(det.size() == pairs.size() && std::abs(we / ww - dn) < 1e-9, "pairDetails matches the weighted distance");
+    std::cout << "  -> v2 d=" << d_plain << ", normalized d=" << dn << ", coin d=" << dc << "\n";
+}
+
 int main() {
     std::cout << "========================================\n";
     std::cout << " Running lambda-BRIEF Regression Tests  \n";
@@ -591,6 +698,8 @@ int main() {
     testPhaseController();
     testInjectionDisabledStillMeasuresContrast();
     testVisualOdometryStreaming();
+    testLegacyAbPattern();
+    testStabilityWeightedDistance();
 
     std::cout << "\n========================================\n";
     std::cout << " Test Results: " << g_tests_passed << " Passed, "

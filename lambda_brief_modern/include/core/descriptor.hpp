@@ -8,6 +8,21 @@
 
 namespace lambda_brief {
 
+/**
+ * @brief How the per-pair map weights enter the distance (v3, --stability_map).
+ *  NORMALIZED  d = sum(w_p * e_p) / sum(w_p)            (weighted mean of the pair errors)
+ *  COIN        d = sum(w_p * e_p + (1 - w_p) * 0.5) / P  (an unreliable pair counts as a coin flip)
+ * e_p = fraction of the pair's bits that disagree (1 for a pair outside the map, as today);
+ * w_p = min(w(A), w(B)) read from the weight map at the two projected points (outside: 1).
+ * With every weight equal to 1 both reduce to the plain normalised Hamming distance.
+ */
+enum class StabilityFormula { NORMALIZED, COIN };
+
+struct PairWeightMap {
+    const cv::Mat* map = nullptr;  // CV_8U, same size as the satellite map, 255 = weight 1
+    StabilityFormula formula = StabilityFormula::NORMALIZED;
+};
+
 class Descriptor {
 public:
     /**
@@ -76,6 +91,40 @@ public:
         const std::vector<PixelPair>& pairs,
         const std::vector<uint8_t>& drone_descriptor,
         DescriptorColorMode mode = DescriptorColorMode::LAB_NO_L
+    );
+
+    /**
+     * @brief Same as evaluateParticleDifference, with every pair weighted by the map stability
+     *        at the points where it lands (v3). weights == nullptr or weights->map == nullptr
+     *        falls back to evaluateParticleDifference (bit-identical).
+     */
+    static double evaluateWeightedParticleDifference(
+        const cv::Mat& map_converted,
+        const Pose& particle_pose,
+        const cv::Size& drone_size,
+        const std::vector<PixelPair>& pairs,
+        const std::vector<uint8_t>& drone_descriptor,
+        DescriptorColorMode mode,
+        const PairWeightMap* weights
+    );
+
+    /** One pixel pair projected on the map at a pose (diagnostics / videos, --save_pairs). */
+    struct PairDetail {
+        cv::Point m1, m2;   // map pixels of the two points
+        bool valid{false};  // both points inside the map
+        double e{1.0};      // fraction of the pair's bits that disagree with the drone (1 if invalid)
+        double w{1.0};      // stability weight min(W(A), W(B)) in [0, 1] (1 without a weight map)
+    };
+
+    /** Same projection as evaluateWeightedParticleDifference, but returns every pair. Read-only. */
+    static std::vector<PairDetail> pairDetails(
+        const cv::Mat& map_converted,
+        const Pose& pose,
+        const cv::Size& drone_size,
+        const std::vector<PixelPair>& pairs,
+        const std::vector<uint8_t>& drone_descriptor,
+        DescriptorColorMode mode,
+        const PairWeightMap* weights
     );
 };
 

@@ -292,7 +292,64 @@ python3 scripts/paper_comparison_seeds.py --protocolo novo --lambda_alpha 0.75 \
 
 ---
 
-## 8. Problemas comuns
+## 8. abBRIEF do legado: quanto do ganho do artigo vinha do baseline
+
+No legado, o abBRIEF não era o λ-BRIEF com α = 0. Ele usava um padrão de 256 pares **fixo e quase uniforme** (`phir2frameworkv2/BriefHeuristic.cpp:1132–1154`), enquanto o λ concentrava os pares no centro, re-sorteava a cada frame e usava o NDVI (ver `achados_codigo_legado.md`).
+
+A engine reproduz esse abBRIEF com `--pair_pattern legacy_ab`: mesmo `cv::RNG` na semente padrão, mesma variância usada como desvio-padrão, mesmo laço de rejeição. O padrão é calculado uma vez e usado em todos os frames. Ele ignora `--alpha` e `--seed`, como no legado.
+
+| `--pair_pattern` | Pares |
+|---|---|
+| `roulette` (padrão) | roleta sobre a máscara combinada pelo α, sorteados de novo a cada frame |
+| `roulette_fixed` | a mesma roleta, sorteada só no 1º frame e mantida |
+| `uniform` | uniformes na imagem, sorteados de novo a cada frame (ignora `--alpha`) |
+| `legacy_ab` | o abBRIEF do legado: um padrão fixo e quase uniforme (ignora `--alpha` e `--seed`) |
+
+**Antes de rodar:** recompile a engine (`cmake --build build -j$(nproc)`); a suíte de testes tem a bateria 22 para o `legacy_ab`.
+
+### 8.1 Com 1 seed
+
+O script `scripts/ab_legado_comparison.py` roda o **abBRIEF legado** ao lado do **abBRIEF** da engine e do **λ**, em cada voo × mapa do artigo. Ele separa a diferença "ab legado → λ" (a comparação do artigo) em:
+
+- **baseline** = MAE(ab legado) − MAE(ab);
+- **NDVI** = MAE(ab) − MAE(λ).
+
+As execuções do abBRIEF e do λ que já existem num teste do artigo com o mesmo protocolo, α e seeds são copiadas. Só o ab legado roda.
+
+```bash
+# Protocolo novo, α = 1, seed 1: copia as 40 de 2026-10-17_artigo_novo_a1 e roda só as 20 do ab legado
+python3 scripts/ab_legado_comparison.py --protocolo novo --lambda_alpha 1.0 --seeds 1 \
+        --reaproveitar experimentos/2026-10-17_artigo_novo_a1 --dry_run
+nohup python3 scripts/ab_legado_comparison.py --protocolo novo --lambda_alpha 1.0 --seeds 1 \
+        --reaproveitar experimentos/2026-10-17_artigo_novo_a1 > ab_legado.log 2>&1 &
+
+# Protocolo do artigo (sem altímetro, odometria do legado, α = 1), seed 1: roda as 60 (nada para copiar ainda)
+nohup python3 scripts/ab_legado_comparison.py --protocolo artigo --seeds 1 > ab_legado_artigo.log 2>&1 &
+```
+
+Para separar também o efeito de **re-sortear** e o de **centralizar** os pares, acrescente `--variantes legacy_ab uniform roulette_fixed`:
+
+- re-sortear = MAE(ab legado) − MAE(ab uniforme);
+- centralizar = MAE(ab uniforme) − MAE(ab).
+
+São 20 execuções a mais por variante.
+
+**Saída:** `experimentos/<hoje>_ab_legado_<protocolo>_a<α>/`
+
+| Arquivo | Conteúdo |
+|---|---|
+| `00_LEIA_ME.md` | o que foi rodado e o resumo por voo |
+| `tabela.md` | MAE, convergência, **Baseline**, **NDVI** e **Baseline / total** por mapa e por voo |
+| `tabela.csv` | MAE de cada execução |
+| `compilado.png` | erro por frame; uma linha por voo, uma coluna por mapa, uma curva por método |
+
+O acompanhamento é igual ao da seção 5 (`tail -f ab_legado.log`). Com 5 seeds, use `--seeds 1..5 --reaproveitar experimentos/2026-10-17_artigo_novo_a1_5seeds`.
+
+**Como ler.** Uma "Baseline / total" alta (por exemplo, acima de 50%) quer dizer que boa parte da vantagem do λ medida no artigo vinha de comparar com o abBRIEF fixo e uniforme, não da vegetação. Com 1 seed, leia como indício: uma única execução que não converge muda o MAE do mapa inteiro.
+
+---
+
+## 9. Problemas comuns
 
 | Sintoma | Causa e solução |
 |---|---|
@@ -303,3 +360,155 @@ python3 scripts/paper_comparison_seeds.py --protocolo novo --lambda_alpha 0.75 \
 | uma execução `FALHOU (exit N)` | veja o `run.log` dela; depois rode de novo com `--continuar` |
 | nada foi copiado com `--reaproveitar` | o comando mudou (binário, partículas, odometria ou caminho); o script só copia comandos idênticos |
 | pasta antiga não encontrada | `python3 scripts/experimentos.py onde <caminho antigo>` |
+| `Error: stability map is AxB but the satellite map is CxD` | o raster da v3 foi gerado para outro mapa; gere de novo com `--mapa <o mapa usado>` (seção 10.1) |
+| `Unknown option --stability_map` ou o `[v3]` não aparece no `run.log` | a engine não foi recompilada depois de atualizar o código (seção 10) |
+| `S2B sem raster para ...` | não há cena S2 a até `--tol` dias da data do mapa; a variante B só existe para mapas a partir de 08/2018 no repositório |
+
+---
+
+## 10. v3: peso de estabilidade do Sentinel-2 (branch `v3`)
+
+**Ideia.** Cada par de pixels do descritor recebe um peso pela estabilidade da região do mapa onde ele cai, medida no Sentinel-2. A distância deixa de ser a fração simples de bits diferentes e vira uma média ponderada:
+
+- `d = Σ wᵢ·eᵢ / Σ wᵢ` (fórmula **normalized**, padrão), ou
+- `d = Σ [wᵢ·eᵢ + (1 − wᵢ)·0,5] / P` (fórmula **coin**: o par instável vale uma moeda; ablação).
+
+Nas fórmulas:
+
+- `eᵢ` é a fração de bits diferentes do par;
+- `wᵢ = min(W(Aᵢ), W(Bᵢ))`, com `W` lido do raster nos dois pontos projetados no mapa;
+- um par fora do mapa conta `e = 1, w = 1`, como hoje.
+
+O peso entra na **verossimilhança**, não no sorteio dos pares: os pares são sorteados antes de saber a pose, e a estabilidade está nas coordenadas do mapa. Sem `--stability_map`, a engine é idêntica à v2. Com todos os pesos iguais a 1, as duas fórmulas dão a mesma distância de hoje (bateria 23 da suíte de testes).
+
+| Código | O que mudou |
+|---|---|
+| `include/core/descriptor.hpp`, `src/core/descriptor.cpp` | `StabilityFormula`, `PairWeightMap`, `Descriptor::evaluateWeightedParticleDifference` |
+| `include/localization/particle_filter.hpp`, `src/localization/particle_filter.cpp` | `ParticleFilter::setPairWeightMap`; `updateWeights` usa a distância ponderada (partículas e sondas do contraste) |
+| `include/config/config.hpp`, `src/config/config.cpp` | `--stability_map <png>` e `--stability_formula normalized\|coin` |
+| `apps/run_localization.cpp` | carrega o raster, confere o tamanho, imprime `[v3] Stability weights: ...`; o diagnóstico `LB_DEBUG_PF` também usa o peso |
+| `tests/test_suite.cpp` | bateria 23: w = 1 reproduz a v2; normalized e coin conferidos contra a conta à mão; `updateWeights` usa o peso |
+| `scripts/make_stability_map.py` | gera o raster de peso (variantes A e B) |
+| `scripts/v3_comparison.py` | roda ab e λ com e sem o peso nos voos ADM × 5 mapas |
+| `scripts/v3_video.py` | vídeos do drone, do mapa, do Sentinel-2 e dos pares (`--save_pairs` da engine) |
+
+**Antes de rodar:**
+
+```bash
+cmake --build build -j$(nproc) && ./build/tests/test_suite     # 96 passed, 0 failed
+```
+
+### 10.1 O raster de peso: `make_stability_map.py`
+
+Ele lê as cenas de `Datasets/Sentinel2/ADM` (as marcadas `kept` no `index.csv`) e junta os dois tiles da mesma data. Também mascara nuvem e sombra pelo SCL. Cada pixel do mapa vai para a sua célula S2 de 10 m pela afim de `sentinel2/map_georef.json` (chave `ADM_35`, erro de 0,13 m). A saída é um PNG 8-bit do tamanho do mapa, com 255 = peso 1.
+
+| Variante | Mede | Peso |
+|---|---|---|
+| **A**, estabilidade | desvio-padrão do NDVI de cada célula ao longo do tempo (padrão: todas as datas, 2018–2026) | 1 até `--lo 0.08`; `1 − (σ − lo)/(hi − lo)` até `--hi 0.22`; nunca abaixo de `--wmin 0.05` |
+| **B**, mudança | \|ΔNDVI\| entre o S2 perto da data do mapa (lida do nome, `dd_mm_aaaa`) e o S2 perto do voo (`--data_voo`, padrão 2019-04-18) | igual, com `--dlo 0.10` e `--dhi 0.35` |
+
+A variante A não depende da data do mapa: o mesmo raster serve para os 5 mapas ADM_35, que têm a mesma geometria, inclusive os do Zenodo do ADM3. A variante B só existe para mapas com cena S2 a até `--tol 20` dias. No teste do artigo, isso vale só para o 12-2018.
+
+```bash
+python3 scripts/make_stability_map.py --modo A                       # insumos/estabilidade/ADM_35_A.png
+python3 scripts/make_stability_map.py --modo A --janela 2018-08-01:2019-05-31 --nome ADM_35_A_2018-2019
+python3 scripts/make_stability_map.py --modo B --mapa ADM_35_17_12_2018.jpg   # ADM_35_B_2018-12-17_2019-04-18.png
+```
+
+Cada raster sai com:
+
+- um `.json` ao lado: parâmetros, datas usadas, peso médio e fração do mapa com peso < 0,5;
+- um `_preview.png`: o mapa e o peso sobreposto; escuro = estável.
+
+Validação: com só o tile JDN (`--tiles JDN`, as 42 datas do protótipo de 27/10), o raster é igual ao do protótipo a menos do arredondamento para 8 bits (diferença máxima de 0,002).
+
+### 10.2 Teste: `v3_comparison.py`
+
+O script segue o mesmo esquema do `ab_legado_comparison.py`:
+
+- ab e λ (α = 0,5, protocolo novo) são copiados de `experimentos/2026-10-17_artigo_novo_a0.5` (ou da pasta `_5seeds`) quando o comando é idêntico;
+- rodam só as versões com peso;
+- os rasters que faltam são gerados na hora.
+
+```bash
+# teste rápido (~4 min): só ab+S2A, ADM2 e ADM3 × mapas 12-2018 e 01-2014 = 4 execuções novas
+# (o ab copiado ao lado); serve para ver se a v3 roda e se o sinal vai na direção certa
+python3 scripts/v3_comparison.py --seeds 1 --flights ADM2 ADM3 --mapas 12-2018 01-2014 --metodos_s2 ab
+# peso mais suave (par instável vale no mínimo 0,5): gera insumos/estabilidade/ADM_35_A_wmin0.5.png na hora;
+# --lo e --hi mudam a rampa do mesmo jeito. A pasta ganha o sufixo _wmin0.5
+python3 scripts/v3_comparison.py --seeds 1 --flights ADM2 ADM3 --mapas 12-2018 01-2014 --metodos_s2 ab --wmin 0.5
+
+# seed 1: 30 execuções novas (ab+S2A e λ+S2A em ADM1–3 × 5 mapas), ~25 min com --jobs 4
+python3 scripts/v3_comparison.py --seeds 1 --dry_run
+nohup python3 scripts/v3_comparison.py --seeds 1 > v3.log 2>&1 &
+
+# se promissor: 5 seeds (copia ab e λ de 2026-10-17_artigo_novo_a0.5_5seeds)
+nohup python3 scripts/v3_comparison.py --seeds 1..5 > v3_5seeds.log 2>&1 &
+
+# ablações
+python3 scripts/v3_comparison.py --seeds 1 --formulas normalized coin --metodos_s2 ab   # fórmula
+python3 scripts/v3_comparison.py --seeds 1 --pesos A B                                 # variante B (só 12-2018)
+```
+
+Para testar outra janela ou outros limiares, gere o raster com outro `--nome` e passe-o à mão a uma execução (`--stability_map insumos/estabilidade/<nome>.png`), ou substitua o `ADM_35_A.png` e rode com `--nome` próprio no `v3_comparison.py`.
+
+**Saída:** `experimentos/<hoje>_v3_novo_a0.5[_<N>seeds]/`
+
+| Arquivo | Conteúdo |
+|---|---|
+| `00_LEIA_ME.md` | métodos, opções da engine e resumo por voo |
+| `tabela.md` | MAE e convergência por mapa e por voo; ganho do S2 pareado por mapa e seed, com Wilcoxon; o critério mínimo |
+| `tabela.csv` | cada execução |
+| `compilado.png` | erro por frame; uma linha por voo, uma coluna por mapa |
+
+### 10.3 Vídeos: o que o drone vê, o que o Sentinel-2 vê e onde caem os pares
+
+`scripts/v3_video.py` roda a engine em **um** voo × mapa com `--save_pairs` e `--save_particles` e monta três vídeos 1920×1080 por método (escolha com `--vistas voo drone mapa`).
+
+`--save_pairs` grava, sem mudar o resultado (o `errors.txt` sai idêntico):
+
+- `pairs_log.csv`: os 256 pares de cada frame, projetados na estimativa e na pose do GT, com o erro do bit e o peso;
+- `frames_log.csv`: as imagens usadas, a estimativa, o GT, d(GT), d(estimativa) e a fase;
+- `amostragem/`: a máscara da roleta e o NDVI do drone, em meia resolução.
+
+A pose do GT usa a escala do altímetro (`gain·z_baro`, a mesma referência do prior de escala). Sem altímetro, usa `0,87·z_GT`.
+
+| Vídeo | Painéis |
+|---|---|
+| `video_<método>_voo.mp4` | **o voo**: à esquerda, o mapa grande com a trilha do GT (verde) e da estimativa (laranja), as pegadas e a nuvem de partículas (amarelo) convergindo, com o zoom acompanhando a nuvem; com `--fundo peso`, o mapa aparece misturado com o peso S2-A. À direita, os 6 painéis da vista do drone, menores |
+| `video_<método>_drone.mp4` | tudo **na orientação da câmera**: 1 drone RGB (quantizado, como o descritor vê) + pares · 2 mapa visto da pose do GT · 3 S2 RGB do dia do voo visto da pose do GT · 4 drone NDVI + pontos sorteados + máscara da roleta · 5 S2 NDVI · 6 peso S2-A |
+| `video_<método>_mapa.mp4` | **norte para cima**, recorte em volta do GT: 1–2 como acima · 3 mapa · 4 S2 RGB · 5 S2 NDVI · 6 peso S2-A com as partículas e a visão geral do voo |
+
+Embaixo dos painéis fica o erro por frame (log, azul), o peso médio dos pares e a fase do filtro.
+
+Cores:
+
+- **Par:** a cor é o peso S2-A onde ele cai no mapa, na pose do GT: verde é estável, vermelho é instável. No ab puro, o peso só é exibido.
+- **Ponta do par:** branca quando o bit concorda com o drone na pose do GT, magenta quando discorda.
+- **Pegada e trilha:** verde é o GT, laranja é a estimativa. Partículas em amarelo.
+
+```bash
+# ab e ab+S2A no ADM2 · 01-2014 (2 execuções em paralelo, ~4 min, + ~4 min de vídeo)
+python3 scripts/v3_video.py --voo ADM2 --mapa 01-2014
+# só o trecho misto (a engine roda o voo inteiro, porque o filtro depende do passado)
+python3 scripts/v3_video.py --voo ADM2 --mapa 01-2014 --frames 80:120 --continuar
+# ADM3 com o λ junto, peso suave
+python3 scripts/v3_video.py --voo ADM3 --mapa 01-2014 --metodos ab ab_s2a lambda --wmin 0.5
+# só renderizar uma execução que já tem pairs_log.csv
+python3 scripts/v3_video.py --run_dir <execução> --map <mapa.jpg> --stability_map insumos/estabilidade/ADM_35_A.png
+```
+
+Saída: `experimentos/<hoje>_v3_video_<VOO>_<mapa>[_wmin…]/`, com:
+
+- os vídeos;
+- `quadros/<método>/{drone,mapa}/` (um PNG a cada `--png_cada 10` frames, para slides);
+- `area_sentinel.png` (a área do voo: mapa, S2 RGB e NDVI do dia do voo, peso e GT).
+
+**Como ler.** As hipóteses da proposta:
+
+- **H1:** ab+S2A perto do λ no ADM2.
+- **H2:** ab+S2A ≈ ab no ADM3.
+- **H3:** o rastreio urbano não piora.
+
+O **critério mínimo** para seguir é ab+S2A convergir pelo menos tanto quanto o melhor entre ab e λ, em cada voo. Com 1 seed são 5 pares por voo, e o menor p possível no Wilcoxon é 0,06: leia como indício.
+

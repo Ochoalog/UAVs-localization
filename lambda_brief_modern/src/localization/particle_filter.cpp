@@ -161,8 +161,10 @@ void ParticleFilter::updateWeights(
     std::vector<double> probe_d(probes.size(), 1.0);
     #pragma omp parallel for schedule(dynamic, 64)
     for (size_t k = 0; k < probes.size(); ++k) {
-        probe_d[k] = Descriptor::evaluateParticleDifference(
-            map_bgr, probes[k], drone_size, pairs, drone_descriptor, mode);
+        probe_d[k] = pair_weights_.map
+            ? Descriptor::evaluateWeightedParticleDifference(map_bgr, probes[k], drone_size, pairs,
+                                                             drone_descriptor, mode, &pair_weights_)
+            : Descriptor::evaluateParticleDifference(map_bgr, probes[k], drone_size, pairs, drone_descriptor, mode);
     }
 
     // 1. Hamming distance for every particle whose centre lies inside the map.
@@ -174,8 +176,10 @@ void ParticleFilter::updateWeights(
         if (p.x < 0.0 || p.y < 0.0 || p.x >= map_bgr.cols || p.y >= map_bgr.rows) {
             continue;
         }
-        diff_[i] = Descriptor::evaluateParticleDifference(
-            map_bgr, p, drone_size, pairs, drone_descriptor, mode);
+        diff_[i] = pair_weights_.map
+            ? Descriptor::evaluateWeightedParticleDifference(map_bgr, p, drone_size, pairs,
+                                                             drone_descriptor, mode, &pair_weights_)
+            : Descriptor::evaluateParticleDifference(map_bgr, p, drone_size, pairs, drone_descriptor, mode);
     }
 
     // 1b. Observation contrast and injection decision.

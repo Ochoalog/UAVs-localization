@@ -81,8 +81,17 @@ struct AppConfig {
     int relocalize_frames{5};         // ... for this many consecutive frames
     double track_vo_scale_deadband{0.01};
 
+    // v3 (Sentinel-2 stability weight, docs/MANUAL_TESTES_ARTIGO.md sec. 10). Empty = off (v2 unchanged).
+    // 8-bit grayscale PNG with the same size as the map; 255 = weight 1. Each pixel pair is weighted by
+    // min(W(A), W(B)) at the two projected map points (scripts/make_stability_map.py builds the raster).
+    std::string stability_map;
+    StabilityFormula stability_formula{StabilityFormula::NORMALIZED};
+
     bool save_particles{false};
     int export_particles{1000}; // Number of particles to export per frame (or -1 for all)
+    // Diagnostics for videos (scripts/v3_video.py): pairs_log.csv, frames_log.csv and amostragem/
+    // (sampling mask and drone NDVI per frame, half resolution). Read-only: results are unchanged.
+    bool save_pairs{false};
 
     unsigned int random_seed{42};
     bool quiet{false};
