@@ -1,0 +1,379 @@
+% Referências para o paper do ICUAS (λ-BRIEF). Levantamento de 02/11/2026.
+% Campo "note" = status da verificação. Antes de submeter, confira no IEEE Xplore /
+% editora os itens marcados "VERIFICAR". DOIs sem marcação foram confirmados em
+% pelo menos uma fonte bibliográfica (editora, DBLP, mlanthology ou repositório).
+
+% ---------------------------------------------------------------------------
+% 1. Trabalho base: abBRIEF e localização de VANT sobre imagem de satélite
+% ---------------------------------------------------------------------------
+@article{mantelli2019abbrief,
+  author  = {Mantelli, Mathias and Pittol, Diego and Neuland, Renata and Ribacki, Alexandre and Maffei, Renan and Jorge, Vitor and Prestes, Edson and Kolberg, Mariana},
+  title   = {A novel measurement model based on {abBRIEF} for global localization of a {UAV} over satellite images},
+  journal = {Robotics and Autonomous Systems},
+  volume  = {112},
+  pages   = {304--319},
+  year    = {2019},
+  doi     = {10.1016/j.robot.2018.12.006}
+}
+
+@article{couturier2021review,
+  author  = {Couturier, Andy and Akhloufi, Moulay A.},
+  title   = {A review on absolute visual localization for {UAV}},
+  journal = {Robotics and Autonomous Systems},
+  volume  = {135},
+  pages   = {103666},
+  year    = {2021},
+  doi     = {10.1016/j.robot.2020.103666}
+}
+
+@inproceedings{conte2009vision,
+  author    = {Conte, Gianpaolo and Doherty, Patrick},
+  title     = {Vision-based unmanned aerial vehicle navigation using geo-referenced information},
+  booktitle = {EURASIP Journal on Advances in Signal Processing},
+  volume    = {2009},
+  pages     = {387308},
+  year      = {2009},
+  doi       = {10.1155/2009/387308}
+}
+
+@inproceedings{masselli2016terrain,
+  author    = {Masselli, Andreas and Hanten, Richard and Zell, Andreas},
+  title     = {Localization of unmanned aerial vehicles using terrain classification from aerial images},
+  booktitle = {Intelligent Autonomous Systems 13 (IAS-13)},
+  series    = {Advances in Intelligent Systems and Computing},
+  volume    = {302},
+  pages     = {831--842},
+  publisher = {Springer},
+  year      = {2016},
+  doi       = {10.1007/978-3-319-08338-4_60}
+}
+
+@misc{shan2017googlemap,
+  author       = {Shan, Mo and Wang, Fei and Lin, Feng and Gao, Zhi and Tang, Ya Z. and Chen, Ben M.},
+  title        = {Google Map Aided Visual Navigation for {UAVs} in {GPS}-denied Environment},
+  howpublished = {arXiv:1703.10125},
+  year         = {2017},
+  note         = {VERIFICAR: versão em conferência (citado às vezes como ROBIO 2015)}
+}
+
+@inproceedings{goforth2019gps,
+  author    = {Goforth, Hunter and Lucey, Simon},
+  title     = {{GPS}-denied {UAV} localization using pre-existing satellite imagery},
+  booktitle = {IEEE International Conference on Robotics and Automation (ICRA)},
+  pages     = {2974--2980},
+  year      = {2019},
+  note      = {VERIFICAR DOI no IEEE Xplore}
+}
+
+@inproceedings{patel2020visual,
+  author    = {Patel, Bhavit and Barfoot, Timothy D. and Schoellig, Angela P.},
+  title     = {Visual localization with {Google Earth} images for robust global pose estimation of {UAVs}},
+  booktitle = {IEEE International Conference on Robotics and Automation (ICRA)},
+  pages     = {6491--6497},
+  year      = {2020},
+  note      = {VERIFICAR DOI no IEEE Xplore}
+}
+
+@inproceedings{couturier2019uav,
+  author    = {Couturier, Andy and Akhloufi, Moulay A.},
+  title     = {{UAV} navigation in {GPS}-denied environment using particle filtered {RVL}},
+  booktitle = {Situation Awareness in Degraded Environments 2019, Proc. SPIE},
+  volume    = {11019},
+  pages     = {110190N},
+  year      = {2019},
+  doi       = {10.1117/12.2518516}
+}
+
+@misc{jurevicius2019robust,
+  author       = {Jurevi\v{c}ius, Rokas and Marcinkevi\v{c}ius, Virginijus and \v{S}eibokas, Justinas},
+  title        = {Robust {GNSS}-denied localization for {UAV} using particle filter and visual odometry},
+  howpublished = {arXiv:1910.12121},
+  year         = {2019},
+  note         = {VERIFICAR: possível versão em Machine Vision and Applications}
+}
+
+@inproceedings{jurevicius2017application,
+  author    = {Jurevi\v{c}ius, Rokas and Marcinkevi\v{c}ius, Virginijus},
+  title     = {Application of vision-based particle filter and visual odometry for {UAV} localization},
+  booktitle = {WSCG 2017 Short Papers Proceedings},
+  publisher = {UNION Agency},
+  year      = {2017},
+  note      = {VERIFICAR páginas}
+}
+
+% ---------------------------------------------------------------------------
+% 2. MCL / localização global com casamento por ortofoto (linha Kinnari)
+% ---------------------------------------------------------------------------
+@inproceedings{kinnari2021gnss,
+  author    = {Kinnari, Jouko and Verdoja, Francesco and Kyrki, Ville},
+  title     = {{GNSS}-denied geolocalization of {UAVs} by visual matching of onboard camera images with orthophotos},
+  booktitle = {20th International Conference on Advanced Robotics (ICAR)},
+  pages     = {555--562},
+  year      = {2021},
+  doi       = {10.1109/ICAR53236.2021.9659333}
+}
+
+@article{kinnari2022season,
+  author  = {Kinnari, Jouko and Verdoja, Francesco and Kyrki, Ville},
+  title   = {Season-invariant {GNSS}-denied visual localization for {UAVs}},
+  journal = {IEEE Robotics and Automation Letters},
+  volume  = {7},
+  number  = {4},
+  pages   = {10232--10239},
+  year    = {2022},
+  doi     = {10.1109/LRA.2022.3191038}
+}
+
+@article{kinnari2023lsvl,
+  author  = {Kinnari, Jouko and Renzulli, Riccardo and Verdoja, Francesco and Kyrki, Ville},
+  title   = {{LSVL}: Large-scale season-invariant visual localization for {UAVs}},
+  journal = {Robotics and Autonomous Systems},
+  volume  = {168},
+  pages   = {104497},
+  year    = {2023},
+  doi     = {10.1016/j.robot.2023.104497}
+}
+
+@misc{yuan2025swapf,
+  author       = {Yuan, Jiayu and Dai, Ming and Zheng, Enhui and Su, Chao and Chen, Nanxing and Hu, Qiming and Zhu, Shibo and Cao, Yibin},
+  title        = {{SWA-PF}: Semantic-Weighted Adaptive Particle Filter for Memory-Efficient 4-{DoF} {UAV} Localization in {GNSS}-Denied Environments},
+  howpublished = {arXiv:2509.13795},
+  year         = {2025}
+}
+
+@inproceedings{gurgu2022wildnav,
+  author    = {Gurgu, Marius-Mihail and Pe\~{n}a Queralta, Jorge and Westerlund, Tomi},
+  title     = {Vision-based {GNSS}-free localization for {UAVs} in the wild},
+  booktitle = {7th International Conference on Mechanical Engineering and Robotics Research (ICMERR)},
+  pages     = {7--12},
+  year      = {2022},
+  doi       = {10.1109/ICMERR56497.2022.10097798}
+}
+
+@article{li2024expediting,
+  author  = {Li, Zhenyu and Jiang, Xiangyuan and Ma, Sile and Ma, Xiaojing and Lv, Zhenyi and Ding, Hongliang and Ji, Haiyan and Sun, Zheng},
+  title   = {Expediting the convergence of global localization of {UAVs} through forward-facing camera observation},
+  journal = {Drones},
+  volume  = {8},
+  number  = {7},
+  pages   = {335},
+  year    = {2024},
+  doi     = {10.3390/drones8070335}
+}
+
+% ---------------------------------------------------------------------------
+% 3. Métodos aprendidos / cross-view / datasets (contraste com descritor artesanal)
+% ---------------------------------------------------------------------------
+@inproceedings{zheng2020university1652,
+  author    = {Zheng, Zhedong and Wei, Yunchao and Yang, Yi},
+  title     = {{University-1652}: A multi-view multi-source benchmark for drone-based geo-localization},
+  booktitle = {Proceedings of the 28th ACM International Conference on Multimedia (MM)},
+  year      = {2020},
+  doi       = {10.1145/3394171.3413896}
+}
+
+@article{keetha2023anyloc,
+  author  = {Keetha, Nikhil and Mishra, Avneesh and Karhade, Jay and Jatavallabhula, Krishna Murthy and Scherer, Sebastian and Krishna, Madhava and Garg, Sourav},
+  title   = {{AnyLoc}: Towards universal visual place recognition},
+  journal = {IEEE Robotics and Automation Letters},
+  volume  = {9},
+  number  = {2},
+  pages   = {1286--1293},
+  year    = {2023},
+  note    = {VERIFICAR DOI IEEE; arXiv:2308.00688}
+}
+
+@article{oquab2024dinov2,
+  author  = {Oquab, Maxime and others},
+  title   = {{DINOv2}: Learning robust visual features without supervision},
+  journal = {Transactions on Machine Learning Research},
+  year    = {2024},
+  note    = {arXiv:2304.07193}
+}
+
+@article{xiao2024sthn,
+  author  = {Xiao, Jiuhong and Zhang, Ning and Tortei, Daniel and Loianno, Giuseppe},
+  title   = {{STHN}: Deep homography estimation for {UAV} thermal geo-localization with satellite imagery},
+  journal = {IEEE Robotics and Automation Letters},
+  volume  = {9},
+  number  = {10},
+  year    = {2024},
+  note    = {VERIFICAR páginas/DOI; arXiv:2405.20470}
+}
+
+@misc{xu2024uavvisloc,
+  author       = {Xu, Wenjia and Yao, Yaxuan and Cao, Jiaqi and Wei, Zhiwei and Liu, Chunbo and Wang, Jiuniu and Peng, Mugen},
+  title        = {{UAV-VisLoc}: A large-scale dataset for {UAV} visual localization},
+  howpublished = {arXiv:2405.11936},
+  year         = {2024}
+}
+
+@article{aerialvl2024,
+  author  = {{AerialVL authors}},
+  title   = {{AerialVL}: A dataset, baseline and algorithm framework for aerial-based visual localization with reference map},
+  journal = {IEEE Robotics and Automation Letters},
+  volume  = {9},
+  number  = {10},
+  pages   = {8210--8217},
+  year    = {2024},
+  note    = {VERIFICAR autores e DOI}
+}
+
+% ---------------------------------------------------------------------------
+% 4. Filtro de partículas / MCL / relocalização
+% ---------------------------------------------------------------------------
+@inproceedings{dellaert1999mcl,
+  author    = {Dellaert, Frank and Fox, Dieter and Burgard, Wolfram and Thrun, Sebastian},
+  title     = {{Monte Carlo} localization for mobile robots},
+  booktitle = {IEEE International Conference on Robotics and Automation (ICRA)},
+  volume    = {2},
+  pages     = {1322--1328},
+  year      = {1999},
+  doi       = {10.1109/ROBOT.1999.772544}
+}
+
+@inproceedings{fox1999mcl,
+  author    = {Fox, Dieter and Burgard, Wolfram and Dellaert, Frank and Thrun, Sebastian},
+  title     = {{Monte Carlo} localization: Efficient position estimation for mobile robots},
+  booktitle = {Proceedings of the Sixteenth National Conference on Artificial Intelligence (AAAI)},
+  pages     = {343--349},
+  year      = {1999}
+}
+
+@article{thrun2001robust,
+  author  = {Thrun, Sebastian and Fox, Dieter and Burgard, Wolfram and Dellaert, Frank},
+  title   = {Robust {Monte Carlo} localization for mobile robots},
+  journal = {Artificial Intelligence},
+  volume  = {128},
+  number  = {1--2},
+  pages   = {99--141},
+  year    = {2001},
+  note    = {VERIFICAR DOI (provável 10.1016/S0004-3702(01)00069-8)}
+}
+
+@book{thrun2005probabilistic,
+  author    = {Thrun, Sebastian and Burgard, Wolfram and Fox, Dieter},
+  title     = {Probabilistic Robotics},
+  publisher = {MIT Press},
+  address   = {Cambridge, MA},
+  year      = {2005},
+  isbn      = {978-0-262-20162-9}
+}
+
+@inproceedings{lenser2000sensor,
+  author    = {Lenser, Scott and Veloso, Manuela},
+  title     = {Sensor resetting localization for poorly modelled mobile robots},
+  booktitle = {IEEE International Conference on Robotics and Automation (ICRA)},
+  volume    = {2},
+  pages     = {1225--1232},
+  year      = {2000},
+  note      = {VERIFICAR DOI no IEEE Xplore}
+}
+
+@inproceedings{engelson1992error,
+  author    = {Engelson, Sean P. and McDermott, Drew V.},
+  title     = {Error correction in mobile robot map learning},
+  booktitle = {IEEE International Conference on Robotics and Automation (ICRA)},
+  pages     = {2555--2560},
+  year      = {1992},
+  doi       = {10.1109/ROBOT.1992.220057}
+}
+
+% ---------------------------------------------------------------------------
+% 5. Descritores, casamento e estimação robusta (odometria visual)
+% ---------------------------------------------------------------------------
+@inproceedings{calonder2010brief,
+  author    = {Calonder, Michael and Lepetit, Vincent and Strecha, Christoph and Fua, Pascal},
+  title     = {{BRIEF}: Binary robust independent elementary features},
+  booktitle = {European Conference on Computer Vision (ECCV)},
+  series    = {LNCS},
+  volume    = {6314},
+  pages     = {778--792},
+  publisher = {Springer},
+  year      = {2010},
+  doi       = {10.1007/978-3-642-15561-1_56}
+}
+
+@inproceedings{rublee2011orb,
+  author    = {Rublee, Ethan and Rabaud, Vincent and Konolige, Kurt and Bradski, Gary},
+  title     = {{ORB}: An efficient alternative to {SIFT} or {SURF}},
+  booktitle = {IEEE International Conference on Computer Vision (ICCV)},
+  pages     = {2564--2571},
+  year      = {2011},
+  doi       = {10.1109/ICCV.2011.6126544}
+}
+
+@article{lowe2004sift,
+  author  = {Lowe, David G.},
+  title   = {Distinctive image features from scale-invariant keypoints},
+  journal = {International Journal of Computer Vision},
+  volume  = {60},
+  number  = {2},
+  pages   = {91--110},
+  year    = {2004},
+  doi     = {10.1023/B:VISI.0000029664.99615.94}
+}
+
+@inproceedings{muja2009flann,
+  author    = {Muja, Marius and Lowe, David G.},
+  title     = {Fast approximate nearest neighbors with automatic algorithm configuration},
+  booktitle = {International Conference on Computer Vision Theory and Applications (VISAPP)},
+  pages     = {331--340},
+  year      = {2009},
+  doi       = {10.5220/0001787803310340}
+}
+
+@article{fischler1981ransac,
+  author  = {Fischler, Martin A. and Bolles, Robert C.},
+  title   = {Random sample consensus: A paradigm for model fitting with applications to image analysis and automated cartography},
+  journal = {Communications of the ACM},
+  volume  = {24},
+  number  = {6},
+  pages   = {381--395},
+  year    = {1981},
+  doi     = {10.1145/358669.358692}
+}
+
+@inproceedings{barath2020magsacpp,
+  author    = {Barath, Daniel and Noskova, Jana and Ivashechkin, Maksym and Matas, Jiri},
+  title     = {{MAGSAC++}, a fast, reliable and accurate robust estimator},
+  booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  pages     = {1304--1312},
+  year      = {2020},
+  doi       = {10.1109/CVPR42600.2020.00138}
+}
+
+% ---------------------------------------------------------------------------
+% 6. Índice de vegetação e sensor multiespectral (máscara do λ-BRIEF)
+% ---------------------------------------------------------------------------
+@inproceedings{rouse1974ndvi,
+  author    = {Rouse, J. W. and Haas, R. H. and Schell, J. A. and Deering, D. W.},
+  title     = {Monitoring vegetation systems in the {Great Plains} with {ERTS}},
+  booktitle = {Third Earth Resources Technology Satellite-1 Symposium, NASA SP-351},
+  volume    = {1},
+  pages     = {309--317},
+  year      = {1974},
+  note      = {Citação clássica do NDVI; NTRS 19740022614. VERIFICAR páginas (309--317 vs 301--317)}
+}
+
+@article{alamrani2021sequoia,
+  author  = {Alamrani, Hamed (?) and Eklundh, Lars},
+  title   = {Parrot {Sequoia} radiometric evaluation (título a confirmar)},
+  journal = {Remote Sensing},
+  volume  = {13},
+  number  = {4},
+  pages   = {577},
+  year    = {2021},
+  note    = {VERIFICAR título, nome do 1o autor e DOI (provável 10.3390/rs13040577)}
+}
+
+@article{fawcett2020multiscale,
+  author  = {Fawcett, Dominic and others},
+  title   = {Multi-scale evaluation of drone-based multispectral surface reflectance and vegetation indices in operational conditions},
+  journal = {Remote Sensing},
+  volume  = {12},
+  number  = {3},
+  pages   = {514},
+  year    = {2020},
+  doi     = {10.3390/rs12030514}
+}
